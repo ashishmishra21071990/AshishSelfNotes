@@ -1,0 +1,92 @@
+Anonymous Type
+-----------------
+function without name is know as 'Anonymous Type'
+--------------------------------------------------
+1-Access One Value using Anonymous Type Example
+-----------------------------------------------
+using System;
+using System.IO;
+using System;
+using System.Collections.Generic;
+
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class demo
+	{
+		static void Main()
+		{
+			var emp = new { eid = 1, name = "dipika", age = 30, city = "delhi" };
+            Console.WriteLine("id="+emp.eid);
+            Console.WriteLine("name="+emp.name);
+            Console.WriteLine("age="+emp.age);
+            Console.WriteLine("city="+emp.city);
+        }
+	}
+}
+output-
+id=1
+name=dipika
+age=30
+city=delhi
+-------------------------------------------------
+2-Access Multiple Value using Anonymous Type Example
+------------------------------------------------------
+using System;
+using System.IO;
+using System;
+using System.Collections.Generic;
+
+
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+using System.Security.Cryptography;
+using System.Xml.Linq;
+
+namespace ashish
+{
+	class Employee
+	{
+		public int eid;
+		public string name;
+		public int age;
+		public string city;
+	}
+	class demo
+	{
+		static void Main()
+		{
+			List<Employee> emplist = new List<Employee>
+			{
+				new Employee { eid = 1, name = "dipika", age = 80, city = "allahabad" },
+				new Employee { eid = 2, name = "sonu", age = 85, city = "lucknow" },
+				new Employee { eid = 3, name = "vikash", age = 90, city = "delhi" },
+				new Employee { eid = 4, name = "maneesha", age = 100, city = "mumbai" },
+				new Employee { eid = 5, name = "raja", age = 80, city = "allahabad" }
+			};
+            Console.WriteLine("list of Employee\n"); 
+			foreach(var emp in emplist)
+			{
+                Console.WriteLine("eid="+emp.eid);
+                Console.WriteLine("name="+emp.name);
+                Console.WriteLine("age="+emp.age);
+                Console.WriteLine("city="+emp.city);
+                Console.WriteLine("==============");
+            }
+        }
+	}
+}
+-------------------------------------------------------------------------------------------
+Pointer
+----------
+it is a special variable that holds the address of another variable.
+--------------------------------------------------------------------
+int a=45;->1000 address
+int *b;->2000 address store address 1000 // pointer declaration
+b=&a;//& address *value
+--------------------------------------------------------

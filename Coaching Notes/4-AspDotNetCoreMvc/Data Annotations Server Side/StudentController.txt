@@ -1,0 +1,30 @@
+using Microsoft.AspNetCore.Mvc;
+using WebApplicationashish.Models;
+
+namespace WebApplicationashish.Controllers
+{
+	public class StudentController : Controller
+	{
+		public IActionResult Index()
+		{
+			return View();
+		}
+		public IActionResult create()
+		{
+			return View();
+		}
+		[HttpPost]
+		public IActionResult create(Student stuobj)
+		{
+			if(ModelState.IsValid)
+			{
+
+			}
+			else 
+			{
+				ModelState.AddModelError(string.Empty, "erroe in student model");
+			}
+			return View();
+		}
+	}
+}

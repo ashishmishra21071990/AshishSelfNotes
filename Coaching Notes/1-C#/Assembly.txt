@@ -1,0 +1,18 @@
+Assembly
+-----------
+*  first project template name- class library dot net framework-add this 
+* second project template name-window based application window 
+forms app(.net framework)-add this  
+-----------------------------------------------
+assembly contains the meta information about classes,method,interface
+Types Of Assembly
+-------------------
+1-Public Assembly
+---------------------
+it is also known as shared assembly
+* .dll(dynamic link library)
+2-Private Assembly
+--------------------
+which can not share
+* .exe(executable file) as like window based application/desktop app
+-----------------------------------------------------------------------------

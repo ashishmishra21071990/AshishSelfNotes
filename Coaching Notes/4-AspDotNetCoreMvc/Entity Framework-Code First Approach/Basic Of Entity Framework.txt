@@ -1,0 +1,74 @@
+Entity Framework
+-----------------
+entity framework is a very powerfull tool for database operation.
+* it allowed to developer to directaly connect with your database without writting sql boaring query.
+* it is a ORM(object relational mapping)tool that directaly map your models with your database.
+* entity framework uses LINQ queries.
+* LINQ stands for language integrated query.
+*LINQ query used Lambda Expresion(=>).
+* LINQ query faster than sql query.
+-----------------------------------
+there are two approches
+1-Code First Approach
+2-Database First Approach
+---------------------
+1-Code First Approach
+---------------------
+step-1 Install the packageg
+--------------------------
+1-Microsoft.EntityFrameworkCore
+2-Microsoft.EntityFrameworkCore.Tools
+3-Microsoft.EntityFrameworkCore.SqlServer
+4- Microsoft.AspNetCore.MVC.Razor.RuntimeCompilation-AddRazorRuntimeCompilation();
+---------------------------------------------------------------
+Step-2 create model class
+--------------------------
+here add one namespace -using System.ComponentModel.DataAnnotations;
+* model class name is Employee
+-------------------------------------
+Step-3 create DataContext Class
+---------------------------------
+Note-
+------
+* EmployeeDbContext to inherit by :DbContext because EmployeeDbContext is not power full class to perform curd operation than 
+that reason inherit by class and add their namespace than inherit class use
+* we are not do the object of EmployeeDbContext
+* base is keyword that help to calling of parent class constructer
+* <Employee>-column name and Employees table name
+* options is variable name but what do you want put as your wish.but both name same.
+here i include one namespace-using Microsoft.EntityFrameworkCore;
+* EmployeeDbContext-name
+------------------------------------------------------------
+Step-4 create ConnectionStrings 
+-------------------------
+step-5 Add Services To the container
+-------------------------------------
+after write this service  into the program.cs then  the front of top these two namespace automatically inbuilt
+theier name as given below
+----------------------
+using Microsoft.EntityFrameworkCore;
+using WebApplicationcodefirst.Models;
+-------------------------------------------
+Step-6
+-------
+add-migration 'migrationname'
+update-database
+after do that  our table is create in sql 
+--------------------------------------------------
+note
+------
+var conn="connection string"
+variable name user decide anything write
+some times in program.cs connection string passing way is different like this
+options.usesqlserver(builder.configuration.getconnectionstring(conn));
+connection string we will write directaly program.cs but one place use or program.cs or.appsetting.json
+--------------------------------------------------------------------------------------------------------
+always we use altogether async and await -withot refresh data are going to server.
+* page does not reaload not refresh but but data are come with database to server.
+* same work as ajax
+* every class his own default constructor.
+--------------------------------------------------------------------------------------
+
+
+ 
+  

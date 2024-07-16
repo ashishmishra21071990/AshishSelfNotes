@@ -1,0 +1,9 @@
+ data validation client side
+---------------------------------
+1- in dot net core there are  already 1 file exist in mvc dot net core
+2-file available in shared
+3-_ValidationScriptPartial
+4-if i want to use the client side validation then the end of View mention this code means call _ValidationScriptPartial because here already exist j query script
+@section scripts{
+	<partial name="_ValidationScriptsPartial"/>
+}

@@ -1,0 +1,10 @@
+step-4
+-------
+create ConnectionStrings 
+-----------------------------
+"ConnectionStrings": {
+    "DefaultConnection": "Data Source=DESKTOP-UNU8TPU\\SQLEXPRESS;Initial Catalog=Dbashish;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;"
+
+
+
+  },

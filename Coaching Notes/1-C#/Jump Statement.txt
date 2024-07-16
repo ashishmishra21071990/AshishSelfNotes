@@ -1,0 +1,120 @@
+Jump Statement
+----------------
+1-break;
+-----------
+it stops the current execution of the loop and transfer control to the next statements
+using System;
+class demo
+{
+	static void Main()
+	{
+		for(int i=1;i<=10;i++)
+		{
+			if(i==4)
+			{
+                Console.WriteLine(i);
+                break;
+            }
+            Console.WriteLine(i);
+
+
+
+        }
+		Console.WriteLine("end of loop");
+	}
+}
+output-
+1
+2
+3
+4
+end of loop
+------------------------------------------------------------
+continue
+------------
+it skip the current execution of loop and transfer control
+to the beginning of the loop
+using System;
+using System;
+class demo
+{
+	static void Main()
+	{
+		for (int i = 1; i <= 10; i++)
+		{
+			if (i == 4 || i == 7 || i == 10)
+			{
+				
+				continue;
+			}
+			Console.WriteLine(i);
+		}
+		Console.WriteLine("end of loop");
+
+
+
+	}
+}
+output-
+1
+2
+3
+5
+6
+8
+9
+
+-----------------------------------------------
+3-return
+-------------
+		
+		
+		
+
+
+	
+
+											 
+			                            
+		                                   
+		      
+		                                    
+
+	
+
+
+
+
+
+
+
+
+    
+
+
+
+		
+		
+		
+
+
+	
+
+											 
+			                            
+		                                   
+		      
+		                                    
+
+	
+
+
+
+
+
+
+
+
+    
+
+

@@ -1,0 +1,309 @@
+1-wap and input a no.
+11111
+22222
+33333
+44444
+55555
+--------------------------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        for(int i=1;i<=5;i++)
+        {
+            for(int j=1;j<=5;j++)
+            {
+                Console.Write(i);
+            }
+            Console.WriteLine();
+
+
+        }
+    }
+}
+---------------------------------
+2-wap to input a no.
+12345
+12345
+12345
+12345
+12345
+-------------------------------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        for(int i=1;i<=5;i++)
+        {
+            for(int j=1;j<=5;j++)
+            {
+                Console.Write(j);
+            }
+            Console.WriteLine();
+
+
+        }
+    }
+}
+----------------------------------
+3-wap pattern matching with # using nested if
+12345
+1234
+123
+12
+1
+------------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int i, j;
+
+
+        for (i = 1; i <= 5; i++)
+        {
+            
+            for (j = 1; j <= 5; j++)
+            {
+                Console.WriteLine(" ");
+            }
+            
+            for (j = 1; j <= 5 - i + 1; j++)
+            {
+                Console.Write(j);
+                
+            }
+            Console.WriteLine();
+        }
+    }
+}
+or
+----------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int i, j;
+        for (i = 5; i >= 1; i--)
+        {
+            for (j = 1; j <= i; j++)
+            {
+                Console.Write(j);
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+
+
+        
+       
+    
+
+---------------------------------------------
+4-wap in pattern matching using nested if
+1
+12
+123
+1234
+12345
+-----------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int i, j, n;
+        Console.WriteLine("enter:n");
+        n = Convert.ToInt32(Console.ReadLine());
+
+
+        for (i = 1; i <= n; i++)
+        {
+
+            for (j = 1; j <= i; j++)
+            {
+                Console.Write(j);
+            }
+            Console.WriteLine();
+        }
+    }
+}
+or
+----
+using System;
+class demo
+{
+    static void Main()
+    {
+        int i, j; 
+       
+
+
+        for (i = 1; i <= 5; i++)
+        {
+
+            for (j = 1; j <= i; j++)
+            {
+                Console.Write(j);
+            }
+            Console.WriteLine();
+        }
+    }
+}
+----------------------------------------
+5-wap in c# pattern matching with nested if 
+54321
+5432
+543
+54
+5
+-----------------------------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int i, j;
+        for (i = 1; i <= 5; i++)
+        {
+            for (j = 5; j >= i; j--)
+            {
+
+                Console.Write(j);
+            }
+            Console.WriteLine();
+        }
+    }
+}
+--------------------------------------------
+6-wap in pattern matching using nested if 
+5
+54
+543
+5432
+54321
+---------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int i, j;
+        for (i = 5; i >= 1; i--)
+        {
+            for (j = 5; j >= i; j--)
+            {
+
+                Console.Write(j);
+            }
+            Console.WriteLine();
+        }
+    }
+}
+--------------------------------------------
+7-wap in pattern matching using nested if
+1
+22
+333
+4444
+55555
+--------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int i, j;
+        for (i = 1; i <= 5; i++)
+        {
+            for (j = 1; j <= i; j++)
+            {
+                
+
+                Console.Write(i);
+            }
+            Console.WriteLine();
+        }
+    }
+}
+-----------------------------------
+8-wap in pattern matching using nested if
+1
+21
+321
+4321
+54321
+---------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int i, j;
+        for (i = 1; i <= 5; i++)
+        {
+            for (j = i; j >= 1; j--)
+            {
+                
+
+                Console.Write(j);
+            }
+            Console.WriteLine();
+        }
+    }
+}
+----------------------------------
+9-wap in pattern matching using nested if
+11111
+2222
+3333
+44
+5
+---------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int i, j;
+        for (i = 1; i <= 5; i++)
+        {
+            for (j = 5; j >= i; j--)
+            {
+                
+
+                Console.Write(i);
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+
+
+
+
+
+            
+               
+                
+            
+            
+        
+    
+
+
+
+
+
+
+
+
+             
+  

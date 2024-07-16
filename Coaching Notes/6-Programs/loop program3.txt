@@ -1,0 +1,343 @@
+1-wap to print 50 to 1 no.using
+while
+do while
+for
+----------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int a = 50;
+        while(a>=1)
+        {
+            Console.WriteLine(a);
+            a--;
+        }
+        Console.WriteLine("end of loop");
+    }
+}
+----------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int a = 50;
+        do
+        {
+            Console.WriteLine(a);
+            a--;
+        }
+        while (a >= 1) ;
+        Console.WriteLine("end of loop");
+    }
+}
+----------------------------------
+using System;
+using System.Threading.Channels;
+
+class demo
+{
+    static void Main()
+    {
+      for(int i=50; i>=1;i--)
+            Console.WriteLine(i);
+      Console.WriteLine("end of loop");
+    }
+   
+}
+-------------------------------
+2-wap to print 1to 50 no.using
+while
+do while
+for
+------------------------
+using System;
+using System.Threading.Channels;
+
+class demo
+{
+    static void Main()
+    {
+        int a = 1;
+        while (a <= 50)
+        {
+
+
+            Console.Write(a);
+            a++;
+        }
+       Console.WriteLine("end of loop");
+    }
+   
+}
+------------------------
+using System;
+using System.Threading.Channels;
+
+class demo
+{
+    static void Main()
+    {
+        int a = 1;
+        do
+
+        { 
+
+
+            Console.Write(a);
+            a++;
+        }
+        while (a <= 50) ;
+            Console.WriteLine("end of loop");
+    }
+   
+}
+-----------------
+using System;
+using System.Threading.Channels;
+
+class demo
+{
+    static void Main()
+    {
+        int a = 1;
+        do
+
+        { 
+
+
+            Console.Write(a);
+            a++;
+        }
+        while (a <= 50) ;
+            Console.WriteLine("end of loop");
+    }
+   
+}
+-----------------
+3-wap to print welcome to c# 20 times using 
+while
+do while
+for
+-----------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int a = 1;
+        while (a <= 20)
+        {
+            Console.WriteLine("welcome to c#");
+            a++;
+        }
+        Console.WriteLine("end of loop");
+    }
+    
+}
+------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int a = 1;
+        do
+        {
+            Console.WriteLine("welcome to c#");
+            a++;
+        }
+        while (a <= 20);
+            Console.WriteLine("end of loop");
+    }
+    
+}
+----------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        for(int a=1; a<=20;a++)
+        {
+            Console.WriteLine("welcome to c#");
+        }
+        Console.WriteLine("end of loop");
+    }
+    
+}
+-------------------------------------------
+4-wap to print 1 to 20 no.and finds it 
+sum 
+avg
+-------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int i,  sum = 0;
+        double avg;
+         
+        for (i = 1; i <= 20; i++)
+        {
+            Console.WriteLine("i="+i);
+            
+           
+            sum = sum + i;
+            Console.WriteLine("sum="+sum);
+            avg = sum / i;
+            Console.WriteLine("avg="+avg);
+        }
+        Console.WriteLine("end of loop");
+
+
+
+
+
+    }
+}
+--------------------------------------
+5-wap to print the even no.b/w 1 to 100 using 
+while
+do while
+for
+-------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int num = 1;
+        while (num <= 100)
+        {
+            if (num % 2 == 0)
+            {
+                Console.WriteLine(num);
+
+            }
+            num++;
+        }
+        Console.WriteLine("end of loop");
+    }
+}
+----------------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int num = 1;
+    do
+        {
+            if (num % 2 == 0)
+            {
+                Console.WriteLine(num);
+
+            }
+            num++;
+        }
+        while (num <= 100) ;
+            Console.WriteLine("end of loop");
+    }
+}
+----------------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        for (int num = 1; num <= 100; num++)
+        {
+            if (num%2==0)
+            {
+                Console.WriteLine(num);
+            }
+
+        }
+        Console.WriteLine("end of loop");
+
+
+    }
+}
+--------------------------------
+6-wap to print the odd no.b/w 1 to 100 using 
+while
+do while
+for
+-----------------
+using System;
+class Demo
+{
+    static void Main()
+    {
+        int num = 1;
+        while(num<=100)
+        {
+            if(num%2==0)
+            {
+                Console.WriteLine(num);
+            }
+            num++;
+        }
+        Console.WriteLine("end of loop");
+    }
+}
+-------------------------
+using System;
+class Demo
+{
+    static void Main()
+    {
+        int num = 1;
+        do
+        {
+            if (num % 2 == 0)
+            {
+                Console.WriteLine(num);
+            }
+            num++;
+        }
+        while (num <= 100);
+            Console.WriteLine("end of loop");
+    }
+}
+-----------------------------------
+using System;
+class Demo
+{
+    static void Main()
+    {
+        for(int num=1; num<=100;num++)
+        {
+            if(num%2==0)
+            {
+                Console.WriteLine(num);
+            }
+        }
+        Console.WriteLine("end of loop");
+    }
+}
+--------------------------------------
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    

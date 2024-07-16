@@ -1,0 +1,46 @@
+using Microsoft.EntityFrameworkCore;
+using WebApplicationapi.Models;
+using WebApplicationapi.Contract;
+using WebApplicationapi.Services;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+namespace WebApplicationapi.Controllers
+{
+	[Route("api/[controller]")]
+	[ApiController]
+	public class EmployeeController : ControllerBase
+	{
+		private Iemployee _iemployee;
+		public EmployeeController(Iemployee iemployee)
+		{
+			_iemployee = iemployee;
+		}
+		[HttpGet]
+		public List<Employee> GetEmployees()
+		{
+			return _iemployee.GetEmployees();
+		}
+		[HttpGet("{id}")]
+		public Employee GetEmployeeById(int id)
+		{
+			return _iemployee.GetEmployeeById(id);
+		}
+		[HttpPost]
+		public void AddEmployee(Employee empobj)
+		{
+			_iemployee.AddEmployee(empobj);
+		}
+		[HttpPut]
+
+		public void UpdateEmployee(Employee empobj)
+		{
+			_iemployee.UpdateEmployee(empobj);
+		}
+		[HttpDelete("{id}")]
+		public void DeleteEmployee(int id)
+		{
+			_iemployee.DeleteEmployee(id);
+		}
+	}
+}

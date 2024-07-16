@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Business_Access_Layer.Contract;
+using Common_Layer.Models;
+using Data_Access_Layer;
+using Microsoft.Identity.Client;
+
+namespace Business_Access_Layer.Services
+{
+
+
+	public class Employeeservice : Iemployee
+	{
+		public EmployeeDboperation dboperation;
+		public Employeeservice()
+		{
+			dboperation = new EmployeeDboperation();
+		}
+
+		public List<Employee> GetEmployees()
+		{
+			return dboperation.GetEmployees();
+		}
+		public Employee AddEmployee(Employee empobj)
+		{
+			return dboperation.AddEmployee(empobj);
+		}
+
+		public Employee AddEmpoyee(Employee empobj)  // second video insert
+		{
+			return dboperation.AddEmployee(empobj);
+		}
+
+		public bool DeleteEmployee(int id)    // second video delete
+		{
+			return dboperation.DeleteEmployee(id);
+		}
+
+		public Employee getsingleEmployee(int id)  //edit
+		{
+			return dboperation.getsingleEmployee(id);
+		}
+
+		public Employee updateEmployee(Employee empobj)
+		{
+			return dboperation.updateEmployee(empobj);
+		}
+	}
+}
+	
+		
+
+
+
+
+
+
+	
+

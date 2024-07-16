@@ -1,0 +1,16 @@
+Mohit-Admin
+Ashish-Manager
+Prateek-User
+Secure Page
+------------
+these pages required authentication 
+Unsecure Page
+-------------
+it can be directally acces .no need of authentication.
+* create project-AuthenticationMVCCore-template name-asp dot net core mvc
+Encryption
+-----------
+plain text to cypher text
+Decryption
+-----------
+cypher text to plain text

@@ -1,0 +1,54 @@
+1-Add Columns Single
+---------------------
+alter table tablename
+add columnname datatype
+
+  alter table Employees
+  add salary int
+Add Column Multiple
+-------------------
+alter table tablename add
+columnname datatype,
+columnname datatype
+
+alter table Employees add
+ package int,
+ village nvarchar
+
+2-Drop Column Single
+--------------------
+alter table tablename
+drop column columnname
+
+ alter table Employees
+  drop column village
+Multiple Drop Column
+--------------------
+alter table tablename drop
+column columnname,
+column columnname
+
+alter table Employees drop
+column village,
+column package
+
+3-Rename Column
+---------------
+alter table tablename
+rename column oldname to new name
+4-Modify Datatype
+-----------------
+alter table tablename
+alter column columnname datatype
+
+alter table Employees
+alter column salary nvarchar
+---------------------------------
+5-updating column decimal datatype
+
+alter table tablename 
+alter column columnname datatype(18,0)not null;
+
+alter table job 
+alter column maxsalary decimal(18,0)not null;
+

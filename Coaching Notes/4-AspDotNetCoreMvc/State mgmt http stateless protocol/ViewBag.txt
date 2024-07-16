@@ -1,0 +1,102 @@
+state mgmt http stateless protocol
+-----------------------------------
+it is used to establish or maintain the relatioship b/w client and server
+its have four part
+1-ViewBag
+2-ViewData
+3-TempData
+4-Session
+---------
+1-viewBag
+---------
+* it is a dynamic property
+* it does not require type casting for complex data type
+* it is used to transfer small amount of information  b/w controller to view
+* it does not display compile time error it only show run time error
+ViewBag.VarName/KeyName=value;
+---------------------------------------------------------------------
+Employee
+---------
+using Microsoft.AspNetCore.Hosting.Server;
+
+namespace WebApplicationdipika.Models
+{
+	public class Employee
+	{
+		public int eid { get;set; }
+		public string? name { get; set; }
+		public int age { get;set; }
+		public string? mobileno { get;set; }
+		public int salary { get;set; }
+	}
+}
+-------------------------
+EmployeeController
+-------------------
+
+using Microsoft.AspNetCore.Mvc;
+using WebApplicationdipika.Models;
+
+namespace WebApplicationdipika.Controllers
+{
+	public class EmployeeController : Controller
+	{
+		[HttpGet]
+		public IActionResult Index()
+		{
+			ViewBag.msg = "data come from ViewBag";
+			string[] sport = new string[] { "cricket", "footbal", "batmilton", "tennis", "hockey" };
+			ViewBag.sports = sport;
+			Employee emp= new Employee();
+			emp.eid = 1;
+			emp.name= "Test";
+			emp.age = 20;
+			emp.mobileno = "1234561234";
+			emp.salary = 10000;
+			ViewBag.Emp = emp;
+			return View();
+		
+		}
+		
+		
+		
+	}
+}
+----------------------------------------------
+Index
+--------
+@using WebApplicationdipika.Models;
+<h2>ViewBag=@ViewBag.msg</h2>
+<h1>following sports are listed below:</h1>
+<ul>
+	@foreach(var sp in ViewBag.sports)
+	{
+		<li>@sp</li>
+	}
+</ul>
+<h2>show Employee Information</h2>
+@{
+	var emp = ViewBag.Emp;
+}
+<h2>@emp.eid</h2>
+<h2>@emp.name</h2>
+<h2>@emp.age</h2>
+<h2>@emp.mobileno</h2>
+<h2>@emp.salary</h2>
+-----------------------------
+output-
+ViewBag=data come from ViewBag
+following sports are listed below:
+cricket
+footbal
+batmilton
+tennis
+hockey
+show Employee Information
+1
+Test
+20
+1234561234
+10000
+---------------------------------------
+

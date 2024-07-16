@@ -1,0 +1,13 @@
+create table tbl_city
+ (
+ city_id int Primary Key Identity(1,1),
+ city_name nvarchar(50)
+ )
+ select *from tbl_city
+ insert into tbl_city Values('punjab'),('hariyana'),('lodhiyana'),('chandigarh')
+ create Proc Sp_city
+ as begin
+ select *from tbl_city
+ end
+ exec Sp_city
+

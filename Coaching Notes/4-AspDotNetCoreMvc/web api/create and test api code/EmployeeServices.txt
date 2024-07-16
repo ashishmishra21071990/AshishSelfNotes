@@ -1,0 +1,56 @@
+using WebApplicationapi.Models;
+using WebApplicationapi.Contract;
+
+namespace WebApplicationapi.Services
+{
+	public class EmployeeServices : Iemployee
+	{
+		private EmployeeDbOperation _dbOperation;
+		public EmployeeServices(EmployeeDbOperation dbOperation)
+		{
+			_dbOperation = dbOperation;
+		}
+
+		public List<Employee> GetEmployees()
+		{
+			return _dbOperation.GetEmployees();
+		}
+		public Employee GetEmployeeById(int id)
+		{
+			return _dbOperation.GetEmployeeById(id);
+		}
+		public void AddEmployee(Employee empobj)
+		{
+			_dbOperation.AddEmployee(empobj);
+		}
+
+		public void UpdateEmployee(Employee empobj)
+		{
+			_dbOperation.UpdateEmployee(empobj);
+		}
+
+		public void DeleteEmployee(int id)
+		{
+			_dbOperation.DeleteEmployee(id);
+		}
+	}
+}
+
+		
+
+		
+
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+

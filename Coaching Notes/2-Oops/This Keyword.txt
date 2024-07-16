@@ -1,0 +1,78 @@
+This Keword
+------------
+when function parameter and class variables are same then use 'this'keyword
+to avoid ambiguity
+* current calling object
+* this represent class variable / instance variable
+---------------------------------------------------
+using System;
+using System;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class Employee
+	{
+		public int length, width, height;// instance variable
+		public Employee(int length, int width, int height)
+		{
+			this.length = length;
+			this.width = width;
+			this.height = height;
+		}
+		public int box()
+		{
+			return this.length*this.width * this.height;	
+		}
+	}
+	class demo
+	{
+		static void Main()
+		{
+			Employee emp=new Employee(10, 20, 5);
+			int res=emp.box();
+            Console.WriteLine("res="+res); //output-1000
+        }
+	}
+}
+
+
+--------------------------------------------------------------------------------------------------
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

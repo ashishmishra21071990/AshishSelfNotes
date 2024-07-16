@@ -1,0 +1,20 @@
+step-3
+----------
+create DataContext Class
+----------------------
+here i include one namespace-using Microsoft.EntityFrameworkCore;
+---------------------------------
+using Microsoft.EntityFrameworkCore;
+
+namespace WebApplicationcodefirst.Models
+{
+	public class EmployeeDbContext:DbContext
+	{
+		public EmployeeDbContext(DbContextOptions<EmployeeDbContext> options) : base(options)
+		{
+
+		}
+		public DbSet<Employee> Employees { get; set;}
+
+	}
+}

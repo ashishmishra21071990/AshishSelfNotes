@@ -1,0 +1,93 @@
+C#
+* using System-S always caps
+* Main()- M always caps
+* convert.toint32(console.readline()); // int
+* double.todouble(console.readline()); // double
+* char.tochar(console.readline());    // char
+* console.readline(); //string
+* if else->always space between else if
+* case 1:->always space biteen case and 1
+* default:->after default : this symbol not space contain
+* while, do,for,->after that used if 
+* console.write();-means all things in a one line
+* console.writeline();->all things in downward line
+
+---
+is a high level,object oriented and type safe programming language
+* c# was developed by anders heljsberg in 2002
+* it is the product of microsoft
+* c# is a plateform independent language
+Type Safe
+--------------
+in c int a="hello";(type unsafe)because at a time it does not show an error 
+after compilation it will show an error but in c# int a="hello";(type safe)as soon as when you
+press enter it show an error
+Dot Net
+------------
+dot net is not programming language.dot net is a framework to develop d/w kind 
+of application
+* dot net support multiple programming language(62+)
+Type Of Application
+----------------------
+1-CUI(command user interface)-console based application ex-cmd
+2-GUI(graphical user interface)-
+1-Desktop Application
+---------------------
+* window based application as stand alone app.
+* an application that runs with the help of o.s
+* compability issue
+2-Web Application
+--------------------
+* an application that runs with the help of web browser 
+* it fallow client server architecture
+* it can be access anywhere
+3-Android App/Mobile
+---------------------------
+xamarine/mono
+Asp Dot Net(active server pageg)(network enabled technology)
+-------------------------------------------------------------
+it is a programing language. it is used to develop web application only
+Dot Net Component
+------------------
+their are 2 main component of dot net 
+1-CLR(common language runtime)
+------------------------------------
+it is resonsible to run your all dot net application 
+* CLR is the heart of dot net framework
+Some Sub Component Of CLR
+-------------------------------
+1-CTS(common type system)
+-----------------------------
+all primitive data type ex-int,float,char,doble,bool
+2-CLS(common language specification)
+----------------------------------------
+after compilation of your code you did not get ang d/w(msil)
+3-GC(garbage collector)
+---------------------------
+it is responsible for automatic memory mgmt
+* it release all your program memory automatically
+4-Native Code
+-----------------
+byte code(m/c independent code)
+2-BCL/FCL(base class library/framework class library)
+------------------------------------------------------
+it contains predifined classes,interface and method
+Ex In C
+-----------
+#include<stdio.h>
+scanf()-to take input from the user
+printf()-to display the output
+Ex IN C#
+---------
+using system; //BCL/FCL
+console.readline()-to take input from the user
+console.writeline()-to display the results
+Compilation Process Of C#
+-----------------------------
+it is 2 ways compilation process
+1-in first compilation process of C# compiler convert source code into MSIL code
+2-in second compilation process JIT compiler convert MSIL code into native code
+
+
+
+

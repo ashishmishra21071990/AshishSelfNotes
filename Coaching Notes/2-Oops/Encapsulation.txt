@@ -1,0 +1,593 @@
+Encapsulation / Data Hidding /Information Hidding
+-------------------------------------------------------
+the wrapping up of data and function into a single unit is known as Encapsulation.
+* it is also know as data hidding or information hidding 
+* in c# encapsulation can be achieved by following modifiers
+---------------------------------------
+1-Public
+-----------
+it can be access anywhere in a program within same namespace and d/w namespace.
+------------------------------------------------------------------------
+
+using System;
+using System;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class Employee
+	{
+		public string name;
+		public int age;
+		public void display()
+		{
+
+		}
+	}
+	class demo
+	{
+		static void Main()
+		{
+			Employee emp = new Employee();
+			emp.name = "ram";
+			emp.age = 100;
+			emp.display();
+		}
+	}
+}
+-------------------------------------------------------------------------------
+using System;
+using System;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class test       // it is access in different class
+	{
+		public void print()
+		{
+			Employee emp = new Employee();
+			emp.name = "fd";
+			emp.aage = 100;
+			emp.display();
+		}
+	}
+}
+-----------------------------------------------------------------------------------------
+2-Private
+---------------
+it can be accessible within class only where it is declared
+-------------------------------------------------------------
+using System;
+using System;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class Employee
+	{
+		private string name;
+		private int age;
+		private void display()  // this is accessible bz it mentioned within a same class
+		{
+			name = "jel";
+		}
+		private string hello()   
+		{
+			return name;
+		}
+	}
+	class demo                    // this is not accessible bz it mentioned in another class
+	{
+		static void Main()
+		{
+			Employee emp = new Employee();
+			emp.name = "ram";
+			emp.age = 23;
+			emp.display();
+		}
+	}
+}
+-----------------------------------------------------------------
+3-Protected
+---------------
+it is same as private but it can accessible only when you 
+perform inheritance
+-----------------------------------------------------------
+using System;
+using System;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class Employee
+	{
+		protected string name;
+		protected int age;
+		protected void display()
+		{
+			name = "jel";
+		}
+		protected string hello()
+		{
+			return name;
+		}
+	}
+	class demo:Employee  
+	{
+		static void Main()
+		{
+			demo d=new demo();
+			d.name = "fd";
+			d.display();
+			d.hello();
+		}
+
+	}
+}
+--------------------------------------------------------------
+using System;
+using System;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class test:Employee
+	{
+		public void print()
+		{
+			test t new test();
+			t.name = "fd";
+			t.age = 34;
+			t.display();
+		}
+	}
+}
+--------------------------------------------------------------
+4-Internal
+--------------
+within same namespace /assembly
+-----------------------------------
+using System;
+using System;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class Employee
+	{
+		internal string name;
+		internal int age;
+		internal void display()
+		{
+			name = "jel";
+		}
+		internal string hello()
+		{
+			return name;
+		}
+	}
+	class demo
+	{
+		static void Main()
+		{
+			Employee emp = new Employee();
+			emp.name= "Test";
+			emp.age = 30;
+			emp.display();
+			emp.hello();
+		}
+	}
+}
+---------------------------------------------------------------
+using System;
+using System;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class rahul
+	{
+		Employee emp = new Employee();
+		emp.name="maneesh";
+			emp.age=80;
+			emp.display();
+			emp.hello();
+
+	}
+}
+------------------------------------------------
+5-Procted Internal
+----------------------
+it can be accessible within same namespace and another,
+in another namespace when you perform inheritance
+-----------------------------------------------------
+using System;
+using System;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class Employee
+	{
+		protected internal string name;
+		protected internal int age;
+		protected internal void display()
+		{
+			name = "jel";
+		}
+		protected internal string hello()
+		{
+			return name;
+		}
+	}
+}
+-------------------------------------------------------
+using System;
+using System;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace shivam  //different namespace
+{
+	class rahul:Employee
+	{
+		public void testing()
+		{
+			rahul rah = new rahul();
+			rah.name = "shivam";
+			rah.age = 90;
+			rah.display();
+			rah.hello();
+		}
+	}
+}
+------------------------------------------------------------------------------
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

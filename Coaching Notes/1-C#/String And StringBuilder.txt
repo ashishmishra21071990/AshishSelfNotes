@@ -1,0 +1,69 @@
+String
+-----------
+* it is immutable entity
+* it is not modify
+* performence is slow
+---------------------
+using System;
+using System;
+class demo
+{
+	static void Main()
+	{
+		string str = "rakesh";
+		str = str += "singh";
+		str = str += "is a good booy";
+        Console.WriteLine(str); //output-rakeshsinghis a good boy
+
+
+    }
+}
+--------------------------------------------
+String Builder
+-----------------
+* it is mutable entity
+* it is modifyable
+* performence is good
+---------------------------------
+using System;
+using System;
+using System.Text;
+
+class demo
+{
+	static void Main()
+	{
+		StringBuilder sb = new StringBuilder();
+		sb.Append("mukesh");
+		sb.Append("kumar");
+		sb.Append("singh");
+		sb.Append("don");
+        Console.WriteLine(sb);// output-mukeshkumarsinghdon
+
+
+
+
+    }
+}
+---------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+            

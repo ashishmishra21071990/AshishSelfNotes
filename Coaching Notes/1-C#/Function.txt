@@ -1,0 +1,271 @@
+Function
+-----------
+a function is block of statement i.e used to divide the work of program.
+* reusability
+* easy to maintain
+* you can define a function only once and you can call it multiple times
+Types Of Function
+---------------------
+1-Library Function/Built-In-Function
+--------------------------------------
+which is defined by the system
+2-User Defined Function
+---------------------------
+here we focus on user define function
+* for creating user define function you need to fallow only 2 steps
+1-Function Defination-
+------------------------
+accessmodifier return_type/non_return type function name(parameter datatype)
+{
+statements
+}
+-----------------------------------------------------------
+Void
+------
+it is a non return type.it does not return any value because void is 0 byte
+int,float->4byte
+char->2byte
+double->8byte
+bool->1byte
+----------------------------
+2-Function calling
+----------------------
+once you define and you can call a function multiple time.
+---------------------------------------------------------------
+using System;
+using System;
+using System.Text;
+namespace ashish
+{
+    class test
+    {
+        public void display()
+        {
+            Console.WriteLine("hello c#");
+        }
+    }
+    class demo
+    {
+        static void Main()
+        {
+            test tobj= new test();
+            tobj.display();  //output-hello c#
+            tobj.display();  //output-hello c#
+        }
+    }
+}
+----------------------------------------------------
+Types Of Function
+-----------------------
+1-Function With No Arguments And No Return Type
+--------------------------------------------------
+using System;
+using System;
+using System.Text;
+namespace ashish
+{
+    class test
+    {
+        public void addition() // function defination //non static
+        {
+            int a = 5;int b = 6;int c;
+            c = a + b;
+            Console.WriteLine("sum="+c);
+        }
+    }
+    class demo
+    {
+        static void Main()
+        {
+            test tobj=new test();
+            tobj.addition(); // function calling //output-sum=11
+			tobj.addition(); // function calling //output-sum=11
+
+		}
+    }
+        
+}
+-----------------------------------------------------------------------
+2-Function With Argument And No Return Type
+--------------------------------------------
+using System;
+using System;
+using System.Text;
+namespace ashish
+{
+    class test
+    {
+        public void addition (int a,int b) //function efination // formal parameter// non static
+        {
+            int c = a + b;
+            Console.WriteLine("sum="+c);
+        }
+    
+    }
+    class demo
+    {
+        static void Main()
+        {
+            test tobj = new test();
+            tobj.addition(1,2); //function calling // actual parameter //output-sum=3
+        }
+    }
+        
+}
+---------------------------------------------------------------------------------
+3-Function With No argument And Return Type
+-----------------------------------------------
+using System;
+using System;
+using System.Text;
+namespace ashish
+{
+    class test
+    {
+        public int addition()
+        {
+
+            int a = 5; int b = 6; int c;
+            c = a + b;
+            return c;
+        }
+    }
+    class demo
+    {
+        static void Main()
+        {
+            test tobj = new test();
+            //  int res=tobj.addition();
+            //   Console.WriteLine(res); //output-11 
+            Console.WriteLine(tobj.addition()); //output-11 //second way
+        }
+    }
+}
+-----------------------------------------------------------------------
+4-Function With Arguments And Return Type (mostally used and easy)
+--------------------------------------------------------------------
+using System;
+using System;
+using System.Text;
+namespace ashish
+{
+    class test
+    {
+        public int addition(int a,int b)
+        {
+            int c=a+b;
+            return c;
+        }
+    }
+    class demo
+    {
+        static void Main()
+        {
+            test tobj = new test();
+            //  int res=tobj.addition(1,2);
+            //  Console.WriteLine(res); //output-3
+            Console.WriteLine(tobj.addition(5,10)); // output-15
+        }
+    }
+}
+---------------------------------------------------------------------
+Types Of Parameters
+------------------------
+1-Actual Parameters
+---------------------
+it takes the original value of a program.which is given by user
+2-Formal Parameters
+----------------------------------
+it takes copied value of actual parameters.
+-----------------------------------------------------------------------------------------------------------------
+
+		
+        
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+		
+        
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            

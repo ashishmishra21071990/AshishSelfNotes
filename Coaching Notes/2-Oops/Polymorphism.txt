@@ -1,0 +1,183 @@
+Polymorphism(many forms)
+-------------------------
+it is the ability to take more than one forms.
+Ex-+->1+3
++->"fd"+"er"
++->3.4+5.34
+Types of Polymorphism
+------------------------
+1-Compile Time Polymorphism / Early Binding / Function Overloading
+--------------------------------------------------------------------
+function name same but their parameter must be d/w
+Ex-
+rectangle()->no paremeter
+rectangle(int a)->one parameter
+rectangle(int l,int b)->two parameter
+------------------------------------
+using System;
+using System;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class Employee
+	{
+		public void rectangle()
+		{
+            Console.WriteLine("having no parameter");
+        }
+		public void  rectangle(int a)
+		{
+			int sq = a * a;
+			Console.WriteLine("square="+sq); //25
+            Console.WriteLine("having one parameter");
+        }
+		public void rectangle(int l,int b)
+		{
+			int ar = l * b;
+            Console.WriteLine("area"+ar); //200
+            Console.WriteLine("having 2 parameters");
+        }
+	}
+	class demo
+	{
+		static void Main()
+		{
+			Employee emp = new Employee();
+			emp.rectangle();
+			emp.rectangle(5);
+			emp.rectangle(10, 20);
+		}
+	}
+}
+---------------------------------------------
+2-Run Time Polymorphism / Late Binding /Function Overriding
+--------------------------------------------------------------
+function name same and their parameter should also be same.
+* to achieved function overridding we use the fallowing 3 keywords.
+1-virtual
+----------
+it always used in parent class
+2-override
+------------
+it always used in child class
+3-base
+---------
+when you want to access parent properties or methods (optional)
+---------------------------------------------------------------------
+Ex-
+parent->cycle->transportation
+child->bike->transportation
+---------------------------------
+using System;
+using System;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class parent
+	{
+		public virtual void transport()
+		{
+            Console.WriteLine("cycle");
+        }
+	}
+	class child:parent
+	{
+		public override void transport()
+		{
+			base.transport();// optional
+			Console.WriteLine("bike");
+		}
+	}
+	class demo
+	{
+		static void Main()
+		{
+			child ch=new child();
+			ch.transport();  // bike
+		}
+	}
+}
+-------------------------------------------------------
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

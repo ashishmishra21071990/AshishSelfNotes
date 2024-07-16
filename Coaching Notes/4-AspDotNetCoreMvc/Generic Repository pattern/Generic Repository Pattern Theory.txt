@@ -1,0 +1,69 @@
+Generic Repository pattern
+---------------------------
+it is the powerfull concept in dot net core in which we can with any model student,teacher,school.
+* basic repository you need to create separed repository foreach and every entity present in your application.
+* for example if you have there entity such as employee product and customer.than you need to create their repository as employeerepository,productrepository,and customerrepository.
+* this is actually boring and repeating work especially.if all the repository are going to do the same kind of work (i.e typically database crud operation) and 
+this is against the Dry(dont repeat yourself)principal as you are repeating the same code again and again in each repository.to solve the above problem generic repository pattern comes into the picture.
+* in it we can work with any model.
+-----------------------------------
+Note-
+-----
+here Studentcontroller and TeacherController makes by scaffolding and required template
+mvcController with views,using Entity Framework-this is create automatically controller and view both.
+------------------------------------------------------------------------------------------------------
+step-1
+-------
+go to model and create 3 class template
+1-School
+2-Teacher
+3-Student
+step-2
+-------- 
+make a folder-Contract-take template interface-IGeneric
+step-3
+-------
+make a folder-Services-take class template-GenericDbContext
+step-4
+-------
+go to Services and add-class template-GenericService
+step-5
+----------
+makes 3 controller template empty controller
+add namespaces
+using generic repository  pattern core.contract
+using generic repository pattern core.services
+using microsoft.entityframeworkcore
+using microsoft.aspnetcore.mvc;
+1-SchoolController
+2-TeacherController
+3-StudentController
+---------------------
+step-6
+-------
+create view
+Index-name-Index
+Template-List
+model class-school(generic repository pattern core.models)
+data context class-generic DbContext(generic repository pattern core.services
+------
+Create
+Edit
+Details
+Delete
+-------------
+step-7
+-------
+program.cs
+----------
+step-8
+--------
+appsetting.json
+--------------
+step-9
+-------
+go to layout and create some link
+1-asp-area""asp-controller="Home"asp-action="Index">Home
+2-asp-area""asp-controller="School"asp-action="Index">School
+3-asp-area""asp-controller="Teacher"asp-action="Index">Teacher
+4-asp-area""asp-controller="Student"asp-action="Index">Student

@@ -1,0 +1,4 @@
+public List<SelectListItem>cityList()
+		{
+			return dboperation.getcity();
+		}

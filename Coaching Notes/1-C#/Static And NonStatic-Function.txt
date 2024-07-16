@@ -1,0 +1,108 @@
+non static
+-----------
+it requires object creation for calling any function
+* performence slow
+* every times it creates a separate memory
+------------------------------------------------
+using System;
+using System;
+using System.Text;
+namespace ashish
+{
+    class login
+    {
+        int i = 0;
+        public void inc()
+        {
+            i++;
+            Console.WriteLine(i);
+        }
+    }
+    class demo
+    {
+        static void Main()
+        {
+            login log1 = new login();
+                log1.inc();                 // output-2
+            login log2 = new login();
+                log2.inc();                  // output-2
+        }
+    }
+}
+-------------------------------------------------------------
+static
+-----------
+no need of object for calling function
+* static function can be called with the help of class name
+* performence wise fast
+-----------------------------------
+using System;
+using System;
+using System.Text;
+namespace ashish
+{
+    class login
+    {
+       static int i = 0;
+        public static  void inc()
+        {
+            i++;
+            Console.WriteLine(i);
+        }
+    }
+    class demo
+    {
+        static void Main()
+        {
+            login.inc(); // output-1
+            login.inc(); // output-2
+        }
+    }
+}
+---------------------------------------------------------------
+
+
+		
+        
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+		
+        
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            

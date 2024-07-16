@@ -1,0 +1,168 @@
+1-Access Multiple Employee Without Database Example
+-----------------------------------------------------
+EmployeeController
+-----------------------
+using Microsoft.AspNetCore.Mvc;
+using WebApplicationdipika.Models;
+
+namespace WebApplicationdipika.Controllers
+{
+	public class EmployeeController : Controller
+	{
+		public IActionResult Index()
+		{
+			List<Employee>emplist=Employee.GetEmployees();
+			return View(emplist);
+		}
+		public IActionResult about()
+		{
+			return View();
+		}
+		
+	}
+}
+---------------------------------------------
+Employee
+------------
+namespace WebApplicationdipika.Models
+{
+	public class Employee
+	{
+		public int eid { get;set; }
+		public string? name { get;set; }	
+		public int age { get;set; }
+		public string? mobileno { get;set; }	
+		public double salary { get;set; }	
+		public static List<Employee>GetEmployees()
+		{
+			List<Employee> emplist = new List<Employee>();
+			// first Employee
+			Employee emp1= new Employee();
+			emp1.eid = 1;
+			emp1.name = "mohit";
+			emp1.age = 20;
+			emp1.mobileno = "99999999";
+			emp1.salary = 50000;
+			emplist.Add(emp1);
+			// second Employee
+			Employee emp2 = new Employee();
+			emp2.eid = 2;
+			emp2.name = "ram";
+			emp2.age = 30;
+			emp2.mobileno = "11111111";
+			emp2.salary = 5000;
+			emplist.Add(emp2);
+			// third Employee
+			Employee emp3 = new Employee();
+			emp3.eid = 3;
+			emp3.name = "krishna";
+			emp3.age = 88;
+			emp3.mobileno = "99998888";
+			emp3.salary = 50001;
+			emplist.Add(emp3);
+			// fourth Employee
+			Employee emp4 = new Employee();
+			emp4.eid = 4;
+			emp4.name = "radha";
+			emp4.age = 100;
+			emp4.mobileno = "999998888";
+			emp4.salary = 60000;
+			emplist.Add(emp4);
+			// fifth Employee
+			Employee emp5 = new Employee();
+			emp5.eid = 5;
+			emp5.name = "mohan";
+			emp5.age = 21;
+			emp5.mobileno = "99999997";
+			emp5.salary = 500400;
+			emplist.Add(emp5);
+			return emplist;
+		}
+	}
+}
+---------------------------------------
+Index
+--------
+@model IEnumerable<WebApplicationdipika.Models.Employee>
+
+<h1 style="text-align:center;background-color:black;color:white;">SHOW EMPLOYEE</h1>
+<table style="background-color:greenyellow;"class="table table-border">
+<tr>
+	<th>EID</th>
+	<th>NAME</th>
+	<th>AGE</th>
+	<th>MOBILENO</th>
+	<th>SALARY</th>
+</tr>
+@foreach(var emp in Model)
+{
+	<tr>
+		<td>@emp.eid</td>
+		<td>@emp.name</td>
+		<td>@emp.age</td>
+		<td>@emp.mobileno</td>
+		<td>@emp.salary</td>
+	</tr>
+}
+</table>
+---------------------------------------------------------------
+2-Access Single Employee Without database Example
+-------------------------------------------------
+EmployeeController
+-------------------
+using Microsoft.AspNetCore.Mvc;
+using WebApplicationdipika.Models;
+
+namespace WebApplicationdipika.Controllers
+{
+	public class EmployeeController : Controller
+	{
+		public IActionResult Index()
+		{
+			List<Employee>emplist=Employee.GetEmployees();
+			return View(emplist);
+                        Employee emp1= new Employee();
+			emp1.eid = 1;
+			emp1.name = "mohit";
+			emp1.age = 20;
+			emp1.mobileno = "99999999";
+			emp1.salary = 50000;
+			return view(emp1);
+		}
+		public IActionResult about()
+		{
+			return View();
+		}
+		
+	}
+}
+------------------------------------------------------------------
+Index
+-----------
+@model WebApplicationdipika.Models.Employee
+@*PLL*@
+<h1 align="center"style="background-color:pink;">ONE EMPLOYEE INFORMATION</h1>
+<table class="table table-bordered">
+	<tr>
+		<th>EID</th>
+		<th>@Model.eid</th>
+	</tr>
+	<tr>
+		<th>NAME</th>
+		<th>@Model.name</th>
+	</tr>
+	<tr>
+		<th>AGE</th>
+		<th>@Model.age</th>
+	</tr>
+	<tr>
+		<th>MOBILENO</th>
+		<th>@Model.mobileno</th>
+	</tr>
+	<tr>
+		<th>SALARY</th>
+		<th>@Model.salary</th>
+	</tr>
+</table>
+-------------------------------------------------------------------------------------------------
+

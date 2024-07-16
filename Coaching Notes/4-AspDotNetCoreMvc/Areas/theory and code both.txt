@@ -1,0 +1,184 @@
+Area
+-----
+it allows us to partion large application into smaller one.
+* when you create a area than its provide you seprate mvc folder of each models
+for example
+School
+Teacher
+Student
+Course
+--------------------------
+
+* it is the concept to make your code loosely coupled.
+* it provides an abstraction layer (repository)b/w data access layer and bussiness layer.
+step1
+------
+HomeController-<h1>welcome to dot net core</h1>
+step-2
+--------
+right click on project-create a folder as name-Areas
+step-3
+---------
+Areas-right click-add-Area-School-template mvc area.
+after that automatically Saffolding Readme.Text file created 
+ app.UseEndpoints(endpoints =>
+        {
+          endpoints.MapControllerRoute(
+            name : "areas",
+            pattern : "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+          );
+        });
+this is add to program.cs means main app after that app.UseAuthorization();
+Step-4
+-------
+Areas-right click-add-area-Teacher-template mvc area
+step-5
+------
+Areas-right click-add-area-Student-template mvc area
+step-6
+---------
+go to out side main app of view than shared past School,Teacher,Student in view.
+step-6
+----------
+go to outer side  main app  view into the shared _Viewimports.cshtml
+                                                  _ViewStart.cshtml
+past 3 position i think School,Teacher,Student
+step-7
+--------
+we are going Area-School-Controller-than make a  there name-HomeController-template mvc controller 
+using Microsoft.AspNetCore.Mvc;
+
+namespace MohitAreas.Areas.School.Controllers
+{
+    [Area("School")]
+    public class HomeController : Controller
+    {
+        public IActionResult Index()
+        {
+
+            return View();
+        }
+        public IActionResult ListOfStudent()
+        {
+            return View();
+        }
+        public IActionResult ListOfTeacher()
+        {
+            return View();  
+        }
+    }
+}
+-----------------------------------------------------------
+Index
+------
+<h1>welcome to my school home page </h1>
+-------------
+ListOfStudent
+---------------
+<h1>list of student</h1>
+-----------
+ListOfTeacher
+--------------
+<h1>list of teacher</h1>
+----------------------------------------------------------------------------------------------------------------
+step-8
+-------
+we are going Area-Student-Controller-than make a  there name-HomeController-template mvc controller empty.
+using Microsoft.AspNetCore.Mvc;
+
+namespace MohitAreas.Areas.Student.Controllers
+{
+    [Area("Student")]
+    public class HomeController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+        public IActionResult Registration()
+        {
+            return View();
+        }
+        public IActionResult Login()
+        {
+            return View();
+        }
+    }
+}
+-----------------------
+Index
+Registration
+Login 
+-----------
+step-9
+-------
+we are going Area-Teacher-Controller-than make a  there name-HomeController-template mvc controller empty.
+
+---------------------------------------------------------------------------------------------------------------
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace MohitAreas.Areas.Teacher.Controllers
+{
+    [Area("Teacher")]
+    public class HomeController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+        public IActionResult Attendence()
+        {
+            return View();
+        }
+        public IActionResult TeachMath()
+        {
+            return View();
+        }
+    }
+}
+----------
+Index
+Attendence
+TeachMath
+-------------------------------------
+step-10
+----------
+we make a link because we are performing 3 things in school.they are clikable and redirect there.
+and its depend on you what do you want show as a list or separated.
+School-Layout.cshtml
+ <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="School" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="School" asp-controller="Home" asp-action="ListOfStudent">ListOfStudent</a>
+                            <a class="nav-link text-dark" asp-area="School" asp-controller="Home" asp-action="ListOfTeacher">ListOfTeacher</a>
+                            <a class="nav-link text-dark" asp-area="School" asp-controller="Home" asp-action="Index">gotohomepage</a>
+                        </li>
+------------------------
+Student-Layout.cshtml
+----------------------
+ <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Student" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="Student" asp-controller="Home" asp-action="Registration">Registration</a>
+                            <a class="nav-link text-dark" asp-area="Student" asp-controller="Home" asp-action="Login">Login</a>
+                            <a class="nav-link text-dark" asp-area="Student" asp-controller="Home" asp-action="Index">gotohomepage</a>
+                        </li>
+Teacher-Layout.cshtml
+--------------------------
+ <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Teacher" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="Teacher" asp-controller="Home" asp-action="Attendence">Attendence</a>
+                            <a class="nav-link text-dark" asp-area="Teacher" asp-controller="Home" asp-action="TeachMath">TeachMath</a>
+                            <a class="nav-link text-dark" asp-area="Teacher" asp-controller="Home" asp-action="Index">gotohomepage</a>
+                        </li>
+---------------------
+Index.cshtml means Layout.cshtml
+ <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="School" asp-controller="Home" asp-action="Index">gotoschool area</a>
+                            <a class="nav-link text-dark" asp-area="Teacher" asp-controller="Home" asp-action="Index">gototeacher area</a>
+                            <a class="nav-link text-dark" asp-area="Student" asp-controller="Home" asp-action="Index">gotostudent area</a>
+                        </li>
+------------------------------------------------------------
+
+
+

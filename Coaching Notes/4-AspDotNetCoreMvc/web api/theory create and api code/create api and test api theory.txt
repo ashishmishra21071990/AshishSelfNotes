@@ -1,0 +1,77 @@
+web api
+--------
+ properties-launchsetting.json-launch url":"weather forecast",
+----------------------------------------------------------------
+if you want to fix controller name in routing than that write api/controllername.
+---------------------------------------------------------------------------------
+how to export excel database in sql server
+-------------------------------------------
+* sql export and import data search
+* data source-microsoft oledb driver for sql server
+server name 
+database name
+select in use window authentication 
+sheet 1s name make but if you want to change this name it is available.
+dbo.sheet 1s 
+------------------------------------------------------------------------
+download packageg
+--------------------
+* microsoft.Entityframework core
+* microsoft.Entityframework core.Tools
+* microsoft.Entityframework core.sql
+----------------------------------------
+* here dependencies injection used. it is showing the life time of each cycle.and how much remaining.
+* select *from sys.tables are showing the all tables.
+* razor runtime not use there.
+* api stand for appication programming interface.
+* api is a light weight. 
+* api is used to communicate cross plateform.
+* api used json
+* all request goes to json form and all request receive to json form.
+* api return key value pair.
+* take template asp.net core web api
+* enable open api support is we do close where we create a project.
+* controller template take api controller.
+3 importants points 
+--------------------
+1-create api
+2-test api
+3-consume api
+-------------------
+1-create api
+--------------
+1-create a folder and their name Models and add a template class name-Employee.
+* using System.ComponentModel.DataAnnotations;
+------------------------------------------------
+2-create a folder and their name Contract and add a interface template and name-Iemployee.
+* using WebApplicationapi.Models;
+----------------------------------------------------------
+3-create a folder and their name Services and add a template class and name-EmployeeServices.
+* using WebApplicationapi.Models;
+using WebApplicationapi.Contract;
+-------------------------------------------
+4-create a template class name EmployeeDbContext in Models.
+-----------------------------------------------------------
+5-appsetting.json
+---------------------
+6-program.cs
+---------------
+7-add-migration
+ update-database
+---------------------
+8-create class template name EmployeeDbOperation in Models.
+* using Microsoft.EntityFrameworkCore;
+-------------------------------------------------------
+9-create controller template name interface api and name EmployeeController.
+* using Microsoft.EntityFrameworkCore;
+using WebApplicationapi.Models;
+using WebApplicationapi.Contract;
+using WebApplicationapi.Services;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+----------------------------------
+2-test api
+-----------
+
+
+ 

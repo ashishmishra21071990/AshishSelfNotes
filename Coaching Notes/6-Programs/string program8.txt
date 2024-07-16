@@ -1,0 +1,152 @@
+1-wap to input a string and find the length of string
+--------------------------------------------------------
+using System;
+using System.Text;
+using System.Threading.Channels;
+
+namespace ashish
+{
+    class demo
+    {
+        static void Main()
+        {
+
+            string str = "computer";
+            {
+                Console.WriteLine("str="+str.Length);
+            }
+
+
+        }
+        
+    }
+}
+---------------------------------------------------------
+2-wap to input a string and reverse the string
+--------------------------------------------------
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
+using System.Threading.Channels;
+
+namespace ashish
+{
+    class demo
+    {
+        
+        static void Main()
+            
+        {
+            string str, reversestring = "";
+            int length;
+            Console.WriteLine("enter a string");
+            str= Console.ReadLine();
+            length = str.Length - 1;
+            while (length >= 0)
+            {
+                 reversestring=reversestring + str[length];
+                length--;
+            }
+            Console.WriteLine("reverse string is{0}",reversestring);
+
+
+
+
+        }
+    }
+}
+------------------------------------------------------
+3-wap to input a string and find its palindrom or not
+------------------------------------------------------
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
+using System.Threading.Channels;
+
+namespace ashish
+{
+    class demo
+    {
+        
+        static void Main()
+            
+        {
+            string name, reverse;
+            
+            Console.WriteLine("enter a string");
+            name= Console.ReadLine();
+            reverse= string.Empty;
+            for(int i=name.Length-1;i>=0;i--)
+            {
+                reverse += name[i];
+            }
+            if(name==reverse)
+            {
+                Console.WriteLine("{name} is palidrom");
+            }
+            else
+            {
+                Console.WriteLine("{name} is not palidrom");
+            }
+           
+           
+        
+
+
+
+
+        }
+    }
+}
+--------------------------------------------------
+4-wap to inut a string and check string is equal or not
+--------------------------------------------------------
+using System;
+namespace ashish
+{
+    class test
+    {
+        static void Main()
+        {
+            string first;
+            string second;
+            Console.WriteLine("enter the first string");
+             first=Convert.ToString(Console.ReadLine());
+            Console.WriteLine("enter the second string");
+             second=Convert.ToString(Console.ReadLine());   
+            if(first==second)
+            {
+                Console.WriteLine("equal");
+            }
+            else
+            {
+                Console.WriteLine("false");
+            }
+        }
+    }
+}
+
+
+            
+                
+                   
+               
+           
+
+
+        
+        
+    
+
+
+            
+                
+                   
+               
+           
+
+
+        
+        
+    
+

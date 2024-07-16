@@ -1,0 +1,48 @@
+@model WebApplicationashish.Models.Student
+<h1 class="bg-dark text-white text-center">Add Student</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-6">
+			<form asp-action="create"asp-controller="Student"method="post">
+				<div class="form-group">
+					<div asp-validation-summary="ModelOnly"class="text-danger"></div>
+					<div class="form-group">
+						<label>Name</label>
+						<input type="text"asp-for="Sname"class="form-control"/>
+						<span asp-validation-for="Sname"class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label>AGE</label>
+						<input type="text" asp-for="Sage" class="form-control" />
+						<span asp-validation-for="Sage" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label>MOBILENO</label>
+						<input type="text" asp-for="Smobileno" class="form-control" />
+						<span asp-validation-for="Smobileno" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label>ADDRESS</label>
+						<input type="text" asp-for="Saddress" class="form-control" />
+						<span asp-validation-for="Saddress" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label>EMAIL</label>
+						<input type="text" asp-for="Semail" class="form-control" />
+						<span asp-validation-for="Semail" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label>PASSWORD</label>
+						<input type="text" asp-for="Spassword" class="form-control" />
+						<span asp-validation-for="Spassword" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<input type="submit"class="form-control btn btn-success mt-3"/>
+					</div>
+
+					
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

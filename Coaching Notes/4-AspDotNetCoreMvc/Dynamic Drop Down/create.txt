@@ -1,0 +1,8 @@
+<div class="form-group">
+<label>city</label>
+					<select class="form-control"asp-for="city"asp-items="@(new SelectList(ViewBag.cityList,"Value","Text"))">
+						<option>select city</option>
+						</select>
+					@*<input type="text"asp-for="city"class="form-control"/>*@
+					</div>
+					

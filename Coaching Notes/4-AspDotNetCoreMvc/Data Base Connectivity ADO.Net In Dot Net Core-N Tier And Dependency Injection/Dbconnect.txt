@@ -1,0 +1,25 @@
+
+using System;
+using System.Collections.Generic;
+using System.Data.SqlTypes;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.Data.SqlClient;//here i include this namespace from the dependencies(download)
+using Common_Layer;
+
+
+namespace Data_Access_Layer
+{
+   public class Dbconnect
+	{
+		public SqlConnection connection;
+		public Dbconnect()
+		{
+
+
+			connection = new SqlConnection(DbConnectionconfigcs.ConnectionStrings);
+		}
+
+	}
+}

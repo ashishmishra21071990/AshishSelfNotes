@@ -1,0 +1,969 @@
+Classes Classes In C#
+---------------------------
+on the basis of storing data it can be divided into 2 parts
+1-Non-Generic
+2-Generic
+--------------
+1-Non-Generic
+------------------
+it can be store d/w types of data together
+* include the namespace-using System.Collections
+* non generic divide into 5 broad categories
+1-ArrayList
+2-HashTable
+3-SortedList
+4-Stack
+5-Queue
+-----------
+1-ArrayList
+-------------
+using System;
+using System;
+using System.Collections;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class demo
+	{
+		static void Main()
+		{
+			ArrayList al = new ArrayList();
+			al.Add(1);
+			al.Add("ram");
+			al.Add(3);
+			al.Add("shyam");
+			al.Add(5);
+			foreach(object item in al)
+			{
+                Console.WriteLine(item); 
+            }
+		}
+	}
+}
+
+output-
+1
+ram
+3
+shyam
+5
+-------------------------------------------------------------
+2-HashTable
+-----------------
+it stores value in key value pair
+------------------------------------
+using System;
+using System;
+using System.Collections;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class demo
+	{
+		static void Main()
+		{
+			Hashtable ht = new Hashtable();
+			ht.Add(1, "shivam");
+			ht.Add(2, "ram");
+			ht.Add("shyam", 3);
+			ht.Add(4, "mohan");
+			ht.Add(5, "radha");
+			foreach(DictionaryEntry dt in ht)
+			{
+                Console.WriteLine(dt.Key+":"+dt.Value);
+            }
+		}
+	}
+
+}
+output-
+5:radha
+shyam:3
+2:ram
+1:shivam
+4:mohan
+--------------------------------------------------------------------------
+3-SortedList
+----------------
+it stores data in ascending order and key value pair
+-------------------------------------------------------
+using System;
+using System;
+using System.Collections;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class demo
+	{
+		static void Main()
+		{
+			SortedList sl=new SortedList();
+			sl.Add(1, "shivam");
+			sl.Add(5, "ram");
+			sl.Add(2,"shri");
+			sl.Add(4, "mohan");
+			sl.Add(3, "radha");
+			foreach(DictionaryEntry item in sl)
+			{
+                Console.WriteLine(item.Key+":"+item.Value);
+            }
+		}
+	}
+}
+output-
+1:shivam
+2:shri
+3:radha
+4:mohan
+5:ram
+------------------------------------------------------
+4-Stack(LIFO)
+----------
+Push-insert an element into stack
+Pop-delete an element from the stack
+-------------------------------------
+using System;
+using System;
+using System.Collections;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class demo
+	{
+		static void Main()
+		{
+			Stack s = new Stack();
+			s.Push("angular");
+			s.Push("dotnet");
+			s.Push("react");
+			s.Push("php");
+			s.Push("nodejs");
+                        s.Pop();
+			s.Pop();
+			foreach(string item in s)
+			{
+                Console.WriteLine(item);
+            }
+
+		}
+	}
+}
+output-
+react
+dotnet
+angular
+---------------------------------------------------------------
+5-Queue(FIFO)
+-----------
+Enqueue-insert an element into queue
+Dequeue-delete an element from the queue
+----------------------------------------
+using System;
+using System;
+using System.Collections;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class demo
+	{
+		static void Main()
+		{
+			Queue qu = new Queue();
+			qu.Enqueue("angular");
+			qu.Enqueue("dotnet");
+			qu.Enqueue("react");
+			qu.Enqueue("123");
+			qu.Enqueue("4.5");
+			qu.Dequeue();
+			qu.Dequeue();
+			foreach(object item in qu)  
+			{
+                Console.WriteLine(item);
+            }
+
+		}
+	}
+}
+
+output-
+react
+123
+4.5
+-------------------------------------------------------
+2-Generic
+-----------
+in it we can store only similar type of data together
+* include namespace using System.Collections.Generic;
+--------------------------------------------
+1-List
+-------
+using System;
+using System;
+using System.Collections;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class demo
+	{
+		static void Main()
+		{
+			List<int>l=new List<int>();
+			l.Add(1);
+			l.Add(2);
+			l.Add(3);
+			l.Add(4);
+			l.Add(5);
+			foreach(int item in l)
+			{
+                Console.WriteLine(item);
+            }
+		}
+	}
+}
+output-
+1
+2
+3
+4
+5
+------------------------------------------------------------
+2-Dictionary
+------------
+using System;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class demo
+	{
+		static void Main()
+		{
+			Dictionary<int,string> d = new Dictionary<int,string>();
+			d.Add(1, "maneesh");
+			d.Add(2, "ram");
+			d.Add(3, "shyam");
+			d.Add(4, "radha");
+			d.Add(5, "mahadev");
+			foreach(KeyValuePair<int,string> item in d)
+			{
+                Console.WriteLine(item.Key+":"+item.Value);
+            }
+		}
+	}
+}
+1:maneesh
+2:ram
+3:shyam
+4:radha
+5:mahadev
+---------------------------------------------------------------
+3-SortedList
+-------------
+using System;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class demo
+	{
+		static void Main()
+		{
+			SortedList<int,string>sl = new SortedList<int,string>();
+			sl.Add(1, "maneesh");
+			sl.Add(2, "ram");
+			sl.Add(5, "shyam");
+			sl.Add(4, "radha");
+			sl.Add(3, "mahadev");
+			foreach(KeyValuePair<int,string> item in sl)
+			{
+                Console.WriteLine(item.Key+":"+item.Value);
+            }
+		}
+	}
+}
+output-
+1:maneesh
+2:ram
+3:mahadev
+4:radha
+5:shyam
+-----------------------------------------------------------------------
+4-Stack
+--------------
+using System;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class demo
+	{
+		static void Main()
+		{
+			Stack<int>s= new Stack<int>();
+			s.Push(1);
+			s.Push(2);
+			s.Push(3);
+			s.Push(4);
+			s.Push(5);
+			s.Pop();
+			s.Pop();
+			foreach(int item in s)
+			{
+                Console.WriteLine(item);
+            }
+		}
+	}
+}
+output-
+3
+2
+1
+---------------------------------------------------------
+5-Queue
+-------------
+using System;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class demo
+	{
+		static void Main()
+		{
+			Queue<string>q= new Queue<string>();
+			q.Enqueue("angular");
+			q.Enqueue("dot net");
+			q.Enqueue("react");
+			q.Enqueue("php");
+			q.Enqueue("node js");
+			q.Dequeue();
+			q.Dequeue();
+
+			foreach (string item in q)
+			{
+                Console.WriteLine(item);
+            }
+		}
+	}
+}
+output-
+react
+php
+node js
+-----------------------------------------------------------------------------------
+Generic In C#
+---------------
+generic allow you to work with any data type but once you need
+to define.it help to improve performance,type safety,and code-reuse.
+you can make two type generic
+1-Generic Class
+2-Generic Method
+----------------------------------------------
+1-Generic Class
+----------------
+using System;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class Employee<T>
+	{
+		T a;
+		public Employee(T a)
+		{
+			this.a = a;
+		}
+		public void display()
+		{
+			Console.WriteLine(this.a);
+		}
+	}
+	class demo
+	{
+		static void Main()
+		{
+			Employee<int> emp = new Employee<int>(10);
+			Employee<string> emp1 = new Employee<string>("ram");
+			Employee<double> emp2 = new Employee<double>(45.5);
+			emp.display();
+			emp1.display();
+			emp2.display();
+		}
+	}
+	
+
+}
+output-
+10
+ram
+45.5
+--------------------------------------------------
+2-Generic Method
+------------------
+using System;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class operation
+	{
+		public void swap<T>(T a,T b)
+		{
+			T temp;
+			temp = a;
+			a = b;
+			b= temp;
+            Console.WriteLine("formal parameters");
+            Console.WriteLine("A="+a);
+            Console.WriteLine("B="+b);
+
+        }
+	}
+	class demo
+	{
+		static void Main()
+		{
+			int a = 5,b = 10;
+			char i = 'p', j = 'Q';
+			double g = 45.6, h = 66.7;
+            Console.WriteLine("before int calling parameter");
+            Console.WriteLine("a="+a);
+            Console.WriteLine("b="+b);
+            Console.WriteLine("before calling char parameter");
+            Console.WriteLine("i="+i);
+            Console.WriteLine("j="+j);
+            Console.WriteLine("before calling double parameter");
+            Console.WriteLine("g="+g);
+            Console.WriteLine("h="+h);
+			operation op=new operation();
+			op.swap<int>(a,b);
+			op.swap<char>(i,j);
+			op.swap<double>(g,h);
+
+        }
+	}
+}
+
+output-
+a=10
+b=5
+i=Q
+j=p
+g=66.7
+h=45.6
+------------------------------------------------------------------------------------
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

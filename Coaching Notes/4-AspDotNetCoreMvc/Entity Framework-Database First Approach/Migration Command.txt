@@ -1,0 +1,16 @@
+step-1
+--------------
+install the all packages
+------------------------------
+step-2
+----------------
+run migration command-tool-package manager console
+PM> Scaffold-DbContext "server=DESKTOP-UNU8TPU\SQLEXPRESS;database=Dbashish;trusted_connection=true;"Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context 'EmployeeDbContext'
+ 
+
+
+step-3
+-------------
+all the steps same as code first approach
+
+

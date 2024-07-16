@@ -1,0 +1,49 @@
+@model Common_Layer.Models.Employee
+
+
+<h1 class="bg-dark text-white text-center" onclick="return confirm('are you sure')">add new employee</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-6">
+			<form asp-action="create"asp-controller="Employee"method="post">
+				<div class="form-group">
+					<label>Name</label>
+					<input type="text"asp-for="Name"class="form-control"/>
+					
+
+				</div>
+				<div class="form-group">
+					<label>age</label>
+					<input type="text"asp-for="Age"class="form-control"/>
+					
+
+				</div>
+				<div class="form-group">
+					<label>mobileno</label>
+					<input type="text"asp-for="Mobileno"class="form-control"/>
+					
+
+				</div>
+				<div class="form-group">
+					<label>city</label>
+					<input type="text" asp-for="City" class="form-control" />
+
+
+				</div>
+				<div class="form-group">
+					<label>salary</label>
+					<input type="text" asp-for="Salary" class="form-control" />
+
+
+				</div>
+				<div class="form-group">
+					<label>submit</label>
+					<button type="submit"class="btn btn-success mt-3">add new employee</button>
+
+
+				</div>
+
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,74 @@
+Data Abstraction
+-------------------
+show only essential things and hide unnecessary information /background details.
+* to achieved the data abstraction in c# we used abstract class
+Abstract Class
+---------------
+1-abstract can be created using 'abstract'keyword
+2-abstract class contain abstract method
+3-we can not create an object of abstract class
+4-we can also create data member in abstract class
+5-we can also make constructor of abstract class
+6-we can not support multiple inheretance
+7-in abstract class within their are not define the body ex-console.writeline();
+8-in a abstract class within we can make abstract method but their body are mentioned.
+9-abstract class we can implement there if i make class and inherit.
+-------------------------------------------------------------------------------------
+using System;
+using System;
+using System.Text;
+namespace ashish
+{
+   abstract class Employee //abstract class
+    {
+        abstract public int sum(int a,int b); // abstract method
+        abstract public int mult(int c,int d);  // abstract method
+    }
+    class abc:Employee
+    {
+        public override int sum(int a,int b)
+        {
+            return a + b;
+        }
+        public override int mult(int c,int d)
+        {
+            return c * d;  //write some logic
+        }
+    }
+    class demo
+    {
+        static void Main() //pll
+        {
+            abc ob = new abc();
+            int sm = ob.sum(10, 400);
+            Console.WriteLine("sum="+sm); //output-410
+            int mt = ob.mult(10, 5);
+            Console.WriteLine("multiplication="+mt); // output-50
+        }
+    }
+    
+}
+-----------------------------------------------------------------------------------------------------
+
+
+		
+        
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+

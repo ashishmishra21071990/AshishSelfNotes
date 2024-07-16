@@ -1,0 +1,257 @@
+Array
+----------
+it is collection and it is similar types of data items that contains contiguous memory
+allocation
+Types Of Array
+---------------
+1-D
+-------
+array initialization
+----------------------
+int[]a=new int[s]{12,34,56,78,99};
+int-> data type
+[]-> subscripts
+a-> array name
+new-> keyword
+s-> size of array
+-------------------------------------------
+using System;
+using System;
+class demo
+{
+	static void Main()
+	{
+		int[] a = new int[5] { 12, 34, 56, 78, 99 };
+		for(int i=0;i<=4;i++)
+		{
+			Console.WriteLine(a[i]);  //output-12,34,56,78,99
+		}
+
+
+
+	}
+}
+------------------------------------------------------------------
+using System;
+using System;
+class demo
+{
+	static void Main()
+	{
+		int[] a = new int[] { 12, 34, 56, 78, 99, 678, 123, 787, 323, 1203, 099, 646 };
+       // Console.WriteLine(a.Length); //output-12
+	   
+		for(int i=0; i<a.Length; i++)
+		{
+			Console.WriteLine(a[i]); //output-12,34,56,78,99,678,123,787,323,1203,099,646
+        }
+
+
+
+
+    }
+}
+---------------------------------------------------------------------------
+using System;
+using System;
+class demo
+{
+	static void Main()
+	{
+		int[] a = new int[5];
+        Console.WriteLine("enter the element=");
+		for(int i=0;i<=4;i++)
+		{
+			a[i]=Convert.ToInt32(Console.ReadLine());
+		}
+        Console.WriteLine("print the 5 element=");
+		for(int i=0;i<=4;i++)
+		{
+			Console.WriteLine(a[i]);
+        }
+
+
+
+
+
+    }
+}
+---------------------OR----------------------------------------------------------
+using System;
+using System;
+class demo
+{
+	static void Main()
+	{
+        Console.WriteLine("enter the size of array=");
+		int size=Convert.ToInt32(Console.ReadLine());
+		int[]a= new int[size];
+        Console.WriteLine("enter the 5 element=");
+		for(int i=0;i<size;i++)
+		{
+			a[i]= Convert.ToInt32(Console.ReadLine());
+		}
+        Console.WriteLine("print the  element=");
+		for(int i=0;i<size; i++)
+		{
+			Console.WriteLine(a[i]);
+        }
+
+
+
+
+
+    }
+}
+---------------------------------------------------------------
+2-D
+-----------
+initialization
+-----------------
+using System;
+using System;
+class demo
+{
+	static void Main()
+	{
+		int[,] a = new int[3, 4] { { 12, 34, 45, 67 }, { 78, 890, 123, 43 }, { 54, 65, 76, 103 } };
+		for(int i=0;i<=2;i++) //row
+		{
+			for(int j=0;j<=3;j++) //column
+			{
+				Console.Write(a[i,j]+"\t");
+            }
+            Console.WriteLine();
+        }
+
+
+
+
+
+    }
+}
+output-
+12  34  45  67 
+78 890 123  43
+54  65 76   103
+---------------------------------------------------------------------------------------
+declaration
+----------------
+using System;
+using System;
+class demo
+{
+	static void Main()
+	{
+		int[,] a = new int[4,5]; // 2D declaration
+        Console.WriteLine("enter the 4x5 elements=");
+		for(int i=0;i<=3;i++)
+		{
+			for(int j=0;j<=4;j++)
+			{
+				a[i,j] =Convert.ToInt32(Console.ReadLine());
+			}
+		}
+        Console.WriteLine("print 4x5 elements=");
+		for (int i = 0; i <= 3; i++)
+		{
+			for (int j = 0; j <= 4; j++)
+			{
+				Console.Write(a[i, j] + "\t");
+			}
+            Console.WriteLine();  //output -4x5 means 4 col and 5 row
+        }
+
+
+
+
+
+
+
+
+	}
+}
+--------------------------OR------------------------------------------------------------------------------
+using System;
+using System;
+class demo
+{
+	static void Main()
+	{
+		int row, col;
+		Console.WriteLine("enter how many row and col you want=");
+		row = Convert.ToInt32(Console.ReadLine());
+		col = Convert.ToInt32(Console.ReadLine());
+		int[,] a = new int[row, col]; //2D declaration
+		Console.WriteLine("enter the element=");
+		for (int i = 0; i < row; i++)
+		{
+			for (int j = 0; j < col; j++)
+			{
+				a[i, j] = Convert.ToInt32(Console.ReadLine());
+			}
+		}
+		for (int i = 0; i < row; i++)
+		{
+			for (int j = 0; j < col; j++)
+			{
+				Console.Write(a[i, j] + "\t");
+			}
+            Console.WriteLine();
+        }
+	}
+}
+--------------------------------------------------------------------------------------
+3-Jagged Array/Array Of Aray
+--------------------------------
+we have d/w type/size of array and combine them to get a single array
+then that is know as jagged array
+* it is also know as array of array
+----------------------------------------
+using System;
+using System;
+class demo
+{
+	static void Main()
+	{
+		int[][] a = new int[3][];
+		a[0] = new int[4] { 12, 45, 67, 89, };
+		a[1] = new int[3] { 102, 405, 607 };
+		a[2] = new int[2] {1982,4587};
+		foreach (int[]arr in a)
+		{
+			foreach (int res in arr)
+			{
+				Console.Write(res + "\t");
+			}
+			Console.WriteLine();
+		}
+		
+    }
+}
+output-
+12    45    67    89
+102   405   607 
+1982  4587
+---------------------------------------------------------
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+            
+
+             

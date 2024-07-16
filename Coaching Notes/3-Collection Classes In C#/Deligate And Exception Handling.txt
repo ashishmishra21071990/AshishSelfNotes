@@ -1,0 +1,452 @@
+Deligate
+---------
+in a c# is similar to pointer in c or c++
+* it is a reference type variable that holds the reference to a method
+* in deligate 3 points importance
+1-declaration 
+2-instantiation 
+3-calling
+* we are pass method as a reference and what to do their task asign a latter
+-----------------------------------------------------------------------------
+using System;
+using System.IO;
+using System;
+using System.Collections.Generic;
+
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	public delegate int dotask(int z);//declaration deligate
+	class demo
+	{
+		static int n = 10;
+		public static int addnum(int p)
+		{
+			 n += p;
+			return n;
+		}
+		public static int mult(int q)
+		{
+			 n *= q;
+			return n;
+		}
+		public static int display()
+		{
+			return n;
+		}
+		static void Main()
+		{
+			dotask dt1 = new dotask(addnum); // instantiation
+			dotask dt2 = new dotask(mult); // instantiation
+			dt1(20); //calling //output-30
+			Console.WriteLine("sum=" + display());
+			dt2(5); //calling //output-150
+			Console.WriteLine("mult=" + display());
+
+
+		}
+
+	}
+	
+
+
+}
+----------------------------------------------------------------------
+Exception Handling
+-------------------
+it is a technique i.e used to handle run time error.
+in exception handling we use the fallowing keyword
+1-try
+-----------
+in the block we write the logic of our code
+--------------------------------------------
+2-catch
+-------------
+catch block catch your exception if it is in your program logic.
+this block is used to handle your exception
+------------------------------------------
+3-finally
+-----------
+it must be executed wheather the exception has raised or not
+------------------------------------------------------------
+4-throw
+----------
+you can create your own message to catch block.
+catch block does not print predefined exception class message
+it print your message which is thrown by the programmer
+---------------------------------------------------------
+Exception
+----------
+it is a abnormal condition that stops the normal execution of program.
+with try use compulsary finally or catch.
+exception is the base class to handle the all exception
+* d/w type of exception in c#
+---------------------------------
+* array index out of bound
+* null reference
+* divide by 0 error
+* file not found exception and so on.
+---------------------------------------------
+try-catch example
+--------------------
+using System;
+using System.IO;
+using System;
+using System.Collections.Generic;
+
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class demo
+	{
+		static void Main()
+		{
+			try
+			{
+				int a, b, res;
+                Console.WriteLine("enter the two no.");
+				 a=Convert.ToInt32(Console.ReadLine());
+				 b=Convert.ToInt32(Console.ReadLine());
+				res = a / b;
+                Console.WriteLine("res="+res);
+
+            }
+			catch (Exception ex)
+			{
+                Console.WriteLine(ex.Message);
+            }
+			
+			
+		}
+		
+			
+
+	}
+}
+------------------------------------------------------------
+try-catch-finally example
+---------------------------
+using System;
+using System.IO;
+using System;
+using System.Collections.Generic;
+
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class demo
+	{
+		static void Main()
+		{
+			try
+			{
+				int a, b, res;
+                Console.WriteLine("enter the two no.");
+				 a=Convert.ToInt32(Console.ReadLine());
+				 b=Convert.ToInt32(Console.ReadLine());
+				res = a / b;
+                Console.WriteLine("res="+res);
+
+            }
+			catch (Exception ex)
+			{
+                Console.WriteLine(ex.Message);
+            }
+			finally
+			{
+                Console.WriteLine("its finally block");
+            }
+			
+			
+		}
+		
+			
+
+	}
+}
+-------------------------------------------------------------------------
+try-catch-throw-finally example
+----------------------------------
+using System;
+using System.IO;
+using System;
+using System.Collections.Generic;
+
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class demo
+	{
+		static void Main()
+		{
+			try
+			{
+				int age;
+                Console.WriteLine("enter the age");
+                age =Convert.ToInt32(Console.ReadLine());
+				if(age>=18)
+				{
+                    Console.WriteLine("valid for vote");
+                }
+				else
+				{
+					throw new Exception("not valid for vote");
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.Message);
+			}
+			finally
+			{
+                Console.WriteLine("i am finally block");
+            }
+		}
+	}
+}
+---------------------------------------------------------------------------
+		
+		
+		
+
+		
+
+		
+		
+
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+		
+
+		
+
+		
+		
+
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+		
+
+		
+
+		
+		
+
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+		
+
+		
+
+		
+		
+
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

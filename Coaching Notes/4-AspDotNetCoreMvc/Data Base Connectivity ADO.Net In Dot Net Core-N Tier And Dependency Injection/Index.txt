@@ -1,0 +1,38 @@
+@Model IEnumerable<CommonLayer.Models.Employee>
+	@Html.Raw(TempData["insert"])
+	@Html.Raw(TempData["update"])
+	@Html.Raw(TempData["Delete"])
+	<h1 class="bg-dark text-white text center">list of employee</h1>
+	<a asp-controller="Employee"asp-action="create"onclick="return confirm('you want to add')"class="btn btn-success">add new enployee</a>
+	<table class=" table table-bordered mt-3">
+		<tr>
+			<th>EID</th>
+			<th>NAME</th>
+			<th>AGE</th>
+			<th>MOBILENO</th>
+			<th>CITY</th>
+			<th>SALARY</th>
+			<th colspan="2"class="text-center">ACTION</th>
+		</tr>
+		@foreach(var emp in Model)
+		{
+			<tr>
+				<td>@emp.Eid</td>
+				<td>@emp.Name</td>
+				<td>@emp.Age</td>
+				<td>@emp.Mobileno</td>
+				<td>@emp.City</td>
+				<td>@emp.Salary</td>
+				
+				<td align="center"><a asp-controller="Employee" asp-action="Edit"asp-route-id="@emp.Eid"class="btn btn-warning">Edit</a></td>
+			<td align="center"><a asp-controller="Employee"asp-action="Delete"asp-route-id="@emp.Eid"onclick="return confirm('are you sure')"class=" btn btn-danger">DELETE</a></td>
+	
+			</tr>
+		}
+		</table>
+
+			
+				
+
+		
+		

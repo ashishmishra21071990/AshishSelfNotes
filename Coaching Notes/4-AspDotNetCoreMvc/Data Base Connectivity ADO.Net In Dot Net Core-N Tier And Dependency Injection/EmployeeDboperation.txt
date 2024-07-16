@@ -1,0 +1,182 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Common_Layer.Models;
+using Microsoft.Data.SqlClient;
+using System.Data;
+using Microsoft.Identity.Client;
+
+namespace Data_Access_Layer
+{
+	public class EmployeeDboperation
+	{
+		public Dbconnect dbconnect;
+		public EmployeeDboperation()
+		{
+			dbconnect = new Dbconnect();
+		}
+		public List<Employee> GetEmployees()
+		{
+			List<Employee> emplist = new List<Employee>();
+			SqlCommand cmd = new SqlCommand("sp_Employee", dbconnect.connection);
+			cmd.CommandType = CommandType.StoredProcedure;
+			cmd.Parameters.AddWithValue("@ststus", "select");
+			if (dbconnect.connection.State == ConnectionState.Closed)
+			{
+				dbconnect.connection.Open();
+			}
+			SqlDataReader dr = cmd.ExecuteReader();
+			while (dr.Read())
+			{
+				Employee emp = new Employee();
+				emp.Eid = (int)dr["eid"];
+				emp.Name = dr["ename"].ToString();
+				emp.Age = (int)dr["age"];
+				emp.Mobileno = dr["mobileno"].ToString();
+				emp.City = dr["city"].ToString();
+				emp.Salary = (int)dr["salary"];
+				emplist.Add(emp);
+			}
+			dbconnect.connection.Close();
+			return emplist;
+		}
+		public Employee AddEmployee(Employee empobj)
+		{
+			SqlCommand cmd = new SqlCommand("sp_Employee", dbconnect.connection);
+			if (dbconnect.connection.State == ConnectionState.Closed)
+			{
+				dbconnect.connection.Open();
+			}
+			cmd.Parameters.AddWithValue("@ststus", "create");
+			cmd.CommandType = CommandType.StoredProcedure;
+			cmd.Parameters.AddWithValue("@name", empobj.Name);
+			cmd.Parameters.AddWithValue("@age", empobj.Age);
+			cmd.Parameters.AddWithValue("@mobileno", empobj.Mobileno);
+			cmd.Parameters.AddWithValue("@city", empobj.City);
+			cmd.Parameters.AddWithValue("@salary", empobj.Salary);
+			int n = cmd.ExecuteNonQuery();
+			dbconnect.connection.Close();
+			if (n != 0)
+			{
+				return empobj;
+			}
+			else
+			{
+				return null;
+			}
+		}
+		public Employee getsingleEmployee(int id) //edit
+		{
+			SqlCommand cmd = new SqlCommand("sp_Employee", dbconnect.connection);
+			cmd.CommandType = CommandType.StoredProcedure;
+			cmd.Parameters.AddWithValue("@ststus", "select_single");
+			cmd.Parameters.AddWithValue("@eid", id);
+			if(dbconnect.connection.State==ConnectionState.Closed)
+			{
+				dbconnect.connection.Open();
+			}
+			Employee emp = new Employee();
+			SqlDataReader dr = cmd.ExecuteReader();
+			if (dr.Read())
+			{
+				emp.Eid = (int)dr["eid"];
+				emp.Name = dr["ename"].ToString();
+				emp.Age = (int)dr["age"];
+				emp.Mobileno = dr["mobileno"].ToString();
+				emp.City = dr["city"].ToString();
+				emp.Salary = (int)dr["salary"];
+			}
+			dbconnect.connection.Close();
+			return emp;
+		}
+		public Employee updateEmployee(Employee empobj)  //update
+		{
+			SqlCommand cmd = new SqlCommand("sp_Employee", dbconnect.connection);
+			if (dbconnect.connection.State == ConnectionState.Closed)
+			{
+				dbconnect.connection.Open();
+			}
+			cmd.Parameters.AddWithValue("@ststus", "update");
+			cmd.CommandType = CommandType.StoredProcedure;
+			cmd.Parameters.AddWithValue("@name", empobj.Name);
+			cmd.Parameters.AddWithValue("@age", empobj.Age);
+			cmd.Parameters.AddWithValue("@mobileno", empobj.Mobileno);
+			cmd.Parameters.AddWithValue("@city", empobj.City);
+			cmd.Parameters.AddWithValue("@salary", empobj.Salary);
+			cmd.Parameters.AddWithValue("@eid", empobj.Eid);
+			int n = cmd.ExecuteNonQuery();
+			dbconnect.connection.Close();
+			if (n != 0)
+			{
+				return empobj;
+			}
+			else
+			{
+				return null;
+			}
+		}
+
+		public bool DeleteEmployee(int id)  // second video delete
+		{
+			SqlCommand cmd = new SqlCommand("sp_Employee", dbconnect.connection);
+			if (dbconnect.connection.State == ConnectionState.Closed)
+			{
+				dbconnect.connection.Open();
+			}
+			cmd.Parameters.AddWithValue("ststus", "Delete");
+			cmd.CommandType = CommandType.StoredProcedure;
+			cmd.Parameters.AddWithValue("@eid", id);
+			int n = cmd.ExecuteNonQuery();
+			dbconnect.connection.Close();
+			if (n != 0)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+}
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+		
+	
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

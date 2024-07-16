@@ -1,0 +1,10 @@
+1-what is key explain d/w types of keys in sql server
+2-ddl,dml,dcl,tcl,dql,
+3-what is normalization
+4-d/w b/w primary key,foreign key and unique key
+5-d/w b/w store procedure and function 
+6-d/w b/w drop,delete, and truncate
+7-d/w b/w union and union all
+8-what is trigger
+9-d/w b/w char,varchar, and nvarchar
+10-what is view

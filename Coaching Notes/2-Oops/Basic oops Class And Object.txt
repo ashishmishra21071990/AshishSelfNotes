@@ -1,0 +1,126 @@
+oops
+----------------------------------------------------------------------------------------------------------------------------------------------------
+it is stand for object oriented programming.it have fallowing concept.it is also know as pillers of oops.
+------------------------
+1-Class
+-------------------------
+2-Object
+-------------------------
+3-Data Abstraction-
+1-Abstract class 
+-------------------------
+4-Inheritance-its 5 types
+1-Single Inheritance
+2-Multiple Inheritance
+3-multilevel Inheritance
+4-Hybrid Inheritance
+5-Hierarchical Inheritance
+-----------------------------
+5-Encapsulation-its 5 types
+1-Public
+2-Private
+3-Protected
+4-Internal
+5-Protected Internal
+------------------------------
+6-Polymorphism-its 2 type
+1-Compile Time Polymorphism /Early Binding/ Function Overloading
+2-Run Time Polymorphism /Late binding/ Function Overriding
+--------------------------------
+7-Constructor-its 5types
+1-Default Constructor /NON Parameterized
+2-Parameterized Constructor
+3-Copy constructor
+4-Private Constructor
+5-Static Constructor
+------------------------------------
+8-This Keyword
+------------------------------------
+9-Interface
+-----------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Class
+--------
+class is a blue print for creating a particular kind of object.
+* a class is a collection of similar kind of objects.
+* we can create multiple object of a single class.
+------------------------
+class classname
+{
+datamember-variable
+member function-method
+}
+---------------------------------------------------------
+Object
+------------
+any real world (living + non living) entity is known as object.
+* objects are the instance of a class
+-----------------------------------------------
+classname objectname=new classname();
+-----------------------------------------------
+EX-fruits- class>-mango,apple,banana->object instance
+----------------------------------------------------
+using System;
+using System;
+using System.Text;
+namespace ashish
+{
+    class Employee
+    {
+        string EmpName;//data member
+        int age;
+        string Address;
+        public void getEmployeeDetails()
+        {
+            Console.WriteLine("enter employee details");
+            EmpName = Console.ReadLine();
+            age=Convert.ToInt32(Console.ReadLine());
+            Address = Console.ReadLine();
+        }
+        public void  displayEmployeeDetails()
+        {
+            Console.WriteLine("show employee information");
+            Console.WriteLine("EmpName="+EmpName);
+            Console.WriteLine("Age="+age);
+            Console.WriteLine("Address="+Address);
+        }
+    }
+    class demo
+    {
+        static void Main()
+        {
+            Employee empobj=new Employee();
+            empobj.getEmployeeDetails();
+            empobj.displayEmployeeDetails();
+        }
+    }
+    
+}
+output-
+Empname=
+age=
+Address=
+---------------------------------------------------------------------
+
+
+		
+        
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+

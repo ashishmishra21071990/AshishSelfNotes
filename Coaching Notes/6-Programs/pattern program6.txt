@@ -1,0 +1,219 @@
+1-wap in pattern matching using nested if 
+A
+AB
+ABC
+ABCD
+ABCDE
+
+
+-----------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        char i, j;
+       
+        for (i = 'A'; i <= 'E'; i++)
+        {
+            for (j = 'A'; j <= i; j++)
+            {
+                Console.Write(j);
+            }
+            Console.WriteLine();
+        }
+    }
+}
+-----------------------------------
+2-wap in pattern matching using nested if 
+ABCDE
+ABCD
+ABC
+AB
+A
+---------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        char i, j;
+       
+        for (i = 'E'; i >= 'A'; i--)
+        {
+            for (j = 'A'; j <= i; j++)
+            {
+                Console.Write(j);
+            }
+            Console.WriteLine();
+        }
+    }
+}
+----------------------------
+3-wap in pattern matching using nested if
+E
+ED
+EDC
+EDCB
+EDCBA
+---------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int i, j;
+        int n = 5;
+
+        for (i = n; i >= 1; i--)
+        {
+            for (j = n; j >= i; j--)
+            {
+                Console.Write((char)(j + 64));
+
+            }
+            Console.WriteLine();
+        }
+    }
+}
+--------------------------------------
+4-wap in pattern matching using nested if
+EDCBA
+EDCB
+EDC
+ED
+E
+------------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int i, j;
+        int n = 5;
+
+        for (i = 1; i <= n; i++)
+        {
+            for (j = n; j >= i; j--)
+            {
+                Console.Write((char)(j + 64));
+
+            }
+            Console.WriteLine();
+        }
+    }
+}
+-------------------------------------------
+5-wap in pattern matching using nested if
+*
+**
+***
+****
+*****
+-------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int n = 5;
+
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j <= i; j++)
+            {
+                Console.Write('*');
+            }
+            Console.WriteLine();
+}
+}
+}
+or
+----------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        
+
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j <= i; j++)
+            {
+                Console.Write('*');
+            }
+            Console.WriteLine();
+        }
+    }
+}
+------------------------------------------
+6-wap in pattern matching using nested if 
+         *                       1                        A
+       * * *         |         1 2 3         |         A B C
+     * * * * *       |       1 2 3 4 5       |       A B C D E
+   * * * * * * *     |     1 2 3 4 5 6 7     |     A B C D E F G
+ * * * * * * * * *   |   1 2 3 4 5 6 7 8 9   |   A B C D E F G H I
+----------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        
+
+        for (int i = 1; i <= 3; i++)
+        {
+            for (int j = 3; j>i; j--)
+            {
+                Console.Write("");
+            }
+            for(int k=1;k<=i;k++)
+            {
+                Console.Write("*");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+-------------------------------------------------------
+7-wap in pattern matching using nested if
+g g *     2-gap
+g * * *   1-gap
+* * * * *  no gap
+----------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        
+
+        for (int i = 1; i <= 5; i++)
+        {
+            for (int j = i; j <5; j++)
+            {
+                Console.WriteLine("");
+            }
+            for(int j=1;j<=2*i-1;j++)
+            {
+                Console.Write("*");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+--------------------------------------------
+            
+
+
+
+
+
+
+
+
+        
+    
+

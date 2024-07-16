@@ -1,0 +1,33 @@
+using Microsoft.AspNetCore.Mvc;
+
+namespace WebApplicationashish.Controllers
+{
+	public class SessionController : Controller
+	{
+		public IActionResult login()
+		{
+			return View();
+		}
+		[HttpPost]
+		public IActionResult Login(string username,string password)
+		{
+			if(username=="mohit"&&password=="123")
+			{
+				HttpContext.Session.SetString("user",username); 
+				return RedirectToAction("Dashboard");
+			}
+			return View();
+		}
+		public IActionResult Dashboard()
+		{
+			string username=HttpContext.Session.GetString("user");
+			ViewBag.user = username;
+			return View();
+		}
+		public IActionResult Logout()
+		{
+			HttpContext.Session.Clear();
+			return RedirectToAction("Login");
+		}
+	}
+}

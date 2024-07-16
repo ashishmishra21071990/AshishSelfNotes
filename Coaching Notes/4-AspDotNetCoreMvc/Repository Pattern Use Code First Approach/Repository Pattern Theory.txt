@@ -1,0 +1,75 @@
+coupled types
+-------------
+1-Loosely Coupled
+-------------------
+we are making service.controller does not interact with model.
+2-Tightly Coupled
+-----------------
+controller are directaly interact with the models if any changeg in models so that every where change required.
+step-1
+-----
+create a project RepositoryPatternMohit-template mvc.
+step-2
+-------
+right click in your project-add-new folder name-Repository.
+step-3
+---------
+Repository-right click-add new folder name-Contract.
+step-4
+------
+Repository-right click-add new folder name-Services.
+step-5
+------
+Contract-right click-add-class template interface-IEmployee.
+step-6
+------
+Services-right click-add-template class-EmployeeService.
+here i make a Abstraction layer
+step-7
+------
+model-right click-add-class-Employee.
+step-8
+-------
+services-right click-add-class-EmployeeDbContext.
+here installed the all packageg.
+Microsoft.EntityFrameworkCore
+RazorRuntimeCompilation
+Microsoft.Entityframeworkcore.SqlServer
+Microsoft.Entityframeworkcore.Tools
+Microsoft.Entityframeworkcore.Design
+------------------
+step-9
+-------
+appsetting.json
+------
+step-10
+--------
+program.cs
+-----
+step-11
+-------
+Controller-right click-add-template mvccontrollerempty.-EmployeeController.
+here injecting to the service.
+step-12
+---------
+view
+-----
+here we will take template razor view because we are performing scaffolding.
+view name-Index
+template-List
+model class-Employee(RepositoryPatternMohit.Models)
+DataContextClass-EmployeeDbContext(RepositoryPatternMohit.Repository.Services)
+-------------------------------------------------------------
+first Index Of view these are mention automatically found
+@model IEnumerable<RepositoryPatternMohit.Models.Employee>
+@{
+view Data["Title"]="Index";
+}
+------------------------
+these are write
+@Html.Raw(TempData["Insert"]")
+@Html.Raw(TempData["update"]")
+@Html.Raw(TempData["delete"]")
+--------------------------------
+
+

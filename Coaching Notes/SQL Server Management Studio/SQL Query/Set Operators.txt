@@ -1,0 +1,202 @@
+Set Operators
+---------------
+where and having
+------------------
+where is slow because it always search all records
+having is fast because it always search particular records not all
+------------------------------------------------------------------
+table column must be same 
+* order of column must be same 
+* data type must be match
+1-union
+-----------
+it does not return duplicate values from the table
+2-union all
+------------
+it returns duplicate value from the table 
+3-intersect
+---------------
+its return common record from both the table 
+4-except table-1table2
+-----------------------
+it returns all record from table1 that does not exist in table2
+* some relationship are as given below---
+* 1to1
+* 1to many -1student-payment many and payment many-1 student
+* many to 1
+*many to many-student and course because 1 student-many course and 1 course-many student
+
+
+join
+-------
+join is used to combine one or more table data
+types of join
+-----------------
+1-inner join
+--------------------
+* wap to get total no.of student Enroll in angular course
+-----------------------------------------------------------
+
+select sname,sage,saddress,sfee,cname from tbl_course inner join tbl_student on tbl_course.cid=tbl_student.cid and cname='angular'
+
+select *from tbl_course inner join tbl_student on tbl_course.cid=tbl_student.cid and cname='angular'
+
+select s1.sname,s1.sage,s1.saddress,s1.sfee,c1.cname from tbl_course c1 inner join tbl_student s1 on c1.cid=s1.cid and cname='angular'
+
+select s1.sname,s1.sage,s1.saddress,s1.sfee,c1.cname from tbl_course c1 inner join tbl_student s1 on c1.cid=s1.cid and cname='dotnet'
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+select<list of column>from table1 inner join table2 on<condition>
+it is used to fetch matching record from multiple table
+2-outer join
+-------------
+
+---------------------------------------------------------------------------------------------
+it is used to get unmatching record from multiple tables
+A-left outer join
+--------------------
+select *from tbl_course left outer join tbl_student on tbl_student.cid=tbl_course.cid
+--------------------------------------------------------------------------------------------
+it returns all record from the left table and matching record from the right table unmatches return Null
+select<list of column>from table1 left outer join table2 on<condition>
+B-right outer join
+-----------------
+select *from tbl_student right outer join tbl_course on tbl_student.cid=tbl_course.cid
+-------------------------------------------------------------------------------------------
+it returns all record from the right table and matching record from the left table unmatched return Null
+select<list of column>from table1 right outer join table2 on<condition>
+C-full outer join
+-------------------
+select *from tbl_student full outer join tbl_course on tbl_student.cid=tbl_course.cid
+--------------------------------------------------------------------------------------------
+it returns all records from both the table and unmatched return Null
+select<list of column>from table1 full outer join table2 on<condition>
+3-cross join(x)
+----------------
+select *from tbl_course cross join tbl_student
+----------------------------------------------------
+6 student and 7 course than every student 7 course doing than total 7 student done 42 courses(because 6x7=42)
+select *from tbl_course
+cross join tbl_student
+
+foreign key
+--------------
+it is used to established the relationship among multiple tables
+* first table P.K work as foreign key in another table 
+points to be remember to create foreign key
+--------------------------------------------
+* column name must be same of parent table
+* data type must be same of parent table
+column_name datatype foreign key references
+parenttablename(column_name)
+eid int foreign key references
+tbl_course(cid)->example
+stored procedure
+------------------------
+* it is pre_compile database objects
+* it reduces network traffic
+* it provide database security
+* high performance
+* it can return N value
+* we can perform all curd operation using sp
+types of parameter in sp
+-----------------------------
+1-with parameter
+2-without parameter
+how to create sp with parameter
+----------------------------------
+create proc/procedure proc_name
+(
+ @parameter1 datatype1,
+ @parameter2 datatype2(size),
+    -----
+     ---
+ @parameterN datatypeN(size)
+)
+as begin
+<sql command/statements>
+end
+how to create sp without parameter
+---------------------------------------
+create proc proc_name
+as begin
+<sql statements>
+end
+group by
+----------------
+wap to get no.of employee in each department
+-------------------------------------------
+select post,count(eid)as 'Total Employee'from tbl_Employee group by post
+wap to sum total salary in each department
+----------------------------------------------
+select post,sum(salary)as 'Total Employee'from tbl_Employee group  by post
+wap to get total employee in tl department
+--------------------------------------------
+select post,count(eid)as 'Total Employee'from tbl_Employee group by post having post='TL'
+wap to get total employee in each department where employee in greater than 2
+--------------------------------------------------------------------------------
+select post,count(eid)as 'Total Employee'from tbl_Employee group by post having count(eid)>2
+set operators
+-----------------------------------------------------------------------------------------------------------------------------------------
+use deepu
+create table tbl_hyd
+(
+bid int,
+bname nvarchar(50),
+blocation nvarchar(50),
+)
+create table tbl_chennai
+(
+bid int,
+bname nvarchar(50),
+blocation nvarchar(50),
+)
+select *from tbl_hyd
+
+select *from tbl_chennai
+
+select *from tbl_hyd 
+union
+select *from tbl_chennai
+
+select *from tbl_hyd 
+union all
+select *from tbl_chennai
+
+select *from tbl_hyd 
+intersect
+select *from tbl_chennai
+
+select *from tbl_hyd 
+except
+select *from tbl_chennai
+----------------------------------------------------------------------------------------------------------------------------------------
+use deepu
+create table tbl_course
+(
+cid int Primary Key Identity(1,1),
+cname nvarchar(50)
+)
+create table tbl_student
+(
+sid int Primary Key Identity(1,1),
+sname nvarchar(50),
+sage int,
+saddress nvarchar(100),
+sfee money,
+cid int Foreign Key references
+tbl_course(cid)
+)
+select *from tbl_course
+select *from tbl_student
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+

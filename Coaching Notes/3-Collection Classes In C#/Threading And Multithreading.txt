@@ -1,0 +1,201 @@
+Multithreading
+-----------------
+a thread is defined as the execution path of program.
+each thread defines a unique flow of control.
+if your application involve complicated and time consuming operations then 
+it is often helpful to set d/w execution path or thread.
+each thread performing a particular job.
+thread are light weight process one common example of use of thread is implementation 
+of concurent programming by modern operating system.
+use of thread saves wastage of cpu cycle and increase efficiancy of an application in c#.
+each thread has a life cycle.
+the life cycle of thread is started  when instance of system.threading.
+thread class is created.when task execution of the thread is completed 
+its life cycle is ended.
+* unstarted
+* runnable(ready to run)
+* not runnable
+* dead(terminated)
+sleep() method is used to temporary suspend the current execution of the thread 
+for specified milisecond.so that other thread can get the chance to start the execution or
+may get the cpu for execution join()method is used to make all the calling thread to wait until the 
+main thread i.e joined thread complete its work.
+abort() method is used to abort the thread.suspend() method is called to suspend the thread.
+resume() method is called to resume the suspended thread.
+start() method is used to send a thread into runnable state
+-------------------------------------------------------------------------
+it is concept in which you can run multiples programs simultaneously
+Ex-
+p1-10 min->10 min
+p2-13 min->10 min + 13 min =23 min
+p3-2 min->23 min +2 min =25 min
+-------------------------------------
+CPU Scheduling
+Thread Life Cycle
+-----------------
+* start
+* sleep
+* abort
+* terminate
+* suspend
+* resume
+----------------
+Thread
+--------
+thread is a single execution flow of program it is light weight process.
+-----------------------------------------------------------------------
+Note-
+-------
+* base class or parent class of c# is system.object
+* namespace include using System.Threading;
+-------------------------------------------------
+Program
+--------
+set of instruction
+S/W
+-----
+collection of program
+Process
+-----------
+small part of program
+or
+in a single program where use a sub comonent of program.
+----------------------------------------------------------------------------------------------------
+Example Of Multithreading
+----------------------------------
+using System;
+using System.IO;
+using System.Reflection;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+using System.Security.Cryptography;
+using System.Xml.Linq;
+
+namespace ashish
+{
+	class demo
+	{
+		static void Main()
+		{
+			Thread t1 = new Thread(new ThreadStart(test1));
+			t1.Start();
+			Thread t2 = new Thread(new ThreadStart(test2));
+			t2.Start();
+                          or
+                 Thread t1 = (new Thread(test1));
+				t1.Start();
+			Thread t2 = (new Thread(test2));
+			t2.Start();
+			
+		}
+		public static void test1()
+		{
+			for(int i=0;i<=3;i++)
+			{
+                Console.WriteLine("test1="+i);
+            }
+		}
+		public static void test2()
+		{
+			for(int i=0;i<=2 ;i++)
+			{
+                Console.WriteLine("test2="+i);
+            }
+		}
+
+	}
+}
+output-
+test1=0
+test2=0
+test1=1
+test2=1
+test2=2
+test1=2
+test1=3
+----------------------------------------------------------
+Example Of Threading
+---------------------------
+using System;
+using System.IO;
+using System.Reflection;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+using System.Security.Cryptography;
+using System.Xml.Linq;
+using System.Threading;
+
+namespace ashish
+{
+	class demo
+	{
+		static void Main()
+		{
+			test1();
+			test2();
+		}
+		public static void test1()
+		{
+			for(int i=0;i<=3;i++)
+			{
+                Console.WriteLine("test1="+i);
+            }
+		}
+		public static void test2()
+		{
+			for(int i=0;i<=2 ;i++)
+			{
+                Console.WriteLine("test2="+i);
+            }
+		}
+
+	}
+}
+output-
+test1=0
+test1=1
+test1=2
+test1=3
+test2=0
+test2=1
+test2=2
+---------------------------------------------------------------------------------------
+using System;
+using System.IO;
+using System.Reflection;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+using System.Security.Cryptography;
+using System.Xml.Linq;
+using System.Threading;
+
+namespace ashish
+{
+	class demo
+	{
+		static void Main()
+		{
+			for(int i=0;i<=10;i++)
+			{
+				Thread.Sleep(4000);
+                Console.WriteLine(i);
+            }
+		}
+	}
+}
+---------------------------------------------------------------------------------
+
+
+

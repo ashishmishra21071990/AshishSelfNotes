@@ -1,0 +1,114 @@
+step-6
+-----------
+add-migration 'migrationname'
+update-database
+after do that  our table is create in sql 
+----------------------------------------------
+using WebApplicationcodefirst.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+
+namespace WebApplicationcodefirst.Controllers
+{
+	public class EmployeeController : Controller
+	{
+		private EmployeeDbContext _dbContext;
+		public EmployeeController(EmployeeDbContext dbContext)
+		{
+			_dbContext = dbContext;
+		}
+		public async Task <IActionResult> Index()
+		{
+			// var employees = await(from m in _dbContext.Employees.Where(m=>m.is_del==false) select m).ToListAsync();
+			return View(employees); //it is used to help and support Create,Edit,Update,and Delete,and,Soft Delete 
+                       but var employees=await _dbContext.Employees.ToListAsync();
+                       return View(employees);//this code support only Create,Edit,Update,Delete-not support to soft Delete
+		}
+		public IActionResult Create()
+		{
+			return View();
+		}
+		[HttpPost]
+		public async Task<IActionResult> Create(Employee empobj)
+		{
+			if (ModelState.IsValid)
+			{
+				_dbContext.Employees.Add(empobj);
+				int n = await _dbContext.SaveChangesAsync();
+				if(n!=0)
+				{
+					TempData["insert"] = "<script>alert('Employee Added Successfully');</script>";
+					return RedirectToAction("Index");
+				}
+				else
+				{
+					TempData["insert"] = "<script>alert('Employee Failled');</script>";
+				}
+			}
+			else
+			{
+				ModelState.AddModelError(string.Empty, "Error in Employee Model");
+			}
+			return View();
+		}
+		public async Task<IActionResult>Edit(int id)        //Edit
+		{
+			var employee=await _dbContext.Employees.Where(m=>m.eid==id).FirstOrDefaultAsync();
+			return View(employee);
+		}
+		[HttpPost]
+		public async Task<IActionResult>Edit(Employee empobj)    //update
+		{
+			if (ModelState.IsValid)
+			{
+				_dbContext.Entry(empobj).State= EntityState.Modified;
+				int n=await _dbContext.SaveChangesAsync();
+				if(n!=0)
+				{
+					TempData["update"] = "<script>alert('Employee Updated Successfully');</script>";
+					return RedirectToAction("Index");
+				}
+				else
+				{
+					TempData["update"] = "<script>alert('Employee Updated Failled');</script>";
+				}
+			}
+			else
+			{
+				ModelState.AddModelError(string.Empty, "Error IN Employee Model");
+			}
+			return View();
+		}
+		public async Task<IActionResult>Delete(int id)  //Delete
+		{
+			if(ModelState.IsValid)
+			{
+				var emp=await _dbContext.Employees.Where(m=>m.eid == id).FirstOrDefaultAsync();  //Employee emp used in soft Delete not var emp
+				if(emp!=null)
+				{
+					
+					_dbContext.Remove(emp);  // emp.is_del = true; used in soft Delete and //_dbContext.Entry(emp).State= EntityState.Modified;//not used _dbContext.Remove(emp);//
+					int n=await _dbContext.SaveChangesAsync();
+					if(n!=0)
+					{
+						TempData["delete"] = "<script>alert('Employee deleted Successfully');</script>";
+						return RedirectToAction("Index");
+					}
+					else
+					{
+						TempData["delete"] = "<script>alert('Employee deleted Failled');</script>";
+						
+					}
+				}
+				else
+				{
+					ModelState.AddModelError(string.Empty, "Error In Employee Model");
+				}
+				
+			}
+			return View();
+		}
+	}
+}

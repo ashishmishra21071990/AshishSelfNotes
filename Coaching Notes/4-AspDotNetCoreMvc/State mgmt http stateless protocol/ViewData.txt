@@ -1,0 +1,92 @@
+ViewData
+-------
+* it is inherited from ViewDataDictionary
+* it is used to transfer information b/w controller to view
+* it is require type casting for complex data type
+* it does not display compile time error it only show run time error
+ViewData["VarName/KeyName"]=value;
+-----------------------------------
+Employee
+--------
+using Microsoft.AspNetCore.Hosting.Server;
+
+namespace WebApplicationdipika.Models
+{
+	public class Employee
+	{
+		public int eid { get;set; }
+		public string? name { get; set; }
+		public int age { get;set; }
+		public string? mobileno { get;set; }
+		public int salary { get;set; }
+	}
+}
+---------------------------------
+EmployeeController
+-------------------
+
+using Microsoft.AspNetCore.Mvc;
+using WebApplicationdipika.Models;
+
+namespace WebApplicationdipika.Controllers
+{
+	public class EmployeeController : Controller
+	{
+		[HttpGet]
+		public IActionResult Index()
+		{
+			ViewData["msg"]= "data come from ViewBag";
+			string[] sport = new string[] { "cricket", "footbal", "batmilton", "tennis", "hockey" };
+			ViewData["sports"] = sport;
+			Employee emp= new Employee();
+			emp.eid = 1;
+			emp.name= "Test";
+			emp.age = 20;
+			emp.mobileno = "1234561234";
+			emp.salary = 10000;
+			ViewData["Emp"] = emp;
+			return View();
+		
+		}
+		
+		
+		
+	}
+}
+---------------------------------
+Index
+----------
+@using WebApplicationdipika.Models;
+<h2>ViewData=@ViewData["msg"]</h2>
+<h1>following sports are listed below:</h1>
+<ol>
+	@foreach(var sp in(string[])ViewData["sports"])
+	{
+		<li>@sp</li>
+	}
+</ol>
+<h2>show Employee Information</h2>
+@{
+	var emp = (Employee)ViewData["Emp"];
+}
+<h2>@emp.eid</h2>
+<h2>@emp.name</h2>
+<h2>@emp.age</h2>
+<h2>@emp.mobileno</h2>
+<h2>@emp.salary</h2>
+------------------------------
+output-
+ViewData=data come from ViewBag
+following sports are listed below:
+1-cricket
+2-footbal
+3-batmilton
+4-tennis
+5-hockey
+show Employee Information
+1
+Test
+20
+1234561234
+10000
+-------------------------------

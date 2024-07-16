@@ -1,0 +1,18 @@
+step-1
+-------
+IEmployee-copy-Contract-pastIDeparment
+step-2
+------
+Employee-copy-models-Department
+step-3
+----------
+ priviouse code copy and past in models department-EmployeeDbContext
+step-4
+------
+priviouse code copy EmployeeService and past DepartmentService
+step-5
+------
+crate DepartmentController
+step-6
+------
+add to the service in program.cs

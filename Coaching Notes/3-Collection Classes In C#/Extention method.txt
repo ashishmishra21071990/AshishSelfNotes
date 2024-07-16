@@ -1,0 +1,54 @@
+Extention Method
+---------------------
+* to add something
+* it is represented by downward arrow keys
+* create static class
+* create static method
+-----------------------------
+using System;
+using System.IO;
+using System.Reflection;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+using System.Security.Cryptography;
+using System.Xml.Linq;
+using System.Threading;
+
+namespace ashish
+{
+	static class operation
+	{
+		public static int getnoofcharacter(this string inputstring)
+		{
+			if(!string.IsNullOrEmpty(inputstring))
+			{
+				return inputstring.Length;
+			}
+			else
+			{
+				return 0;
+			}
+		}
+	}
+	class demo
+	{
+		static void Main()
+		{
+			// Console.WriteLine("total no.of character="+operation.getnoofcharacter("mandy"));
+			                   
+			int res = operation.getnoofcharacter("mandy"); // or
+            Console.WriteLine(res);
+
+
+        }
+	}
+}
+--------------------------------------------------------------------------------
+
+
+
+	

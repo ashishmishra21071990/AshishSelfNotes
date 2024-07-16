@@ -1,0 +1,12 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=DESKTOP-UNU8TPU\\SQLEXPRESS;Initial Catalog=ashishapi;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;"
+  },
+  "AllowedHosts": "*"
+}

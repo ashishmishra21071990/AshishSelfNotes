@@ -1,0 +1,4 @@
+
+how to implement database query when the record was deleted but again recover 
+-----------------------------------------------------------------------------
+update Employees set is_del=0 where eid=3

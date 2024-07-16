@@ -1,0 +1,262 @@
+How To Work With Complex Model
+----------------------------------
+1-school->list of teacher
+2-teacher->list of student
+3-student->list of course
+----------------------------
+Making A New Folder
+----------------------
+project name-right click-add-folder-than one class  add and perform their operation
+----------------------------------------------------------------------------------------
+Course
+--------
+namespace WebApplicationdipika.Models
+{
+	public class Course
+	{
+		public int cid { get; set; }
+		public string? cname { get; set; }
+	}
+}
+------------------------------------
+Teacher
+--------
+namespace WebApplicationdipika.Models
+{
+	public class Teacher
+	{
+		public int tid { get; set; }
+		public string? tname { get; set; }
+		public int tage { get;set; }
+		public string? trole { get;set; }
+		public List<Student> students { get; set; }
+	}
+}
+----------------------------------------------------------------
+School
+--------
+namespace WebApplicationdipika.Models
+{
+	public class School
+	{
+		public int school_id {  get; set; }
+		public string? school_name { get; set; }
+		public string? school_city { get;set; }
+		public List<Teacher>?teachers { get; set; }
+		
+
+	}
+}
+---------------------------------------------------
+Student
+------------
+namespace WebApplicationdipika.Models
+{
+	public class Student
+	{
+		public int sid { get; set; }
+		public string? sname { get; set; }
+		public int sage { get; set; }
+		public string? saddress { get;set; }
+		public List<Course>?courses { get; set; }	
+	}
+			
+	
+
+	
+}
+-------------------------------------------------
+SchoolDbOperation
+---------------------
+using System.Security.Cryptography.X509Certificates;
+using WebApplicationdipika.Models;
+namespace WebApplicationdipika.SchoolOperation
+{
+	public class SchoolDbOperation
+	{
+		public static List<Student>listofstudentteacherA()
+		{
+			List<Student> stulist = new List<Student>();
+			Student st1= new Student();
+			st1.sid= 1;
+			st1.sname = "mohit";
+			st1.sage = 19;
+			st1.saddress = "new ashok nagar";
+			stulist.Add(st1);
+			Student st2 = new Student();
+			st2.sid = 2;
+			st2.sname = "radha";
+			st2.sage = 55;
+			st2.saddress = "new ashok ";
+			stulist.Add(st2);
+			Student st3 = new Student();
+			st3.sid = 3;
+			st3.sname = "krishna";
+			st3.sage = 100;
+			st3.saddress = "noida";
+			stulist.Add(st3);
+			return stulist;
+		}
+		public static List<Student>listofstudentforteacherB()
+		{
+			List<Student> stulist = new List<Student>();
+			{
+				
+				Student st1 = new Student();
+				st1.sid = 4;
+				st1.sname = "mohan";
+				st1.sage = 55;
+				st1.saddress = "delhi";
+				stulist.Add(st1);
+				Student st2 = new Student();
+				st1.sid = 5;
+				st1.sname = "sweta";
+				st1.sage = 85;
+				st1.saddress = "mumbai";
+				stulist.Add(st2);
+				return stulist;
+			}
+			
+		}
+		public static List<Student>listofstudentforteacherC()
+		{
+			List<Student>stulist=new List<Student>();
+			Student st1 = new Student();
+			st1.sid = 6;
+			st1.sname = "ram";
+			st1.sage = 100;
+			st1.saddress = "ayodha";
+			stulist.Add(st1);
+			return stulist;
+		}
+		public static List<Teacher>GetTeachers()
+		{
+			List<Teacher> tchlist = new List<Teacher>();
+			Teacher tc1 = new Teacher();
+			tc1.tid = 1;
+			tc1.tname = "ritesh";
+			tc1.tage = 34;
+			tc1.trole = "web d";
+			tc1.students=listofstudentteacherA();
+			tchlist.Add(tc1);
+			
+			
+			Teacher tc2 = new Teacher();
+			tc2.tid = 2;
+			tc2.tname = "rihan";
+			tc2.tage = 55;
+			tc2.trole = "java";
+			tc2.students = listofstudentforteacherB();
+			tchlist.Add(tc2);
+			
+			Teacher tc3 = new Teacher();
+			tc3.tid = 3;
+			tc3.tname = "joshi";
+			tc3.tage = 36;
+			tc3.trole = "dot net";
+			tc3.students = listofstudentforteacherC();
+			tchlist.Add(tc3);
+			return tchlist;
+		}
+		public static School getschooldetails()
+		{
+			School sc=new School();
+			sc.school_id = 1;
+			sc.school_name = "dps";
+			sc.school_city = "lucknow";
+			sc.teachers=GetTeachers();
+			return sc;
+		}
+	}
+}
+----------------------------------------
+EmployeeController
+---------------------
+using Microsoft.AspNetCore.Mvc;
+using WebApplicationdipika.Models;
+using WebApplicationdipika.SchoolOperation;
+
+namespace WebApplicationdipika.Controllers
+{
+	public class EmployeeController : Controller
+	{
+		public IActionResult Index()
+		{
+			School sc=SchoolDbOperation.getschooldetails();
+			return View(sc);
+		
+		}
+		public IActionResult about()
+		{
+			return View();
+		}
+		
+	}
+}
+----------------------------------------
+Index
+---------
+@model WebApplicationdipika.Models.School
+<h1 class="bg-dark text-white text-center">School Information</h1>
+<table class="table table-bordered bg-primary">
+	<tr>
+		<th>school id</th>
+		<th>@Model.school_id</th>
+	</tr>
+	<tr>
+		<th>school name</th>
+		<th>@Model.school_name</th>
+	</tr>
+	<tr>
+		<th>school city</th>
+		<th>@Model.school_city</th>
+	</tr>
+	
+</table>
+@{
+	foreach(Teacher tch in Model.teachers)
+	{
+		<h2 class="bg-dark text-center text-white">Teacher Information</h2>
+		<table class="table table-bordered bg-danger">
+		<tr>
+		<th>tid</th>
+		<th>@tch.tid</th>
+		</tr>
+			<tr>
+				<th>tname</th>
+				<th>@tch.tname</th>
+			</tr>
+			<tr>
+				<th>tage</th>
+				<th>@tch.tage</th>
+			</tr>
+			<tr>
+				<th>trole</th>
+				<th>@tch.trole</th>
+			</tr>
+		</table>
+		foreach(var stu in tch.students)
+		{
+			<h2 class="bg-dark text-white text-center">Student Information</h2>
+			<table class="table table-bordered"style="background-color:aqua;">
+			<tr>
+			<th>sid</th>
+			<th>@stu.sid</th>
+			</tr>
+			<tr>
+			<th>sname</th>
+			<th>@stu.sname</th>
+			</tr>
+				<tr>
+					<th>sage</th>
+					<th>@stu.sage</th>
+				</tr>
+				<tr>
+					<th>saddress</th>
+					<th>@stu.saddress</th>
+				</tr>
+			</table>
+		}
+	}
+}
+------------------------------------------------------------

@@ -1,0 +1,401 @@
+Operator
+----------
+operator are the special symbol i.e that used to perform some operation
+1-Arithmetic Operator
+-------------------------
++,-,*,/
+------------
+using System;
+class demo
+{
+	static void Main()
+	{
+		double a, b,  sm, sb, mt, dv;
+		Console.WriteLine("enter two no.=");
+		a=Convert.ToInt32(Console.ReadLine());
+		b=Convert.ToInt32(Console.ReadLine());
+		sm = a + b;
+		sb = a - b;
+		mt = a * b;
+		dv = a / b;
+        Console.WriteLine("sum="+sm);
+        Console.WriteLine("subtract="+sb);
+        Console.WriteLine("multiplication="+mt);
+        Console.WriteLine("division="+dv);
+
+
+    }
+}
+----------------------------------------------------------
+2-Relational
+---------------
+it returns boolean value
+>,>=,<,<=,==,!=
+---------------
+using System;
+class demo
+{
+	static void Main()
+	{
+		int a = 5, b = 7;
+        Console.WriteLine(a>b); //f
+        Console.WriteLine(a<b);  //t
+        Console.WriteLine(a>=b); //f
+		Console.WriteLine(a <= b); //t
+		Console.WriteLine(a != b); //t
+		Console.WriteLine(a == b); //f
+
+
+
+
+	}
+}
+
+-----------------------------------------------------
+Logical
+---------
+1-AND(&&)
+--------
+both condtion must be true
+EX-
+1 1->1
+2-OR(||)
+------------
+if either one of the condition is true then true else false
+EX-
+0 0->0
+3-NOT(!)
+------------
+if input is 1 then result is 0 and vice-versa
+EX-
+1->0
+0->1
+-----------------------------------------
+using System;
+class demo
+{
+	static void Main()
+	{
+		int a = 5, b = 7;
+        Console.WriteLine(a>b||a<b); // t
+        Console.WriteLine(a<b&&a>b); //f
+        Console.WriteLine(a!=b&&a<b); //t
+        
+
+
+
+
+    }
+}
+
+4-Ternary/Conditional
+----------------------
+it takes 3 operand/var
+(condition)?t:f;
+EX-
+using System;
+class demo
+{
+	static void Main()
+	{
+		int a = 10, b = 12, res;
+		res = (a > b) ? a : b;
+		Console.WriteLine(res); // output 12
+
+
+
+
+
+
+    }
+}
+----------------------------------------------
+using System;
+class demo
+{
+	static void Main()
+	{
+		int a = 10, b = 12, res;
+		res=(a<b)?a:b;
+        Console.WriteLine(res); // output 10
+
+
+
+
+
+
+    }
+}
+
+
+-------------------------------------------------------
+5-Assignment
+------------
+to assign value we use assignment operator int a=45;
+6-Bitwise 
+-----------
+its work on bit(0,1)
+1-bitwise and &
+---------------
+int a=5 0101
+int b=4 0100
+---------------
+int a&b  0100->4
+-----------------
+using System;
+class demo
+{
+	static void Main()
+	{
+		int a = 5, b = 4, res;
+		res = a & b;
+        Console.WriteLine(res); //output 4
+
+
+
+
+
+
+    }
+}
+
+Rule- 1 0->0
+      0 1->0
+      1 1->1
+      0 0->0 
+
+2-bitwise or |
+----------------
+int a=5 0 1 0 1
+int b=4 0 1 0 0
+-------------------
+int a|b   0101->5
+------------------
+Rule-1 0->1
+     0 0->0
+     1 1->1
+     0 1->1
+---------------
+using System;
+class demo
+{
+	static void Main()
+	{
+		int a = 5, b = 4, res;
+		res = a | b;
+        Console.WriteLine(res); //output 5
+
+
+
+
+
+
+    }
+}
+
+
+3-bitwise xor ^
+--------------------
+if the input is same (0,0)(1,1)than result will be 0,wheather both the input are high(1)
+int a=5 0 1 0 1
+int b=4 0 1 0 0
+---------------------
+int a^b 0 0 0 1->1
+-----------------------
+Rule-1 0->1
+     0 1->1
+     1 1->0
+     0 0->0
+-------------------
+using System;
+class demo
+{
+	static void Main()
+	{
+		int a = 5, b = 4, res;
+		res = a ^ b;
+        Console.WriteLine(res); //output 1
+
+
+
+
+
+
+    }
+}
+
+--------------------------------------------------
+4-shift left <<
+----------------
+it shifts all the bits towards its left 
+-----------------------------------------
+using System;
+class demo
+{
+	static void Main()
+	{
+		int a = 5, res;
+		res = a << 3;
+        Console.WriteLine(res); // output 40
+
+
+
+
+
+
+    }
+}
+Explanation-int a=5; it work on 8 bit
+int a<<3;?
+
+00000101->8 bit
+so then the 3 bit eliminate left side and 3 bit means 0 add right side
+00101000->40
+
+
+-------------------------------------------
+5-shift right >>
+-------------------
+using System;
+class demo
+{
+	static void Main()
+	{
+		int a = 5, res;
+		res = a >> 2;
+        Console.WriteLine(res); // output 1
+
+
+
+
+
+
+    }
+}
+ Explation- int a=5;
+int a>>2;?
+here 2 bits eliminate right side and 2 bit means 0 add the left side
+00000101->8 bit
+00000001->1
+
+-----------------------------------------------------
+7-Increment And Decrement
+----------------------------
+its 2 part
+1-pre inc/dec
+---------------
+operator comes before operand
+++a; or a=1+a
+--a  or a=1-a
+2-post inc/dec
+-----------------
+operator comes after operand
+a++ or a=a+1
+a-- or a=a-1
+----------------------------------
+Ex-using System;
+class demo
+{
+	static void Main()
+	{
+		int a = 5;
+        Console.WriteLine(a++); //5
+	Console.WriteLine(a++);	//6
+        Console.WriteLine(++a);  //8
+        Console.WriteLine(a++);  //8
+        Console.WriteLine(a++);  //9
+        Console.WriteLine(a);  //10
+
+
+
+
+
+
+    }
+}
+
+-------------------------------------------------
+using System;
+class demo
+{
+	static void Main()
+	{
+		int a = 6;
+        Console.WriteLine(a++); //6
+	Console.WriteLine(a--);	//7
+        Console.WriteLine(++a); //7
+        Console.WriteLine(a++);//7
+        Console.WriteLine(a--); //8
+        Console.WriteLine(a++); //7
+       
+
+
+
+
+
+
+    }
+}
+-----------------------------------------------------
+using System;
+class demo
+{
+	static void Main()
+	{
+		int a = 9;
+        Console.WriteLine(a++); //9
+		Console.WriteLine(a++);  //10
+        Console.WriteLine(++a); //12
+        Console.WriteLine(a--); //12
+        Console.WriteLine(a++); //11
+        Console.WriteLine(a++); //12
+        Console.WriteLine(--a); //12
+        Console.WriteLine(a--); //12
+        Console.WriteLine(a++); //11
+        Console.WriteLine(a++); //12
+
+
+
+
+
+
+
+
+    }
+}
+
+--------------------------------------------
+using System;
+class demo
+{
+	static void Main()
+	{
+		int a = 5,b=3,c=-1;
+        Console.WriteLine(a++); //5
+		Console.WriteLine(b++);  //3
+        Console.WriteLine(c++); //-1
+        Console.WriteLine(a++); //6
+        Console.WriteLine(b--); //4
+        Console.WriteLine(c--); //0
+        Console.WriteLine(++a); //8
+        Console.WriteLine(b++); //3
+        Console.WriteLine(c++); //-1
+        Console.WriteLine(++c); //1
+
+
+
+
+
+
+
+
+    }
+}
+
+
+
+
+
+
+
+

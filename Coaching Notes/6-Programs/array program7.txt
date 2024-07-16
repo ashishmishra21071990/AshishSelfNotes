@@ -1,0 +1,402 @@
+1-wap to input 10 elements and find sum and avg
+----------------------------------------------
+using System;
+namespace ashish
+{
+    class demo
+    {
+        static void Main()
+        {
+            int sum = 0, avg = 0;
+            Console.WriteLine("how many no.want to enter?");
+            int n=Convert.ToInt32(Console.ReadLine());
+            int[] number = new int[n];
+            for(int i= 0; i < number.Length; i++)
+            {
+                Console.WriteLine("enter the no");
+                number[i] = Convert.ToInt32(Console.ReadLine());
+                sum = sum + number[i];
+
+            }
+
+           
+            avg = sum / number.Length;
+            Console.WriteLine(sum);
+            Console.WriteLine(avg); 
+        }
+    }
+}
+----------------------------------------------
+2-wap to input 12 elements and find the even and odd no.
+and also count the total no.of even and odd
+------------------------------------------------
+using System;
+using System.Transactions;
+
+namespace ashish
+{
+    class demo
+    {
+        static void Main()
+        {
+            
+            Console.WriteLine("how many no.want to enter");
+           
+           int n=Convert.ToInt32(Console.ReadLine());   
+            int[]number = new int[n];
+            Console.WriteLine("enter the no.");
+            for(int i = 0; i < number.Length; i++)
+            {
+                number[i]= Convert.ToInt32(Console.ReadLine());
+                
+                if (number[i]%2 ==0)
+                {
+                    Console.WriteLine(number[i]+"even no. ");
+                }
+                else
+                {
+                    Console.WriteLine(number[i]+"odd no.");
+                }
+                
+
+            }
+            
+        }
+    }
+}
+
+----------------------------------------------------------
+3-count the how many no.of element odd or even
+---------------------------------------------------
+using System;
+using System.Threading.Channels;
+using System.Transactions;
+
+namespace ashish
+{
+    class demo
+    {
+        static void Main()
+        {
+            int i, n, even = 0,odd= 0;
+                
+
+            Console.WriteLine("how many no.want to enter");
+          
+           
+            n = Convert.ToInt32(Console.ReadLine());
+          
+
+          
+            int[] a = new int[n];
+            Console.WriteLine("enter the no.");
+            for ( i = 0; i < n; i++)
+            {
+                a[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            for (i = 0; i < n; i++)
+            {
+                if (a[i] % 2 == 0)
+                {
+                    even = even;
+                    even++;
+                }
+                else
+                {
+                    odd = odd;
+                    odd++;
+                }
+            }
+            Console.WriteLine("even=" + even);
+            Console.WriteLine("odd=" + odd);
+        }
+    }
+}
+--------------------------------------------------------
+4-wap to input 5 elements and find smallest and largest among them.
+------------------------------------------------------------------
+using System;
+using System.Threading.Channels;
+using System.Transactions;
+
+namespace ashish
+{
+    class demo
+    {
+        static void Main()
+        {
+            int i;
+                
+
+            
+          
+           
+            
+          
+
+          
+            int[] a = new int[10];
+            Console.WriteLine("enter the no.");
+            for ( i = 0; i < 10; i++)
+            {
+                a[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            int smallest = a[0];
+            for( i = 0; i < 10;i++)
+            {
+                if (a[i] < smallest)
+                {
+                    smallest = a[i];
+                }
+            }
+            int largest = a[9];
+            for(i= 0; i < 10;i++)
+            {
+                if (a[i] > largest)
+                {
+                    largest = a[i];
+                }
+            }
+            Console.WriteLine("smallest no.="+smallest);
+            Console.WriteLine("largest no.="+largest);
+
+        }
+    }
+}
+-----------------------------------------------------------
+                                                       2D array poroblems
+----------------------------------------------------------------------------
+1-wap to input 3x4 elements and finds it sum and avg
+-------------------------------------------------
+using System;
+using System.Data;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.Intrinsics.X86;
+
+namespace ashish
+{
+    class demo
+    {
+        static void Main()
+        {
+
+            int sum = 0;
+            int avg = 0;
+            
+              
+
+
+            int[,] a = new int[3, 4];
+            Console.WriteLine("enter the element");
+
+            for (int i = 0; i <=2; i++)
+            {
+               
+                for (int j = 0; j <=3; j++)
+                {
+                    a[i, j] = Convert.ToInt32(Console.ReadLine());
+                    sum = sum + a[i, j];
+                   
+                }
+                
+            }
+            Console.WriteLine("print the no.");
+            for (int i = 0; i <=2;i++)
+            {
+                for(int j = 0; j <=3;j++)
+                {
+                    avg = sum / a.Length;
+                }
+                
+            }
+            Console.WriteLine(sum);
+            Console.WriteLine(avg);
+
+        }
+    }
+}
+----------------------------------------------------------
+2-wap to input 3x4 elements and find the sum and multiplication
+------------------------------------------------------------------
+using System;
+namespace ashish
+{
+    class demo
+    {
+        static void Main()
+        {
+            
+           
+            
+   
+       
+             
+            int[,] a = new int[3,3];
+            int[,]b= new int[3,3];
+            int[,]c= new int[3,3];
+            Console.WriteLine("enter  element");
+            for(int i=0;i<3;i++)
+            {
+                for(int j=0;j<3;j++)
+                {
+                    a[i,j]=Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            Console.WriteLine("enter the element ");
+            for (int i=0;i<3; i++)
+            {
+                for(int j=0 ; j<3 ; j++)
+                {
+
+
+
+                    b[i,j] = Convert.ToInt32(Console.ReadLine());
+                }
+           
+
+            }
+           
+            for (int i=0;i <3; i++)
+            {
+                for(int j=0 ; j<3 ; j++)
+                {
+                    c[i, j] = 0;
+                    for(int k=0 ; k<3 ; k++)
+                    {
+                        c[i, j] = a[i,j] * b[i,j];
+                    }
+                }
+
+                
+            }
+            Console.WriteLine("result ");
+            for(int i = 0; i < 3; i++)
+            {
+                for(int j= 0 ; j<3 ; j++)
+                {
+                    Console.Write(c[i,j] + "\t");
+                }
+                Console.WriteLine();
+            }
+           
+            
+              
+            
+
+                    
+
+        }
+    }
+}
+----------------------------------------------------------------
+3-wap to input 3x3 elements and find the diagonal element
+-------------------------------------------------------------
+using System;
+namespace ashish
+{
+    class demo
+    {
+        static void Main()
+        {
+            int[,] a = new int[3, 3];
+            Console.WriteLine("enter the element");
+            for(int i=0;i<3;i++)
+            {
+                for(int j=0;j<3;j++)
+                {
+                    a[i,j]=Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            for(int i=0;i<3; i++)
+            {
+                for(int j=0 ; j<3 ; j++)
+                {
+                    if(i==j)
+                    {
+                        Console.Write(a[i,j]);
+                    }
+                    Console.WriteLine();
+                }
+             
+            }
+
+        }
+    }
+}
+-----------------------------------------------------------------------------
+4-wap to input 3x3 elements and find the transpose of element
+-------------------------------------------------------------------
+using System;
+namespace ashish
+{
+    class demo
+    {
+        static void Main()
+        {
+            Console.WriteLine("size of array");
+            int row = 2;
+            int col = 2;
+             row=Convert.ToInt32(Console.ReadLine());
+              col=Convert.ToInt32(Console.ReadLine());
+            int[,] a = new int[row, col];
+            Console.WriteLine("enter the element");
+            for(int i=0;i<row;i++)
+            {
+                for(int j=0;j<col;j++)
+                {
+                    a[i,j]=Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            Console.WriteLine("print the element");
+            for (int i=0;i<row; i++)
+            {
+                for(int j=0 ; j<col ; j++)
+                {
+
+
+
+                    Console.Write(a[i,j]);
+                }
+                Console.WriteLine();
+
+            }
+            Console.WriteLine("transpose matrix");
+            for (int i=0;i <col; i++)
+            {
+                for(int j=0 ; j<row ; j++)
+                {
+                    Console.Write(a[j,i]);
+                }
+                Console.WriteLine();
+            }
+
+        }
+    }
+}
+
+
+
+
+        
+                
+
+            
+            
+
+        
+    
+
+
+        
+                
+
+            
+            
+
+        
+    
+
+
+
+
+

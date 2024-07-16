@@ -1,0 +1,71 @@
+Authentication
+---------------
+to identify the identity of a user
+Authorization
+-------------
+select *from sys.tables
+select *from AspNetUsers
+------------------------------
+to access or give tht priviledges to the user.
+* in dot net core we can use the Identity to implement security.
+steps1
+-------
+*create  project-project name and template-asp.netcore(mvc).
+* right click to the project-add-new scaffold item-identity.
+* add identity-what do you want select
+ex-account login
+account logout
+account/register
+DataContextClass-+click-add
+UserClass-+click-add
+add and apply 
+step-2
+packageg are automatically install
+------------------
+
+* Microsoft.AspNetCore.Identity.EntityFrameworkcore
+* Microsoft.AspNetCore.Identity.UI
+* Microsoft.EntityFrameworkCore.SqlServer
+* Microsoft.EntityFrameworkCore.tools
+* Microsoft.VisualStudio.Web.CodeGenertaion.Design
+--------------------------------------------------------
+step-3
+--------
+check one folder created automatically Areas-Identity-Data-here 2 classes are inbuild one is ContextClass and second is NormalClass.
+you can check also pages-account 
+---------------------------
+step-4
+appsetting.json
+connection strings and Database are automatically created.there are one changeg required server name.
+--------------------------------------------------------------------------------
+step-5
+program.cs
+app.run();just upward add this app.MapRazorPages();
+using projectname.Areas.Identity.Data;
+-------
+step-6
+-------you can check by steps fallowed Identity/Account/Register in url 
+-----------------------------------------------------------------------------
+step-7
+-------
+add-migration 'first'
+update-database
+-----------------------
+step-8
+--------
+view-shared_layout.cshtml
+_loginpartial.cshtml
+Error.cshtml
+_viewimports.cshtml
+_view Start.cshtml
+call the partial view into layout because layout are work.
+when user sign than layout show hello user name and @usermanager.Getusername.
+when user not login than show else part and want to register or login than call it in _layout.cshtml and make a one list
+<li class="nav-item">
+<partial name="_Login partial"/>
+</li>
+-------------------------------------------
+
+
+
+

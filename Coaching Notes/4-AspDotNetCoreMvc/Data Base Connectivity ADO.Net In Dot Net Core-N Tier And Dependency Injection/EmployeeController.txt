@@ -1,0 +1,78 @@
+using Microsoft.AspNetCore.Mvc;
+using Business_Access_Layer.Contract;
+using Common_Layer.Models;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+
+namespace multitiermohitapp.Controllers
+{
+	public class EmployeeController : Controller
+	{
+		private Iemployee _employee;
+        public EmployeeController(Iemployee employee)
+		{
+			_employee = employee;
+		}
+		public IActionResult Index()
+		{
+			var employee = _employee.GetEmployees();
+			return View(employee);
+		}
+		public IActionResult create()  // start second video insert
+		{
+			return View();
+		}
+		[HttpPost]
+		public IActionResult create(Employee empobj)
+		{
+			Employee emp = _employee.AddEmpoyee(empobj);
+				if(emp!=null)
+				{
+					TempData["insert"] = "<script>alert('Employee added successfully');</script>";
+					return RedirectToAction("Index");
+				}
+			
+			return View();
+		}
+		public IActionResult Edit(int id) //edit
+		{
+			Employee emp = _employee.getsingleEmployee(id);
+			return View(emp);
+		}
+		[HttpPost]
+		public IActionResult Edit(Employee empobj)
+		{
+			Employee emp = _employee.updateEmployee(empobj);
+			if(emp!=null)
+			{
+				TempData["update"] = "<script>alert('Employee updated successfully');</script>";
+				return RedirectToAction("Index");
+			}
+			return View();
+		}
+
+		
+		
+		public IActionResult Delete(int id)  //second video delete
+		{
+			bool b= _employee.DeleteEmployee(id);
+			if (b == true)
+			{
+				TempData["Delete"] = "<script>alert('Employee Deleted successfully');</script>";
+				return RedirectToAction("Index");
+			}
+			return View();
+		}
+}
+}
+
+		
+		
+		
+			
+			
+
+			
+			
+	
+

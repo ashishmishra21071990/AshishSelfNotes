@@ -1,0 +1,8 @@
+because we are showing in the view of Create
+----------------------------------------------
+public IActionResult create()
+		{
+			var cityList = _employee.cityList();
+			ViewBag.cityList=cityList;
+			return View();
+		}

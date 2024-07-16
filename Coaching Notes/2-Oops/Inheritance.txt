@@ -1,0 +1,359 @@
+Note-
+-------
+* class by default internal
+* data member/ method by default private
+* abstract class and interface where method declare int tha last ;but in function no
+* if property is inherited than make of the object of inherited class,not inherited name  
+* default means do not write it is also available
+* class child:parent->parent pr=new child();
+* object all type value store
+* var all type value store
+* data member/variable/variable declaration/variable initialization/class variable/instance variable.
+* member function /method.
+pr.function name-> one more d/w way of making object
+
+-----------------------
+Inheritance
+---------------
+child class always inherit the properties of its parent class.
+* reusability
+Types Of Inheritance
+---------------------
+1-Single Inheritance
+--------------------
+single parent class /supper class/ base class(A) and single child class /sub class / derived class(B)
+--------------------------------------------------------------------------------------------------
+using System;
+using System;
+using System.Text;
+namespace ashish
+{
+    class parent
+    {
+		public void print()
+		{
+			Console.WriteLine("hello parent");
+		}
+	}
+    class child:parent
+    {
+        public void display()
+        {
+            Console.WriteLine("hello child");
+        }
+    }
+    class demo
+    {
+        static void Main()
+        {
+            child ch= new child();
+            ch.print();  //output-hello parent
+            ch.display(); // output-hellochild
+        }
+    }
+}
+----------------------------------------------------------------------------------
+using System;
+using System;
+using System.Text;
+namespace ashish
+{
+    class parent
+    {
+        public int c;
+        public int sum(int a,int b)
+        {
+            c = a + b;
+            return c; // 300
+        }
+    }
+    class child:parent
+    {
+        int m;
+        public int mult(int d)
+        {
+            m = d * c; //300*300
+            return m; //90000
+        }
+    }
+    class demo
+    {
+        static void Main()
+        {
+            child ch=new child();
+            int sm = ch.sum(100, 200);
+            int mt = ch.mult(300);
+            Console.WriteLine("sum="+sm); // output-sum=300
+            Console.WriteLine("mult="+mt); // output-mult=90000
+        }
+    }
+    
+}
+---------------------------------------------------
+2-Multiple Inheritance
+----------------------------
+multiple parent class and one child class
+Ex-father class(A) mother class(B)-their multiple parent class and one child class(C)
+* c# does not support multiple inheritance
+* if you want to support multiple inheritance in c# then we 
+use the concept of 'Interface'
+Interface
+---------------
+1- interface support multiple inheritance
+2- interface keyword is used to create interface
+3- we can not create data member in interface
+4- we provide only method declaration inside the interface
+5- all method must be implemented inside the interface 
+6- we can not create constructor inside the interface
+7- interface bydefault is public
+--------------------------------------------------------------
+using System;
+using System;
+using System.Text;
+namespace ashish
+{
+    interface father
+    {
+        public int sum(int a, int b);
+    }
+    interface mother
+    {
+        public int mult(int c, int d);
+    }
+    class child:father,mother //multiple inheritance
+    {
+        public int sum(int a, int b)
+        {
+            return a+b;
+        }
+        public int mult(int c, int d)
+        {
+            return c * d;
+        }
+    }
+    class demo
+    {
+        static void Main()
+        {
+            child ch=new child();
+            int sm = ch.sum(100, 200);
+                Console.WriteLine("sum="+sm); // output-300
+            int mt = ch.mult(200, 400);
+            Console.WriteLine("mult="+mt);   // output-80000
+        }
+    }
+}
+----------------------------------------------------------------
+3-Multilevel Inheritance
+---------------------------
+grandfather class(A)-father class(B)-child class(C)
+---------------------------------------------------
+
+
+4-Hierarchical Inheritance
+----------------------------
+1 parent class is inherit by multiple child or sub class that is known as hierarchical inheritance
+Ex- 1 parent class(A) inherit multiple child class(B) and child class(C)
+------------------------------------------------------------------------------------------
+
+5-Hybridge Iheritance
+----------------------
+it is mixup of hirarchical inheritance and multilevel inheritance
+EX-here build 2 case 
+case 1-1 parent class(A) but multiple child class(B),class(C),class(D).
+case2-multiple parent class(B),class(C),class(A) but single child class (D).
+
+                    
+                    
+
+
+                    
+                    
+
+				
+   
+   
+
+    
+
+
+
+		
+        
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+                    
+                    
+
+
+                    
+                    
+
+				
+   
+   
+
+    
+
+
+
+		
+        
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+                    
+                    
+
+
+                    
+                    
+
+				
+   
+   
+
+    
+
+
+
+		
+        
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+   
+   
+
+    
+
+
+
+		
+        
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+   
+
+    
+
+
+
+		
+        
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+   
+
+    
+
+
+
+		
+        
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+

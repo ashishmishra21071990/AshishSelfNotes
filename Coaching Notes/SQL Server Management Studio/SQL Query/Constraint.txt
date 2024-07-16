@@ -1,0 +1,71 @@
+Sql Constraints
+----------------
+1-not null
+-----------
+name nvarchar(255)not null
+
+alter table tablename
+alter column columnname datatype not null
+
+2-unique
+---------
+id int not null unique
+
+alter table tablename
+add unique(id)
+
+alter table tablename
+drop constraint columnname
+
+3-primary key
+-------------
+id int not null Primary Key
+
+alter table tablename 
+add primary key (id)
+
+alter table tablename 
+add constraint columnname unique(id,name)
+ 
+alter table tablename
+add constraint columnname primarykey(id,name)
+
+alter table tablename
+drop constraint columnname
+
+4-foreign key
+-----------------
+alter table tablename
+add foreign key (columnname)references tablename (columnname)
+
+alter table tablename
+drop constraint columnname
+
+5-check
+-------
+age int check(age>=18)
+
+alter table tablename 
+add check(age>=18)
+
+alter table tablename
+drop constraint columnname
+
+6-Default
+----------
+city varchar(255)default'am'
+
+alter table tablename 
+add constraint city default 'am'for city
+
+alter table tablename
+alter column columnname drop default
+
+7-index
+---------
+create index index_name
+on tablename(col1,col2,----)
+
+create unique index index_name on table name(col1,col2,---)
+
+drop index tablename.index_name

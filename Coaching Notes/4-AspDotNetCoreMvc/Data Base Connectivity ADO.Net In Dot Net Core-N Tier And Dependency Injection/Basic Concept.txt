@@ -1,0 +1,88 @@
+1-create a project mvc dot net core web app(model-view-controller)
+2-right click solution where mention project name-add-project-template name-class library
+* data access layer-project name
+* business access layer-project name 
+* common layer-project name
+------------------------------
+3-common layer-right click-add-folder name models-add class name Employee.
+and their add one namespace for data validation  using System.ComponentModel.DataAnnotations;
+4-go to data access layer-add one class name-Dbconnect.here also we add one namespace
+microsoft.data.sqlclient;
+note-here namespace of Common_Layer; add.
+here ConnectionStrings work are perform.
+5-go to again common layer add one class name-DbConnectionconfigcs.
+ConnectionStrings are not passed in priviouse class than here perform and 
+that value passed to priviouse class. 
+6-go to again data access layer add one class name-EmployeeDboperation.
+here all the operation are perform.
+7-go to bussiness access layer -right click-add-folder name-Contract.
+it is used for DI reason .
+8- go to business access layer -right click-add-folder name-Services.
+it is used for DI reason.
+9-go to Contract -add-interface-Iemployee
+in a interface there only declaration not defination or implementation.
+10-go to Services -add-class name Employeeservice.
+here implement the declare in Iemployee.
+and add some namespace 
+using Common_Layer.Models;
+using Data_Access_layer;
+using business_Access_layer.Contract;
+
+---------------------------------------------
+DAL
+---
+connectivity\database related code.
+BAL
+----
+Contract\Services-interface\service
+CommonLayer
+------------
+models as per requirements DAL and BAL are used common layer.
+Dependency Injection
+--------------------
+1-Singleton
+2-Scope
+3-Transient
+-------------
+appsetting.json
+----------------
+program.cs
+------------
+here add namespace
+using Common_Layer;
+using Business_Access_Layer.Contract;
+using Business_Access_Layer.Services;
+-----------------------------------------
+namespace adding
+-----------------
+1-dairct upward write namespace
+2-dependency-rightclick-add project reference -add namespace what do you want.
+3-add com reference
+---------------------------------------------------------------------------
+note-we do not make object of interface.
+--------------------------------------------
+lousely coupled
+------------------
+one class does not depend with another class .
+--------------------------------------------------
+tightly coupled
+----------------
+remove
+------------------
+view
+------
+Index
+--------
+@model IEnumerable<Common_Layer.Models.Employee>
+@Html.Raw(TempData["insert"])
+@Html.Raw(TempData["update"])
+@Html.Raw(TempData["delete"])
+-------------------------------
+Create
+---------
+@model Common_Layer.Models.Employee
+------------------------------------
+Edit
+------
+@model Common_Layer.Models.Employee
+---------------------------------------------------

@@ -1,0 +1,402 @@
+Razor Syntax
+----- ----------
+Note-
+------
+[Display(Name="Employee id")]
+i have already  explain in model emp but client want to show  browser with the name of 
+Employee id than this case i will use [Display(Name="Employee id")]
+this just upward of model declaration where i declared emp.
+-----------------------------
+when you want to write anything dynamic in your html file.
+then we use razor syntax.
+it is represented by @ symbol
+Types Of Razor In cshtml file
+--------------------------------
+1-Inline Expression(old)
+--------------------
+Index
+---------
+@{
+	string name = "ravi";
+	int age = 34;
+	string city = "noida";
+	
+}
+<h2>name=@name</h2>
+<h2>age=@age</h2>
+<h2>city=@city</h2>
+output-
+name=ravi
+age=34
+city=noida
+---------------------
+2-Conditional statement(old)
+---------------------------
+@{
+	int ag = 19;
+	if(ag>18)
+	{
+		<h1>valid for vote</h1>
+	}
+	else
+	{
+		<h1>not valid for vote</h1>
+	}
+}
+output-
+valid for vote
+------------------------------------
+3-Loop(while)(old)
+-------------
+@{
+	int a = 10;
+	while(a>=1)
+	{
+		<h3>@a</h3>
+		a = @a - 1;
+	}
+}
+output-
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+--------------------------------------------------
+do-while(old)
+---------
+@{
+	int i = 5;
+	do
+	{
+		<h3>welcome to dot net core</h3>
+		i = @i + 1;
+	}
+	while (i <= 10);
+}
+output-
+welcome to dot net core
+welcome to dot net core
+welcome to dot net core
+welcome to dot net core
+welcome to dot net core
+welcome to dot net core
+-------------------------------
+for(old)
+--------
+@{
+	for(int j=1;j<=15;j++)
+	{
+		<h3>@j</h3>
+	}
+}
+output-
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+--------------------------------------
+switch
+---------
+@{
+	int day = 31;
+	switch(day)
+	{
+		case 1:
+			<h3>sun</h3>
+			break;
+
+		case 2:
+			<h3>mon</h3>
+			break;
+
+		case 3:
+			<h3>tue</h3>
+			break;
+		default:
+			<h2>invalid choice</h2>
+			break;
+		
+	}
+}
+output-
+invalid choice
+-----------------
+HTML Helper
+--------------
+it is used to reader html file.
+we have d/w helper method in dot net core
+1-Normal HTML
+----------------
+Employee
+-----------
+namespace WebApplicationdipika.Models
+{
+	public class Employee
+	{
+		public string? name { get; set; }
+		public int age { get;set; }
+		public string? address { get;set; }
+	}
+}
+-------------------------------------------
+EmployeeController
+----------------------
+using WebApplicationdipika.Models;
+using Microsoft.AspNetCore.Mvc;
+
+namespace WebApplicationdipika.Controllers
+{
+	public class EmployeeController : Controller
+	{
+		[HttpGet]
+		public IActionResult Index()
+		{
+			return View();
+		
+		}
+		[HttpPost]
+		public IActionResult Index(string name,int age,string address)
+		{
+			return View();
+		}
+		
+	}
+}
+----------------------------------------
+Index
+-----------
+<form action ="\"method="post">
+	<label>name</label>
+	<input type="text"name="name"/>
+	<label>age</label>
+	<input type="text"name="age"/>
+	<input type="text"name="address"/>
+	<button type="submit">register</button>
+</form>
+------------------------------------------------
+2-Standard HTML
+------------------
+@Html.TextBox()
+@Html.RadioButton()
+@Html.CheckBox()
+@Html.Password()
+@Html.DropDownList()
+@Html.BeginForm()
+@Html.Label()
+@Html.Display()
+-------------------
+Employee
+-----------
+namespace WebApplicationdipika.Models
+{
+	public class Employee
+	{
+		public string? name { get; set; }
+		public int age { get;set; }
+		public string? address { get;set; }
+	}
+}
+-----------------------------------
+EmployeeController
+----------------------
+using WebApplicationdipika.Models;
+using Microsoft.AspNetCore.Mvc;
+
+namespace WebApplicationdipika.Controllers
+{
+	public class EmployeeController : Controller
+	{
+		[HttpGet]
+		public IActionResult Index()
+		{
+			return View();
+		
+		}
+		[HttpPost]
+		public IActionResult Index(string name,int age,string address)
+		{
+			return View();
+		}
+		
+	}
+}
+--------------------------------
+Index
+----------
+@using (Html.BeginForm("Index","Employee",FormMethod.Post))
+{
+	@Html.Label("name")
+	@Html.TextBox("name")
+	@Html.Label("age")
+	@Html.TextBox("age")
+	@Html.Label("address")
+	@Html.TextBox("address")
+	<button type="submit">register</button>
+}
+-----------------------------
+3-Strongly Typed
+-----------------
+all the fields generated directally with  the help of model.
+
+@Html.TextBoxFor()
+@Html.RadioButtonFor()
+@Html.CheckBoxFor()
+@Html.PasswordFor()
+@Html.DropDownListFor()
+@Html.BeginFormFor()
+@Html.LabelFor()
+@Html.DisplayFor()
+--------------------------------------
+EmployeeController
+------------------
+using WebApplicationdipika.Models;
+using Microsoft.AspNetCore.Mvc;
+
+namespace WebApplicationdipika.Controllers
+{
+	public class EmployeeController : Controller
+	{
+		[HttpGet]
+		public IActionResult Index()
+		{
+			return View();
+		
+		}
+		[HttpPost]
+		public IActionResult Index(Employee empobj)
+		{
+			return RedirectToAction("Employee", empobj);
+				
+		}
+		public IActionResult Employee(Employee empobj)
+		{
+			return View(empobj);
+		}
+		
+		
+	}
+}
+-----------------------------------
+Employee
+---------
+using Microsoft.AspNetCore.Hosting.Server;
+
+namespace WebApplicationdipika.Models
+{
+	public class Employee
+	{
+		public string? name { get; set; }
+		public int age { get;set; }
+		public string? mobileno { get;set; }
+		public int salary { get;set; }
+	}
+}
+--------------------------------
+Index
+----------
+@model WebApplicationdipika.Models.Employee;
+@using (Html.BeginForm("Index","Employee",FormMethod.Post))
+{
+	@Html.LabelFor(m=>m.name)
+	@Html.TextBoxFor(m=>m.name)
+	@Html.LabelFor(m=>m.age)
+	@Html.TextBoxFor(m=>m.age)
+	@Html.LabelFor(m=>m.mobileno)
+	@Html.TextBoxFor(m=>m.mobileno)
+	@Html.LabelFor(m=>m.salary)
+	@Html.TextBoxFor(m=>m.salary)
+	<input type="submit"value="register">
+}
+---------------------------------------------
+4-Tag Helper
+----------------
+EmployeeController
+---------------------
+
+using Microsoft.AspNetCore.Mvc;
+using WebApplicationdipika.Models;
+
+namespace WebApplicationdipika.Controllers
+{
+	public class EmployeeController : Controller
+	{
+		[HttpGet]
+		public IActionResult Index()
+		{
+			return View();
+		
+		}
+		[HttpPost]
+		public IActionResult Index(Employee empobj)
+		{
+			return
+				RedirectToAction("GetEmployee", empobj);
+				
+		}
+		public IActionResult GetEmployee(Employee empobj)
+		{
+			return View(empobj);
+		}
+		
+		
+	}
+}
+-----------------------
+Employee
+----------
+using Microsoft.AspNetCore.Hosting.Server;
+
+namespace WebApplicationdipika.Models
+{
+	public class Employee
+	{
+		public string? name { get; set; }
+		public int age { get;set; }
+		public string? mobileno { get;set; }
+		public int salary { get;set; }
+	}
+}
+------------------
+Index
+---------
+@model WebApplicationdipika.Models.Employee;
+<h1>Employee Information</h1>
+<table>
+	<tr>
+		<th>name</th>
+		<th>@Model.name</th>
+	</tr>
+	<tr>
+		<th>age</th>
+		<th>@Model.age</th>
+	</tr>
+	<tr>
+		<th>mobileno</th>
+		<th>@Model.mobileno</th>
+	</tr>
+	<tr>
+		<th>salary</th>
+		<th>@Model.salary</th>
+	</tr>
+</table>
+------------------------or----------------------------------
+@using WebApplicationdipika.Models.Employee;
+<form method="post"asp-action="Index"asp-controller="Employee">
+	<label asp-for="name"></label>
+	<input type="text" asp-for="name" />
+	<label asp-for="age"></label>
+	<input type="text" asp-for="age" />
+	<label asp-for="mobileno"></label>
+	<input type="text" asp-for="mobileno" />
+	<label asp-for="salary"></label>
+	<input type="text" asp-for="salary" />
+	<input type="submit"value="register"/>
+
+</form>
+--------------------------------------------
+
+
+

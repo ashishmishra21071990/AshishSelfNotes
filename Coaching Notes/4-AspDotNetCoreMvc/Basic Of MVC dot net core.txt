@@ -1,0 +1,115 @@
+model
+---------
+business entities (DAL) data access layer.
+all data base related operation perform in this layer.
+we can create properties here
+--------------------------------
+view
+-----
+(PLL)presentation logic layer it is ui for the user (html,css,js,j query)
+------------------------------------------
+controller
+-----------
+(BLL)business logic layer 
+all business related logic or actual logic of program or c#
+code written in this layer
+* it is main layer of mvc
+* controller interact both model and view.
+* it is the heart of the mvc
+Dot Net Core
+-------------
+* 2016
+* it is a cross plateform (window,linux,mac) open source framework.
+* fast
+* roslyn (ryu jit) just in time compiler is used to execute dot net application.
+* middleware
+* appsetting.json(java script object notation->here you write connecting strings.
+* xml->extensible markup language.
+How To Take Dot Net Core MVC Project
+-------------------------------------
+* Template-ASP dotnet core web app(model-view-controller
+install the one packageg by which you can see  all the changeg commit in view at runtime
+----------------------------------------------------------------------------------------
+microsoft.asp net core.mvc.razor.runtime compilation
+Add Services To The Container
+------------------------------
+builder.services.Addcontrollers with view().AddRazorRuntimeCompilation();->add this
+* dependencies-right click-manage nuget package
+---------------------------------------------------------------------------------------
+Query String
+----------------
+* it is make controller
+* https://localhost:34555/controller name/action name?varname1=value1&varname2=value2&varname3=value3
+--------------------------------------------------------------------------------------------------------
+https://localhost:7229/Employee/wecome?username=ashish
+              or
+https://localhost:7229/Employee/welcome?user=ashish&age=19&address=new ashok nagar
+------------------------------------------------------------------------------
+using Microsoft.AspNetCore.Mvc;
+
+namespace WebApplicationdipika.Controllers
+{
+	public class EmployeeController : Controller
+	{
+		public IActionResult Index()
+		{
+			return View();
+		}
+		public string welcome(string user,int age,string address)
+		{
+			return "welcome" + user;
+		}
+		public int getEmpid(int?id)
+		{
+			int res = id ?? 100;
+			return res;
+		}
+	}
+}
+----------------------------------------------------------------------------------------------
+* index are return view
+* the default value of integer is 0
+* ?? oprator->default value 0,
+* null collision operator
+--------------------------------------------
+Routing
+---------
+which page controller show router is define
+----------------------------
+* we always download   less than our package version from the Asp.Net core  Web App(model-view-controller) template.
+
+* Docker enbuilt container support
+* we write C# code in view but before @ use
+* @ mention each server side scripting language because not runnable.
+* multipe record then use in IEnurable in view.
+* ctrl m+G->screen and go to the next task if you select
+controller making
+---------------------
+controller right click-add-controller-template name mvc controller empty-add-write name-add
+---------------------------------------------------------------------------------------------
+view making
+-------------
+view right click-add view-template name razor view empty-add-write name-add
+* view make or not check right click action of index and go to view
+?
+-------
+optional 
+shared
+-------
+@{
+   Layout=null;
+}
+-------------------------
+* @* start and *@ end->ctrl k+c->comment 
+model making
+----------------
+model-rightclick-template name class-add-create model name.
+Dependency Injection
+---------------------
+its work single page responsibility
+* classes or s/w component in between dependencies -do inject or remove dependencies.
+----------------------------------------------------------------------------------------
+
+
+
+

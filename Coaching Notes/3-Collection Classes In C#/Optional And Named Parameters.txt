@@ -1,0 +1,99 @@
+Optional Parameter
+-------------------
+* namespace add using Extension Method;
+this is a parameter in which we pass any default value.
+-------------------------------------------------------
+using System;
+using System.IO;
+
+using System.Reflection;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+using System.Security.Cryptography;
+using System.Xml.Linq;
+using System.Threading;
+
+namespace ashish
+{
+	class Employee
+	{
+		// function defination // optional parameter
+		public static void getEmployee(string name="ram",int age=80,string city="allahabad") 
+		{
+            Console.WriteLine("name="+name);
+            Console.WriteLine("age="+age);
+            Console.WriteLine("city="+city);
+        }
+	}
+	class demo
+	{
+		static void Main()
+		{
+			Employee.getEmployee();  //function calling
+		}
+	}
+}
+output-
+name=ram
+age=80
+city=allahabad
+-----------------------------------------------------------------------
+Named parameter
+------------------
+you can specify the parameters with the help of name.
+i.e known as named parametrs
+-----------------------------------
+using System;
+using System.IO;
+
+using System.Reflection;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+using System.Security.Cryptography;
+using System.Xml.Linq;
+using System.Threading;
+
+namespace ashish
+{
+	class Employee
+	{
+		// function efination // optional parameter
+		public static void getEmployee(string name, int age, string city = "allahabad")
+		{
+            Console.WriteLine("name="+name);
+            Console.WriteLine("age="+age);
+            Console.WriteLine("city="+city);
+        }
+
+	}
+	class demo
+	{
+		static void Main()
+		{
+			Employee.getEmployee(name: "shivam", age: 80, city: "varanasi"); // named parameter
+		}
+	}
+}
+output-
+name=shivam
+age=80
+city=varanasi
+---------------------------------------------------------------------------------------
+
+
+
+	
+
+
+
+	
+
+

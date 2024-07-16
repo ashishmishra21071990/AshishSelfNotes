@@ -1,0 +1,92 @@
+Paramsparemeters
+----------------
+it accept N number of parametrs
+---------------------------------
+using System;
+using System.IO;
+using System.Reflection;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+using System.Security.Cryptography;
+using System.Xml.Linq;
+using System.Threading;
+using System.Diagnostics.CodeAnalysis;
+
+namespace ashish
+{
+	class operation
+	{
+		public int summult(params int[]a)
+		{
+			int s = 0;
+			for(int i=0; i<a.Length; i++)
+			{
+				s += a[i];
+			}
+			return s;
+		}
+	}
+	class demo
+	{
+		static void Main()
+		{
+			operation op=new operation();
+			int res=op.summult(1,2,3,4,5,1);
+            Console.WriteLine(res); // output-16
+			int avg = res / 2;
+            Console.WriteLine(avg); // output-8
+
+        }
+	}
+}
+-------------------------------------------------------------------
+using System;
+using System.IO;
+using System.Reflection;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+using System.Security.Cryptography;
+using System.Xml.Linq;
+using System.Threading;
+using System.Diagnostics.CodeAnalysis;
+
+namespace ashish
+{
+	class operation
+	{
+		public void calculation(params object[]a)
+		{
+			foreach(var emp in a)
+			{
+                Console.WriteLine(emp);
+            }
+		}
+	}
+	class demo
+	{
+		static void Main()
+		{
+			operation op=new operation();
+			  op.calculation(101, "ramesh", 88, "allahabad");
+		}
+	}
+}
+output-
+101
+ramesh
+88
+allahabad
+----------------------------------------------------------------------------
+
+
+
+	
+

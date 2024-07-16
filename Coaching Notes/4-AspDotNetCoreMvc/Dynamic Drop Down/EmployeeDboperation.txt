@@ -1,0 +1,36 @@
+ using System.Web.Mvc;;  =>go to dependencies and download package Microsoft.AspNet.Mvc
+SelectListItem-it is use return type dropdown.and if you want to use this yhan add namespace 
+mention in upward.
+* in a select 2 attribute are availabled Value and Text
+Value
+------
+store in database 
+Text
+------
+showing to user 
+
+------------------------------------------------------------------------------------
+public List<SelectListItem>getcity()
+		{
+			SqlCommand cmd = new SqlCommand("Sp_city", dbconnect.connection);
+			if(dbconnect.connection.State==ConnectionState .Closed )
+			{
+				dbconnect .connection.Open();
+			}
+			List<SelectListItem>cityList=new List<SelectListItem>();
+			SqlDataReader dr=cmd.ExecuteReader();
+			while(dr.Read())
+			{
+				var city=new SelectListItem();
+				{
+					Value=dr.GetValue(0).ToString(),
+						Text=dr.GetString(1).ToString()
+				
+				};
+				cityList.Add(city);	
+			}
+			dbconnect.connection.Close ();
+			return cityList;
+		}
+		
+	

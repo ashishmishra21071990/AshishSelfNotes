@@ -1,0 +1,83 @@
+Enum
+------
+enum is a constant.
+the default value of enum is 0 but its if you want to  change there value  it is posible.
+
+-------------------------------------
+using System;
+using System.IO;
+using System;
+using System.Collections.Generic;
+
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class demo
+	{
+		enum days
+		{
+			sunday=11,monday,tuesday,wednesday,thursday,friday,saturday
+		};
+		static void Main()
+		{
+			int day = (int)days.friday;
+            Console.WriteLine(day);   //output-16
+			string d=days.tuesday.ToString();
+            Console.WriteLine(d); // output-tuesday
+        }
+	}
+}
+--------------------------------------------------------------
+using System;
+using System.IO;
+using System;
+using System.Collections.Generic;
+
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class demo
+	{
+		enum otp
+		{
+			running,process,success,fail,serverdown
+		};
+		static void Main()
+		{
+			string msg=otp.success.ToString();
+            Console.WriteLine(msg);//output-success
+        }
+	}
+}
+----------------------------------------------------------------------
+using System;
+using System.IO;
+using System;
+using System.Collections.Generic;
+
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class demo
+	{
+		enum otp
+		{
+			running='r',process='p',success='s',fail='f',serverdown='s'
+		};
+		static void Main()
+		{
+			char msg = (char)otp.success;
+            Console.WriteLine(msg); //output-s
+        }
+	}
+}
+------------------------------------------------------------------------

@@ -1,0 +1,38 @@
+Stored Procedure
+-----------------
+* sp is a pre-compiled database objects
+* sp increase the performance of our database
+* sp reduces network traffic
+* sp is a fast
+* hogh security
+create procedure/proc proc_name
+(
+@parameter1 datatype1,
+@parameter2 datatype(size),
+.
+.
+.
+@parameterN datatypeN
+)
+as begin
+insert into tablename(col1,col2,col3)values(@parameter1,@parameter2,@parameter3)
+end
+-------------------------------------
+Primary Key
+-----------
+it does not allowed null and duplicate value-eid-Primary Key
+* int by default 0 value hold
+* string by default null value hold
+---------------------------------------
+create database databasename
+use databasename
+------------------------------
+* here not work == only use =
+* as keyword use for temporary column add 
+* @ symbol use for making variable in stored procedure 
+* database-new query or database right click -new query open
+* table is available before making of procedure
+* nvar means those take alphanumeric values.ex- abc123
+* which query want to execute before select and than do
+* procedure store in-programability-stored procedure
+* if i want to execute procedure -exec. if i want to look all record than select. but looking the behalf of id than one by one select and add id. 

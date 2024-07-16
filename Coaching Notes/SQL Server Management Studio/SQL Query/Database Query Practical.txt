@@ -1,0 +1,77 @@
+
+create database deepu
+use deepu
+create table tbl_Employee
+(
+eid int Primary Key Identity(1,1),
+ename nvarchar(100),
+age int,
+eaddress nvarchar(50),
+salary money,
+post nvarchar(60)
+)
+-----------------------------------------------------------------------------------------------------
+select *from tbl_Employee
+insert into tbl_Employee(ename,age,eaddress,salary,post)values('prateek',19,'ashoknagar',34000,'si')
+insert into tbl_Employee(ename,age,eaddress,salary,post)values('vijay',29,'pandav nagar',34000,'si')
+insert into tbl_Employee(ename,age,eaddress,salary,post)values('rakesh',49,'preet vihar',34000,'si')
+insert into tbl_Employee(ename,age,eaddress,salary,post)values('shivam',59,'yamuna bank',34000,'si')
+insert into tbl_Employee(ename,age,eaddress,salary,post)values('arun',69,'kirti nagar',34000,'si')
+--------------------------------------------------------------------------------------------------------
+
+select ename,salary,post from tbl_Employee where eid=3
+update tbl_Employee set post='marketting',salary=25000 where eid=5
+-------------------------------------------------------------------------------------------------------
+Example of arithmetic operator
+---------------------------------
+select 10+5 as'ADD'
+select 10-5 as'SUB'
+select 10*5 as'MULT'
+select 10/5 as 'DIV'
+------------------------------------------------------------------------------------------------------
+
+select *from tbl_Employee
+select ename+''+post from tbl_Employee
+------------------------------------------------------------------------------------------------
+Example of relational operator
+--------------------------------------
+select *from tbl_Employee where salary<25000 or ename='prateek'
+select *from tbl_Employee where salary<=25000 and ename='arun' 
+select *from tbl_Employee where ename<>'rakesh'
+select *from tbl_Employee where not ename='rakesh'
+-----------------------------------------------------------------------------------------------------------------
+Example of special operator
+------------------------------
+
+
+select *from tbl_Employee
+select top 3 *from tbl_Employee order by eid desc
+select *from tbl_Employee order by ename asc
+select *from tbl_Employee order by ename desc
+select top 3 *from tbl_Employee
+
+select *from tbl_Employee
+select *from tbl_Employee where ename in('rakesh','vijay','arun')
+select *from tbl_Employee where ename not in('rakesh','vijay','arun')
+select *from tbl_Employee where salary between 10000 and 40000
+select *from tbl_Employee where salary not between 10000 and 40000
+--------------------------------------------------------------------------
+Example of aggregate function
+-----------------------------------
+
+select *from tbl_Employee
+select max(salary)as'max_salary'from tbl_Employee
+select min(salary)as'min_salary'from tbl_Employee
+select sum(salary)as'total_salary'from tbl_Employee
+select avg(salary)as'avg_salary'from tbl_Employee
+select count(salary)as'total Employee'from tbl_Employee
+------------------------------------------------------------
+Example of like
+---------------------------------
+
+select *from tbl_Employee
+select *from tbl_Employee where ename like 'v_j_y'  //after like space
+select *from tbl_Employee where ename like 'a%'      //after like space
+select *from tbl_Employee where ename like '%m'      //after like space
+select *from tbl_Employee where ename like '%i%'      //after like space
+select *from tbl_Employee where ename like '%%'       //after like space

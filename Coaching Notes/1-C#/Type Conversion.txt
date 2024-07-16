@@ -1,0 +1,44 @@
+Type Conversion
+------------------
+to convert one data type into another data type,theie are 3 types 
+1-Implicit
+------------
+to convert lower data type value into higher data type
+* their is no data loss
+EX-
+using System;
+int a = 34;
+double b = a;
+Console.WriteLine(b);  //output 34
+2-Explicit
+-------------
+it is also known as type casting,to convert higher data type value into 
+lower data type
+* data loss is possible
+EX-
+using System;
+double b = 45.678;
+	int a=(int)b;
+Console.WriteLine(a); //output 45
+3-Conversion b/w In Compatible Type
+---------------------------------------
+int-string
+it is 2 types 
+1-Convert Class
+------------------
+using System;
+ 
+{
+	string a = "1234";
+	int b=Convert.ToInt32(a);
+    Console.WriteLine(b); //output 1234
+}
+2-Parse Method
+--------------
+using System;
+ 
+{
+	string a = "1234";
+	int b=int.Parse(a);
+    Console.WriteLine(b); //output 1234
+}

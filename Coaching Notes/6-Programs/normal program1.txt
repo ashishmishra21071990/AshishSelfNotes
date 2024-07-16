@@ -1,0 +1,166 @@
+1-wap to input, two no.and find the  sum
+------------------------------------------
+class demo
+{
+    static void Main()
+    {
+        int a, b, c;
+        Console.WriteLine(  "enter the two no.");
+        a=Convert.ToInt32(Console.ReadLine());
+        b=Convert.ToInt32(Console.ReadLine());
+        c = a + b;
+        Console.WriteLine(  "sum="+c);
+
+    }
+}
+-----------------------------------------------------------------------------
+2-wap to input two no.and swap using third variables ex-inta=10,b=20;output inta=20,b=10;
+--------------------------------------------------------------------------------------------
+class demo
+{
+    static void Main()
+    {
+        int number1, number2, temp;
+        Console.WriteLine("enter the first no.");
+        number1=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("enter the second no.");
+        number2 = Convert.ToInt32(Console.ReadLine());
+        temp = number1;
+        number1 = number2;
+        number2 = temp;
+        Console.WriteLine("sawp=" + number1);
+        Console.WriteLine("swap=" + number2);
+    }
+}
+------------------------------------------------------------------------------------------------
+3-wap to input two no.and swap without using third variable.
+------------------------------------------------------------
+class demo
+{
+    static void Main()
+    {
+        int number1, number2;
+        Console.WriteLine("enter the first no.");
+        number1=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("enter the second no.");
+        number2 = Convert.ToInt32(Console.ReadLine());
+        number1=number1 + number2;
+        number2 = number1 - number2;
+        number1 = number1 - number2;    
+        Console.WriteLine("sawp=" + number1);
+        Console.WriteLine("swap=" + number2);
+    }
+}
+------------------- 
+4-wap to input the length and width of the rectangle and finds its area,percentage,and diagonal
+------------------------------
+class demo
+{
+    static void Main()
+    {
+        int l, w, ar, pr, di;
+        Console.WriteLine("enter the length and width");
+        l=Convert.ToInt32(Console.ReadLine());
+        w=Convert.ToInt32(Console.ReadLine());
+        ar = l * w;
+        pr = 2 * (l + w);
+        di = (l * l + w * w);
+        Console.WriteLine("area=" + ar);
+        Console.WriteLine(  "percentage="+pr);
+        Console.WriteLine( "diameter="+di);
+    }
+}
+-----------------------------
+5-wap to input the radius of circle and finds its area,circumference.
+--------------------------
+class demo
+{
+    static void Main()
+    {
+        double r, area,circumference;
+        Console.WriteLine("enter the no.");
+        r=Convert.ToInt32(Console.ReadLine());
+        area = 3.14 * r * r;
+        circumference = 2 * 3.14 * r;
+        Console.WriteLine("area=" + area);
+        Console.Write("circumference="+circumference);
+
+    }
+}
+-----------------------------------------
+6-wap to input five no.and finds its sum,and average.
+------------------------------------------------
+class demo
+{
+    static void Main()
+    {
+        int a, b, c, d, e, sum, avg;
+        Console.WriteLine("enter the five no.");
+        a=Convert.ToInt32(Console.ReadLine());
+        b=Convert.ToInt32(Console.ReadLine());
+        c=Convert.ToInt32(Console.ReadLine());  
+        d=Convert.ToInt32(Console.ReadLine());  
+        e=Convert.ToInt32(Console.ReadLine());
+        sum = a + b + c + d + e;
+        avg = sum / 2;
+        Console.WriteLine("sum="+sum);
+        Console.WriteLine("avg="+avg);
+    }
+}
+---------------------------------------------
+7-wap to two no.operation perform or  calculator
+ addition
+substraction 
+multiplication
+division
+remainder
+-----------------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int a, b, add,sub,mul,div,rem;
+        Console.WriteLine("enter two no.");
+        a=Convert.ToInt32(Console.ReadLine());
+        b=Convert.ToInt32(Console.ReadLine());
+        add= a + b;
+        sub= a - b;
+        mul= a * b;
+        div= a / b;
+        rem= a % b;
+        Console.WriteLine("add=" + add);
+        Console.WriteLine("sub="+sub);
+        Console.WriteLine("mul="+mul);
+        Console.WriteLine("div="+div);
+        Console.WriteLine("rem="+rem);
+    }
+}
+-----------------------------------------------------
+8-wap to input and finds it compound interest
+-------------------------------------------------
+using System;
+using System.Threading.Channels;
+
+class demo
+{
+    static void Main()
+    {
+        double principal, rate, time, a, ci;
+        Console.WriteLine("enter the amount:");
+        principal=Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("rate:");
+        rate=Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("time:");
+        time=Convert.ToDouble(Console.ReadLine());
+        a=principal*(Math.Pow((1+rate/100),time));
+        ci = a - principal;
+        Console.WriteLine("ci="+ci);
+    }
+    
+    
+}
+-----------------------------------------
+9-wap to input a no. and finds it simple intrest
+--------------------------------------------
+same as per above

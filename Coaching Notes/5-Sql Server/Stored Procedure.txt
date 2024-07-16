@@ -1,0 +1,225 @@
+
+Note-
+* sql me comment --
+* string define-  intead of ""-''use
+* alter -use when some changeg in procedure because if i execute second time the procedure than system show few error if i want to solve this error than i 
+use alter intead of create
+function
+----------
+after making function it show in scalar_valued function-than my function name show 
+-----------------------------------------------------------------------------------
+ 
+
+
+
+creating table
+---------------
+create table tbl_Employee
+(
+eid int Primary Key Identity(1,1),
+ename nvarchar(100),
+age int,
+eaddress nvarchar(50),
+salary money,
+post nvarchar(60)
+)
+------------------------------------------------
+create procedure insert
+------------------------
+
+create Proc Sp_insert
+(
+@name nvarchar(50),
+@age int,
+@address nvarchar(50),
+@salary int,
+@post nvarchar(50)
+)
+as begin
+insert into tbl_Employee(ename,age,eaddress,salary,post)
+values(@name,@age,@address,@salary,@post)
+end
+exec Sp_insert'raj',34,'rajendra nagar',55000,SE
+------------------------------------------------------------------------
+create procedure get all 
+-------------------------------------------------
+create proc Sp_getemp
+as begin
+select *from tbl_Employee order by eid desc
+end
+exec Sp_getemp
+-----------------------------------------------------
+create procedure update
+----------------------------
+create proc Sp_updatemp
+(
+@eid int,
+@name nvarchar(50),
+@age int,
+@address nvarchar(50),
+@salary int,
+@post nvarchar(50)
+)
+as begin 
+update tbl_Employee set ename=@name,age=@age,eaddress=@address,salary=@salary,post=@post where eid=@eid
+end
+exec Sp_getemp
+exec Sp_updatemp 6,'rahul singh',45,'new ashok  nagar',45000,ca
+--------------------------------------------------------------------------
+create procedure delete
+--------------------------
+create proc Sp_deletemp
+(
+@eid int
+) 
+as begin
+delete from tbl_Employee where eid=@eid
+end
+exec Sp_getemp
+exec Sp_deletemp 6
+-------------------------------------------------
+create procedure get single 
+----------------------------------
+create proc get_singleemp
+(
+@eid int
+)
+as begin
+select *from tbl_Employee where eid=@eid
+end
+exec Sp_getemp
+exec get_singleemp 1
+-------------------------------
+create single procedure and perform all the operations
+------------------------------------------------------------------
+create table tbl_Employee
+(
+eid int Primary Key Identity(1,1),
+ename nvarchar(100),
+age int,
+eaddress nvarchar(50),
+salary money,
+post nvarchar(60)
+)
+
+
+
+
+---------------------------------
+create Proc Sp_Employee
+(
+@action nvarchar(50)=null,
+@eid int=0,
+@name nvarchar(50)=null,
+@age int=0,
+@address nvarchar(50)=null,
+@salary int=0,
+@post nvarchar(50)=null
+)
+as begin
+if @action='insert'
+begin
+insert into tbl_Employee(ename,age,eaddress,salary,post)values(@name,@age,@address,@salary,@post)
+select 1 as result
+end
+else if @action='selectall'
+begin
+select *from tbl_Employee
+end
+else if @action='select_single'
+begin
+select *from tbl_Employee where eid=@eid
+end
+else if @action='update'
+begin
+update tbl_Employee set ename=@name,age=@age,eaddress=@address,salary=@salary,post=@post where eid=@eid
+select 1 as result
+end
+else if @action='delete'
+begin
+delete from tbl_Employee where eid=@eid
+select 1 as result
+end
+end
+ 
+ exec Sp_Employee'selectall'
+ exec Sp_Employee 'insert',0,'ramesh',12,'noida','35000',si
+ select *from tbl_Employee
+
+ exec Sp_Employee'update',1,'sharma',55,'delhi','55555',police
+  select *from tbl_Employee
+
+  exec Sp_Employee'select_single',1
+
+  exec Sp_Employee'delete',1
+   select *from tbl_Employee
+---------------------------------------------------
+function
+1-inbuilt function -already available in system 
+2-user define function-we create 
+-----------------
+create function function_name(@parameter1 datatype(size),@parameter2 datatype)
+returns datatype
+as begin
+<sql statement/logic of program)
+return final_value
+end
+
+* wap to create a function 3 no.of sum
+-------------------------------------------
+create function addition(@a int,@b int,@c int)
+returns int
+as begin
+declare @res int
+set @res=@a+@b+@c
+return @res
+end
+select dbo.addition(10,20,30)as'addition'
+----------------------------------------------------
+* create a function that accept id of an employee and calculate gross salary of an employee
+basic salary=34000
+---------------------------------------------------------------------------------------------
+da->10% of bs-3400-.01
+ta->15% of bs-5100-0.15
+hra->5% of bs-1700-0.05
+gs->bs+da+ta+hra->44200
+
+
+create function gross_salary(@eid int)
+returns money
+as begin
+declare @bs money,@da money,@ta money,@hra money,@gs money
+select @bs=salary from tbl_Employee where eid=@eid
+set @da=0.1*@bs
+set @ta=0.15*@bs
+set @hra=0.05*@bs
+set @gs=@bs+@da+@ta+@hra
+return @gs
+end
+select *from tbl_Employee
+select dbo.gross_salary(2)as'gross_salary'
+--------------------------------------------------------
+view
+-----------
+* the view we use only select command
+* view is fast as compare to table
+*view holds temporary data
+create view view_name as select *from table_name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+using WebApplicationapi.Models;
+namespace WebApplicationapi.Contract
+{
+	public interface Iemployee
+	{
+		List<Employee>GetEmployees();
+		Employee GetEmployeeById(int id);
+		void AddEmployee(Employee empobj);
+		void UpdateEmployee(Employee empobj);
+		void DeleteEmployee(int id);
+		
+
+		
+	}
+}

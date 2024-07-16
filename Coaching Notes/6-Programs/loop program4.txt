@@ -1,0 +1,244 @@
+1-wap to input no.and finds the sum of its digits
+---------------------------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int num, sum = 0, remainder;
+        Console.WriteLine("enter a no.");
+        num=Convert.ToInt32(Console.ReadLine());
+        while(num!=0)
+        {
+            remainder=num%10;
+            num = num / 10;
+            sum=sum+remainder;
+        }
+        Console.WriteLine("sum="+sum);
+    }
+}
+---------------------------------------
+2-wap to input a no.and print the table
+------------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int i, num;
+        Console.WriteLine("enter the no.");
+        num=Convert.ToInt32(Console.ReadLine());
+        for(i=1; i<=10; i++)
+        {
+            Console.WriteLine("{0}x{1}={2}\n",num,i,num*i);
+        }
+    }
+}
+-------------------------------------------
+3-wap to input a no. reverse it
+------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int num, rev = 0;
+        Console.WriteLine("enter the no.");
+        num=Convert.ToInt32(Console.ReadLine());
+        while(num > 0)
+        {
+            rev = rev * 10;
+            rev = rev + num % 10;
+            num = num / 10;
+
+        }
+        Console.WriteLine("rev=" + rev);
+
+    }
+}
+-------------------------------
+4-wap to input a no.and check wheather its palidrom or not
+-----------------------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int num, i, rev;
+        Console.WriteLine("enter the no.");
+        num=Convert.ToInt32(Console.ReadLine());
+        rev = num;
+        for(i=0;num>0;num=num/10)
+        {
+            i = i * 10;
+            i = i + (num % 10);
+
+        }
+        if (rev == i)
+        {
+
+
+            Console.WriteLine("rev=" + rev);
+        }
+        else
+        {
+            Console.WriteLine("not rev");
+        }
+           
+    }
+}
+-----------------------------
+5-wap to input a no.and check its buzz no. or not
+------------------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int num;
+        Console.WriteLine("enter the no.");
+        num=Convert.ToInt32 (Console.ReadLine());   
+        if (num % 10 == 7 || num % 7 == 0)
+        {
+            Console.WriteLine("right ");
+        }
+        else
+        {
+            Console.WriteLine("wrong ");
+        }
+    }
+}
+---------------------------------------------------------
+6-wap to input a no.and find the factorial
+------------------------------------------
+using System;
+using System.Threading.Channels;
+
+class demo
+{
+    static void Main()
+    {
+        int i, fact = 1, number;
+        Console.WriteLine("enter the no.");
+        number = Convert.ToInt32(Console.ReadLine());
+        for (i = 1; i <= number; i++)
+        {
+            fact = fact * i;
+        }
+            Console.WriteLine("fact="+fact);
+        
+        
+    }
+
+}
+----------------------------
+7-wap to input a no.and find the fibonanci series
+--------------------------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int first = 0, second = 1,i,n,  sum = 0;
+        Console.WriteLine("enter the no.");
+        n=Convert.ToInt32(Console.ReadLine());
+        
+        for(i=0;i<n;i++)
+        {
+            if(i<=1)
+            {
+                sum = i;
+                Console.WriteLine(sum);
+
+            }
+            else
+            {
+                sum =first+second;
+                first= second;
+                second = sum;
+
+                Console.WriteLine(sum);
+            }
+        }
+    }
+}
+------------------------
+8-wap to input  a no.and check wheather its armstrong no.
+--------------------------------------------------------
+using System;
+using System.Security.Cryptography;
+
+class demo
+{
+    static void Main()
+    {
+        int number, remainder, sum = 0;
+        Console.WriteLine("enter the no.");
+        number=Convert.ToInt32(Console.ReadLine());
+        for (int i = number; i > 0; i = i / 10)
+        {
+
+
+
+
+            remainder = i % 10;
+            sum = sum + remainder * remainder * remainder;
+        }
+
+            if(sum==number)
+            {
+
+            
+                Console.WriteLine("no. is armstrong no.");
+            }
+            else
+            {
+                Console.WriteLine("not armstrong no.");
+            }
+            
+        
+    }
+}
+--------------------------------------------------------------
+9-wap to input a no.and checks it prime no.or not
+---------------------------------------------------
+using System;
+using System.Data;
+using System.Threading.Channels;
+
+class demo
+{
+    static void Main()
+    {
+        int num1;
+        Console.WriteLine("enter the no.");
+        num1 = Convert.ToInt32(Console.ReadLine());
+        for (int a = 2; a <= num1 / 2; a++)
+        {
+            if (num1 % a == 0)
+            {
+                Console.WriteLine("not prime no.");
+            }
+            else if (num1 == 0 || num1 == 1)
+            {
+                Console.WriteLine("not prime no.");
+                
+            }
+            else
+            {
+                Console.WriteLine("prime no.");
+                break;
+            }
+        }
+    }
+}
+
+
+
+-----------------------------------------------------
+
+
+
+
+
+

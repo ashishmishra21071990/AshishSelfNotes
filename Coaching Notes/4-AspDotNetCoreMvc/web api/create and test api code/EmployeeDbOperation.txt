@@ -1,0 +1,44 @@
+using Microsoft.EntityFrameworkCore;
+namespace WebApplicationapi.Models
+{
+	public class EmployeeDbOperation
+	{
+		private EmployeeDbContext _dbContext;
+		public EmployeeDbOperation(EmployeeDbContext dbContext)
+		{
+			_dbContext = dbContext;
+		}
+		public List<Employee> GetEmployees()
+		{
+			return _dbContext.Employees.ToList();
+		}
+		public Employee GetEmployeeById(int id)
+		{
+			return _dbContext.Employees.Find(id);
+		}
+		public void AddEmployee(Employee empobj)
+		{
+			_dbContext.Add(empobj);
+			_dbContext.SaveChanges();
+		}
+
+		public void UpdateEmployee(Employee empobj)
+		{
+			_dbContext.Entry(empobj).State = EntityState.Modified;
+			_dbContext.SaveChanges();
+		}
+
+		public void DeleteEmployee(int id)
+		{
+			var emp = _dbContext.Employees.Find(id);
+			if (emp != null)
+			{
+				_dbContext.Remove(emp);
+				_dbContext.SaveChanges();
+			}
+		}
+
+
+
+	}
+}

@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Common_Layer.Models;
+using Data_Access_Layer;
+
+namespace Business_Access_Layer.Contract
+{
+	public interface Iemployee
+	{
+		List<Employee> GetEmployees();
+		Employee AddEmpoyee(Employee empobj);   //second video insert
+		bool DeleteEmployee(int id); // second video delete
+		Employee getsingleEmployee(int id);  //edit
+		Employee updateEmployee(Employee empobj);
+}
+}
+
+
+
+
+
+
+
+	
+
+
+	
+	
+

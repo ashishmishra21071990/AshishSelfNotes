@@ -1,0 +1,17 @@
+Database First Approach
+------------------------
+in this approch we have existing database and tables.
+Step-1
+--------
+install entity framework packageg
+-----------------------------------
+Step-2
+-------
+run the migration command -package manager console
+Step-3
+----------
+do the connection strings
+Step-4
+------
+add this connection strings into the container means program.cs
+----------------------------------------------------------------

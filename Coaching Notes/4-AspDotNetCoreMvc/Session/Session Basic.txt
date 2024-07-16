@@ -1,0 +1,30 @@
+Session
+--------
+* it is a golbal mgmt protocol.
+* it can be access anywhere in a program.
+* in a session you can store any type of data.
+* the default life time session is 20 minutes
+but it depend on developer as per client requirement it will be exceed 
+means increase or decrease.
+SET
+----
+Httpcontext.Session.SetString("Key","Value")
+----------------------------------------------
+GET
+---
+Httpcontext.Session>GetString("Key");
+-------------------------------------
+Register Session in service
+-----------------------------
+// Add services to the container
+builder.services.AddSession(options=>{options.IdleTimeout=TimeSpan.FromMinutes(60);
+}); // to increase or decrease the time session
+----------------------------------------
+// configure the Http request pipeline// middleware
+app.useHttps Redirection();
+app.use StaticFiles();
+app.use Routing();
+app.use Session(); // add this 
+app.use Authorization();
+------------------------------
+

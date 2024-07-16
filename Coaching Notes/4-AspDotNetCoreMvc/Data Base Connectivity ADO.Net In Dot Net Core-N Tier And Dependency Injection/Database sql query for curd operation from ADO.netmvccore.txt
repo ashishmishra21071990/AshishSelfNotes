@@ -1,0 +1,54 @@
+create database webapplicationdeepu
+use webapplicationdeepu
+
+create table tbl_Employee
+(
+eid int Primary Key Identity(1,1),
+ename nvarchar(50),
+age int,
+mobileno nvarchar(20),
+city nvarchar(100),
+salary int
+)
+
+
+create Proc Sp_Employee
+(
+@status nvarchar(50)=null,
+@eid int=0,
+@ename nvarchar(50)=null,
+@age int=0,
+@mobileno nvarchar(20)=null,
+@city nvarchar(100)=null,
+@salary int=0
+)
+as begin
+if(@status='select')
+begin
+select *from tbl_Employee
+end
+else if(@status='select_single')
+begin
+select *from tbl_Employee where eid=@eid
+end
+else if(@status='create')
+begin
+insert into tbl_Employee(ename,age,mobileno,city,salary)values(@ename,@age,@mobileno,@city,@salary)
+select 1 as result
+end
+else if(@status='update')
+begin
+update tbl_Employee Set ename=@ename,age=@age,mobileno=@mobileno,city=@city,salary=@salary where eid=@eid 
+select 1 as result
+end
+else if(@status='delete')
+begin
+ delete from tbl_Employee where eid=@eid
+ select 1 as result
+ end
+ end
+ exec Sp_Employee 'select'
+ exec sp_Employee 'select_single',2
+ exec Sp_Employee'create',0,'shyam',85,'88888888','varanasi',85000
+ exec Sp_Employee'update',2,'shankar',55,'1111111','allahabad',78000
+ 

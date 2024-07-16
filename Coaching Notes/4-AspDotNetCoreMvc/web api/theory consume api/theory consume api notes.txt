@@ -1,0 +1,50 @@
+* microsoft.visualstudio.web.codegeneration.dessign are used to automatic ui-template razzor view
+serialization
+--------------
+* Iconfiguration are those  interface  already exist.and within GetSection method are available that calls to key where pass the connection strings. 
+to convert object to json.
+deserization
+---------------
+to convert json to object.
+-------------------------
+1-go to solution explorer-right click-add-new project-template asp.net core (mvc)
+2-copy models first project  template aspnet core web  api  to   past models second project template aspnetcore mvc.
+* using System.ComponentModel.DataAnotations;
+3-appsetting.json
+-----------------
+make a variable like"webapiurl":"here past the url of first project"
+4-program.cs
+-------------
+set the controller name of second project.
+-----------------------------------------
+5-make controller normal template mvc Controller Empty.
+-------------------------------------------------------
+here add namespaces
+using WebApplicationconsumeapi.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Text.Json.Serialization;
+using Newtonsoft.Json; // this name space use serialization and deserialization.
+using System.Text;
+-----------------------------------------
+6-go to solution explorer-properties-multiple startup project select-apply-ok
+------------------------------------------------------------------------------
+view
+------
+1-Index
+-------
+changeg to the 3 places
+* id=item.Id
+------------
+2-Create
+----------
+@* id
+*@
+----------
+3-Edit
+--------
+4-Edit
+-------
+5-Delete
+-------
+6-Details
+-----------

@@ -1,0 +1,27 @@
+using System.ComponentModel.DataAnnotations;//add this namespace for mvc validation
+------------------------------------------------------------------------------------
+namespace WebApplicationashish.Models
+	
+{
+	public class Student
+	{
+		[Key]
+		public int Sid { get; set; }
+		[Required(ErrorMessage = "Enter Name!")]
+		public string? Sname { get; set; }
+		[Required(ErrorMessage ="Enter Age!")]
+		public string? Sage { get; set; }
+		[Required(ErrorMessage ="Enter Mobileno! ")]
+		[RegularExpression("^[0-9]{10}$",ErrorMessage ="Invalid Mobileno!")]
+		public string? Smobileno { get; set; }
+		[Required(ErrorMessage ="Enter Address!")]
+		public String? Saddress { get; set; }
+		[Required(ErrorMessage ="Enter Email!")]
+		[RegularExpression(@"\w+([-+;]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*",ErrorMessage ="Invalid Email!")]
+		public String? Semail { get; set; }
+		[Required(ErrorMessage ="Enter Password!")]
+		public string? Spassword { get;set; }
+		
+		
+	}
+}

@@ -1,0 +1,17 @@
+* here in a client side validation their are 3 options are availabed
+---------------------------------------------------------------------
+link
+--------
+<h4>@Html.ActionLink("Logout","Logout","Session")</h4>
+----------------------------------------------------------
+All
+----
+its show in summary type all errors
+Only
+-----
+where error are showing only there show .no summary show in the upward of moddel
+Null
+-----
+always create view name means action name and action method name same.
+* action method  described  of same name of in view.
+* action name add to the program.cs

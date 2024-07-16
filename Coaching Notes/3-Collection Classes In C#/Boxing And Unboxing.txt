@@ -1,0 +1,140 @@
+Boxing
+-------
+to convert value type to reference type
+Unboxing
+-----------
+to convert reference type to value type
+----------------------------------------
+valu type
+------------
+using System;
+using System.IO;
+using System.Reflection;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+using System.Security.Cryptography;
+using System.Xml.Linq;
+using System.Threading;
+using System.Diagnostics.CodeAnalysis;
+
+namespace ashish
+{
+	class demo
+	{
+		static void Main()
+		{
+			string name = "ashish";
+			int age = 20;
+                   Employee emp = new Employee(); // we call the second Example of function 
+	           emp.getEmployee(name,age);  // we call the second Example of function 
+            Console.WriteLine("name="+name); //output-name=ashish
+            Console.WriteLine("age="+age); //output-age=20
+        }
+	}
+}
+---------------------------enterlinked with each other both --------------------------------------------------------
+value type
+--------------
+using System;
+using System.IO;
+using System.Reflection;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+using System.Security.Cryptography;
+using System.Xml.Linq;
+using System.Threading;
+using System.Diagnostics.CodeAnalysis;
+
+namespace ashish
+{
+	class Employee
+	{
+		public void getEmployee(string name,int age)
+		{
+			name = "mohit";
+			age = 19;
+            Console.WriteLine("name="+name);
+            Console.WriteLine("age="+age);
+        }
+	}
+	
+}
+---------------------------------------------------------------------------------
+reference type
+------------------
+using System;
+using System.IO;
+using System.Reflection;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+using System.Security.Cryptography;
+using System.Xml.Linq;
+using System.Threading;
+using System.Diagnostics.CodeAnalysis;
+
+namespace ashish
+{
+	class demo
+	{
+		static void Main()
+		{
+			Employee empobj = new Employee();
+			empobj.name = "ashish";
+			empobj.age = 20;
+			empobj.getEmployee(empobj); // reference type
+            Console.WriteLine("name="+empobj.name); // mohit
+            Console.WriteLine("age="+empobj.age); // 19
+        }
+	}
+}
+----------------------------enterlinked with each other both program-----------------------------
+reference type
+------------------
+using System;
+using System.IO;
+using System.Reflection;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+using System.Security.Cryptography;
+using System.Xml.Linq;
+using System.Threading;
+using System.Diagnostics.CodeAnalysis;
+
+namespace ashish
+{
+	class Employee
+	{
+		public string name;
+		public int age;
+		public void getEmployee(Employee empobj)
+		{
+			empobj.name = "mohit";
+			empobj.age = 19;
+            Console.WriteLine("name="+empobj.name);
+            Console.WriteLine("age="+empobj.age);
+        }
+	}
+}
+
+----------------------------------------------------------------------
+
+
+
+
+

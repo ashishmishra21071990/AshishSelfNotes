@@ -1,0 +1,264 @@
+Condtional Statements
+--------------------------
+1-if
+------
+this statement is used to check single condtion only 
+if(condtion)
+{
+statement;
+}
+------------
+2-if-else
+-----------
+this statement is used to test the condition and take one of the two posible action.
+if(condition)
+{
+statement1;
+}
+else
+{
+statement2;
+}
+-------------------
+3-if-else-if ladder
+--------------------
+this statement is used to check multiple condition in a program
+if(condition)
+{
+statement1;
+}
+else if(condition2)
+{
+statement2;
+}
+else if(condition3)
+{
+statement3;
+}
+else if(condition4)
+{
+statement4;
+}
+else
+{
+statement5;
+}
+-------------------
+Wap To Find The Greatest Among 3 No.a=14,b=19,c=10;
+----------------------------------------------------
+using System;
+class demo
+{
+	static void Main()
+	{
+		int a = 14, b = 19, c = 10;
+		if (a > b && a > c)
+		{
+			Console.WriteLine("a is greater");
+		}
+		else if (b > a && b > c)
+		{
+			Console.WriteLine("b is greater");     //output b is greater
+		}
+		else
+		{
+			Console.WriteLine("c is greater");
+		}
+	}
+}
+-------------------------------------------------------------------------------------
+4-nested if
+---------------
+if within if is called nested if 
+* T/T->statement2;
+* T/F->statement3;
+* F->statement1;
+if(condition1)
+{
+if(condition2)
+{
+statement2;
+}
+else
+{
+statement3
+}
+else
+{
+statement1;
+}
+}
+-----------------------------------------
+Wap To Find The Greatest Among 3 No.a=5,b=2,c=10;
+---------------------------------------------------
+using System;
+class demo
+{
+	static void Main()
+	{
+		int a = 5, b = 2, c = 10;
+		if(a<b)
+		{
+			if(c>b)
+			{
+                Console.WriteLine("hello angular");
+            }
+			else
+			{
+                Console.WriteLine("hello c++");
+            }
+		}
+		else
+		{
+			if(b<c)
+			{
+				if(a<b)
+				{
+                    Console.WriteLine("hello java");
+                }
+				else
+				{
+                    Console.WriteLine("hello c");    //output hello c
+                }
+			}
+			else
+			{
+                Console.WriteLine("enjoy c#");
+            }
+		}
+	}
+}
+---------------------------------------------------------------------------
+
+Wap To Find The Greatest Among 3 No.a=9,b=1,c=10; Using nested if
+----------------------------------------------------------------------
+using System;
+class demo
+{
+	static void Main()
+	{
+		int a = 9, b = 1, c = 10;
+		if(a>b)
+		{
+			if(a>c)
+			{
+                Console.WriteLine("a is greater");
+            }
+			else
+			{
+                Console.WriteLine("c is greater");
+            }
+		}
+		else
+		{
+			if(b>a)
+			{
+                if(b>c)
+				{
+                    Console.WriteLine("b is greater");
+                }
+				else
+				{
+                    Console.WriteLine("c is greater");  // c is greater
+                }
+            }
+		}
+	}
+}
+------------------------------------------------------------------------------
+5-switch
+-----------
+it is used to make menu based program.
+1-tea
+2-coffee
+3-coldrink
+switch(expresion)
+{
+case 1:
+statement1;
+break;
+case 2:
+statement2;
+break
+.....
+.....
+default:
+statement;
+break;
+}
+----------------------------------
+using System;
+class demo
+{
+	static void Main()
+	{
+        Console.WriteLine("enter your choice=");
+        Console.WriteLine("1-tea");
+        Console.WriteLine("2-coffee");
+        Console.WriteLine("3-coldrink");
+        int ch=Convert.ToInt32(Console.ReadLine());
+        switch (ch)
+        {
+            case 1:
+                Console.WriteLine("tea");
+                break;
+            case 2:
+                Console.WriteLine("coffee");
+                break;
+            case 3:
+                Console.WriteLine("coldrink");
+                break;
+                default:
+                Console.WriteLine("invalid choice");
+                break;
+
+        }
+                      
+    }
+}
+
+
+
+
+
+
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+

@@ -1,0 +1,351 @@
+Loop Controll Statements
+-------------------------
+loop is used to perform iteration on a statements.their are 4 types of 
+loop in c#
+1-while/entry controll
+-----------------------
+it is used to check the condition first after that statement will be printed it is 
+also known as entry controll loop
+while(condition)
+{
+statement;
+inc/dec;
+}
+---------------
+using System;
+class demo
+{
+	static void Main()
+	{
+        int a = 10;
+        while(a>5)
+        {                                         
+            Console.WriteLine("hello c#");   //output hello c#
+										 
+			a--;                               
+		}                                   
+		Console.WriteLine("enjoy");          
+		                                     
+
+	}
+}
+Output-
+hello c#
+hello c#
+hello c#
+hello c#
+hello c#
+enjoy
+-------------------------------------------------------------
+2-do-while/exit controll
+-------------------------
+in do while statements will be printed at once and then its check the condition it is also 
+know as exit controll loop
+do
+{
+statement;
+inc/dec;
+}
+while(condition);//condition must be terminated
+-------------------------------------------------
+using System;
+class demo
+{
+	static void Main()
+	{
+		int a = 5;
+		do
+		{
+			if (a == 7 || a == 9 || a == 10)
+			{
+				Console.WriteLine("hello c#");
+			}
+			a++;
+		}
+		while (a <= 10);
+		Console.WriteLine("enjoy");
+
+
+	}
+}
+output-
+hello c#
+hello c#
+hello c#
+enjoy
+---------------------------------------------
+3-for
+---------
+it is very fast it has 3 expression
+1-initialization-it is  only one time
+2-condition
+3-inc/dec
+for(initialization;condition;inc/dec)
+{
+statements;
+}
+--------------------------------
+using System;
+class demo
+{
+	static void Main()
+	{
+		for(int i=1;i<=10;i++)
+		{
+			if(i==6)
+			{
+                Console.WriteLine(i);
+            }
+		}
+		Console.WriteLine("end of loop");   //output 6
+		                                    //end of loop
+
+
+	}
+}
+-------------------------------------------------------------
+using System;
+class demo
+{
+	static void Main()
+	{
+		string name = "ABHISHEK";
+		char ch;
+		for(int i=0;i<name.Length;i++)
+		{
+			ch= name[i];
+            Console.WriteLine(ch);
+        }
+
+
+	}
+}
+output-
+A
+B
+H
+I
+S
+H
+E
+K
+--------------------------------------------------------------
+4-foreach
+----------
+it is used to iterate collection of element
+foreach(datatype var_name in collection)//string, array,list,tuple,dict,object
+{
+statement
+}
+-------------------------
+using System;
+class demo
+{
+	static void Main()
+	{
+		string name = "ABHISHEK";
+		foreach(char mandy in name)
+		{
+            Console.WriteLine(mandy);
+        }
+		
+		
+
+
+	}
+}
+output-
+A
+B
+H
+I
+S
+H
+E
+K
+-------------------------------------------
+using System;
+class demo
+{
+	static void Main()
+	{
+		List<string>sports=new List<string>();
+		sports.Add("cricket");
+		sports.Add("football");
+		sports.Add("tennis");
+		sports.Add("chess");
+		foreach(string sport in sports)
+		{
+            Console.WriteLine(sport);
+        }
+	}
+}
+-----------------------------------------
+5-nested loop
+-------------------
+loop within loop is called nested loop
+using System;
+class demo
+{
+	static void Main()
+	{
+		for(int i=1;i<=5;i++)  //row outer loop owner
+		{
+			for(int j=1;j<=5;j++)  //servent column
+			{
+                Console.Write(i);
+            }
+            Console.WriteLine();
+        }
+
+
+
+	}
+}
+output-
+11111
+22222
+33333
+44444
+55555
+--------------------------------------------------------
+using System;
+class demo
+{
+	static void Main()
+	{
+		for(int i=1;i<=5;i++)  //row outer loop owner
+		{
+			for(int j=1;j<=5;j++)  //servent column
+			{
+                Console.Write(j);
+            }
+            Console.WriteLine();
+        }
+
+
+
+	}
+}
+output-
+12345
+12345
+12345
+12345
+12345
+		
+		
+		
+
+
+	
+
+											 
+			                            
+		                                   
+		      
+		                                    
+
+	
+
+
+
+
+
+
+
+
+    
+
+
+											 
+			                            
+		                                   
+		      
+		                                    
+
+	
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+											 
+			                            
+		                                   
+		      
+		                                    
+
+	
+
+
+
+
+
+
+
+
+    
+
+
+
+											 
+			                            
+		                                   
+		      
+		                                    
+
+	
+
+
+
+
+
+
+
+
+    
+
+
+
+											 
+			                            
+		                                   
+		      
+		                                    
+
+	
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+

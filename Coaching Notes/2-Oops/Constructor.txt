@@ -1,0 +1,240 @@
+Constructor
+------------
+it is the special method that contains the same name as the class name.
+* it does not return any value.
+* it call automatically when you create one object of a class.
+Types Of Constructor
+--------------------
+1-Default Constructor / NON Parameterized Constructor
+2-Parameterized Constructor
+3-Copy Constructor
+4-Private Constructor
+5-Static Constructor
+------------------------------
+D/W B/W FUNCTION AND CONSTRUCTOR
+------------------------------------
+* function are as  like method.
+* function  make a call after object creation and .function name  but constructor automatically call when we make object of class.
+* function are the return value but constructor not return the value. 
+------------------------------------------------------------------------
+1-Default Constructor / NON Parameterized Constructor
+-------------------------------------------------------
+in this constructor we do not pass any parameter.
+-------------------------------------------------
+using System;
+using System;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class Employee
+	{
+		public Employee() //default constructor
+		{
+			Console.WriteLine("hello Employee");
+		}
+	}
+	class demo
+	{
+		static void Main()
+		{
+			Employee emp = new Employee(); // output-hello Employee
+		}
+	}
+}
+-------------------------------------------------------------------
+2-Parameterized Constructor
+-----------------------------
+in this constructor we pass the paremeter .
+--------------------------------------------
+using System;
+using System;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class Employee
+	{
+		string n;
+		int a;
+		public Employee(string name,int age) //parameterized constructor
+		{
+			n = name;
+			a = age;
+		}
+		public void display()
+		{
+            Console.WriteLine("name="+n);
+            Console.WriteLine("age="+a);
+        }
+	}
+	class demo
+	{
+		static void Main()
+		{
+			Employee emp=new Employee("preeti",19); // name=preeti,age=19
+			emp.display();
+		}
+	}
+}
+-------------------------------------------------------------------------
+3-Copy Constructor
+-------------------
+copy one constructor value into another constructor
+---------------------------------------------------
+using System;
+using System;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class Employee
+	{
+		string n;
+		int a;
+		public Employee(string name,int age) // copy constructor
+		{
+			n= name;
+			a= age;
+            Console.WriteLine("first constructor value");
+            Console.WriteLine("name="+n);
+            Console.WriteLine("age="+a);
+        }
+		public Employee(Employee empobj)
+		{
+			n= empobj.n;
+			a= empobj.a;
+            Console.WriteLine("second constructor value");
+            Console.WriteLine("name="+n);
+            Console.WriteLine("age="+a);
+        }
+	}
+	class demo
+	{
+		static void Main()
+		{
+			Employee emp=new Employee("preeti",19);
+			Employee emp1 = new Employee(emp); // copy constructor work here
+		}
+	}
+}
+------------------------------------------------------------------------------
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

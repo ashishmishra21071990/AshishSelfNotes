@@ -1,0 +1,82 @@
+Reflection
+----------
+it is a process to provide meta information of ant type like
+class,object,assembly,string,interface
+* include the name space of using System.Reflection.
+* reflection namespace contains required classes for reflection such as
+------------------------------------------------------------------------
+* member information
+* construct information
+* method information
+* field information
+* propert information
+* type information
+* assembly
+-------------------------------------------------
+using System;
+using System.IO;
+using System.Reflection;
+using System;
+using System.Collections.Generic;
+
+
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+using System.Security.Cryptography;
+using System.Xml.Linq;
+
+namespace ashish
+{
+	class testReflection
+	{
+		static void Main()
+		{
+			Type t = typeof(System.String);
+            Console.WriteLine(t.Assembly);
+            Console.WriteLine(t.FullName);
+            Console.WriteLine(t.IsValueType);
+            Console.WriteLine(t.IsClass);
+            Console.WriteLine(t.IsEnum);
+            Console.WriteLine(t.IsInterface);
+        }
+	}
+}
+output-
+System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+System.String
+False
+True
+False
+False
+--------------------------------------------------------------------------
+using System;
+using System.IO;
+using System.Reflection;
+using System;
+using System.Collections.Generic;
+
+
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+using System.Security.Cryptography;
+using System.Xml.Linq;
+
+namespace ashish
+{
+	class testReflection
+	{
+		static void Main()
+		{
+			int a = 10;
+			Type type = a.GetType();
+            Console.WriteLine(type);
+        }
+	}
+}
+output-
+System.Int32
+---------------------------------------------------------------------------------

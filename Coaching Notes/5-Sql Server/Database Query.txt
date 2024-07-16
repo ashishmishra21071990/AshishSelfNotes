@@ -1,0 +1,146 @@
+SqlServer-in a sql == does not support,and as use for temporary column add means 1 row are affected
+------------
+Making databse and table in GUI
+--------------------------------
+* database right click-database name than ok
+* table right click-new-table
+* if i want to look our table than right click than edit top 1000 rows.
+if i want to insert our table than right click than edit top 200 rows.
+how to delete database
+-----------------------
+database-right click-delete note here first block automatic tik yes but i do tik yes the second box
+----------------------------------------------------------------------------------------------------
+with the help of GUI making autoincrement eid 
+--------------------------------------------
+eid-right click-set primary key- than 
+identity specification-is identity do yes here 2 parameters identity increment and identity seed means how much differences you want.
+-----------------------------------------------------------------------------------------------------------------------------------------
+it is database mgmt tool i.e used to manage our database.
+* sql server is used to retrieve data,insert,update,and perform many oprtations in fast and efficient manner.
+Database Language
+--------------------
+1-DDL(data defination language)
+----------------------------------
+create,alter,drop,truncate,rename,comment.
+2-DML(data manipulation language)
+-----------------------------------
+insert,update,delete.
+3-DCL(data control language)
+----------------------------
+grant,revoke.
+4-TCL(transaction control language)
+--------------------------------------
+begin,transaction,commit,rollback,savepoint.
+5-DQL(data query language)
+----------------------------
+select.
+Database
+------------
+* multiple tables 
+* create database databasename
+* use databasename
+
+1-GUI
+2-CUI
+P.K
+-------
+which does not allow Null and duplicate
+Table
+----------
+create table tablename
+(
+colname1 datatype1,
+colname2 database2,
+colnameN databaseN
+)
+Insert Command
+---------------------
+* Insert into all column
+-------------------------
+insert into tablename
+values(col1,col2,---coln)
+* Insert into particular column
+---------------------------------
+insert into tablename(col1,col4,col8)
+values(value1,value4,value8)
+Select
+--------------
+* Select all rows and cols
+------------------------------
+select *from tablename
+* Select particular row but all cols
+-------------------------------------
+select *from tbl_Employee where eid=4
+* Select particular cols and all rows
+------------------------------------------
+select ename,salary,post from tbl_Employee
+* Select particular row and col 
+-----------------------------------
+select ename,salary,post from tbl_Employee where eid=3
+Update
+------------
+*Update into particular column
+----------------------------------
+update tbl_Employee set post='mrkt',salary=25000 where eid=5
+Operator
+-----------
+1-arithmetic
+------------------
++,-,*,/
+2-Relational
+---------------
+>,>=,<,<=,<>
+3-Logical
+-----------
+Special Operator
+-------------------
+* top
+* order by
+* in
+* not in
+* between
+* not between
+*like
+-----------
+it is used for pattern matching,it read single character
+select *from tbl_Employee where ename like'v_j_y'means it read single character
+
+%-> it read multiple character
+1-if you know first character only
+-----------------------------------
+select *from tbl_Employee where ename like'a%'
+2-if you know last character only 
+-----------------------------------
+select *from tbl_Employee where ename like '%m'
+3-if yoy dont know any character
+-------------------------------
+select *from tbl_Employee where ename like'%%'
+4-if you dont know first and last character only know middle character
+----------------------------------------------------------------------
+select *from tbl_Employee where ename like'%i%'
+Aggregate Function
+-----------------------
+1-max()
+2-min()
+3-sum()
+4-avg()
+5-count()
+Clauses
+-------------
+without aggregate function you can not use clauses
+1-groupeby
+--------------
+2-having
+-----------
+it is used to provide condition it always used after groupeby
+note-i can use where before groupeby
+
+
+
+
+
+
+
+
+
+

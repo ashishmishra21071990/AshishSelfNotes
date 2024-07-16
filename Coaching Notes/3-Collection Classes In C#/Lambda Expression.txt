@@ -1,0 +1,136 @@
+Lambda Expression
+-------------------
+* it is used lambda operater(=>)
+* it is used to get your data from the list a very fast manner
+* it is very fast
+-------------------------------------------------------
+using System;
+using System.IO;
+using System.Reflection;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+using System.Security.Cryptography;
+using System.Xml.Linq;
+using System.Threading;
+
+namespace ashish
+{
+	class Employee
+	{
+		static void Main()
+		{
+			List<int> lt = new List<int> { 12, 34, 56, 88, 9, 7 };
+			List<int>evenno =lt.FindAll(x=> x%2==0);
+			foreach(int x in evenno)
+			{
+                Console.WriteLine(x);
+            }
+		}
+	}
+}
+output-
+12
+34
+56
+88
+---------------------------------------------------------------------
+using System;
+using System.IO;
+using System.Reflection;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+using System.Security.Cryptography;
+using System.Xml.Linq;
+using System.Threading;
+
+namespace ashish
+{
+	class Employee
+	{
+		public int eid { get; set; }
+		public string? name { get; set; }
+		public int age { get; set; }
+		public string? city { get; set; }
+		public static List<Employee> GetEmployees()
+		{
+			List<Employee> emplist = new List<Employee>();
+			Employee emp = new Employee();
+			// first Employee
+			emp.eid = 1;
+			emp.name = "vikash";
+			emp.age = 30;
+			emp.city = "allahabad";
+			emplist.Add(emp);
+			// second Employee
+			emp = new Employee();
+			emp.eid = 2;
+			emp.name = "ram";
+			emp.age = 45;
+			emp.city = "varanasi";
+			emplist.Add(emp);
+			// third Employee
+			emp = new Employee();
+			emp.eid = 3;
+			emp.name = "radha";
+			emp.age = 85;
+			emp.city = "mathura";
+			emplist.Add(emp);
+			// fourth Employee
+			emp = new Employee();
+			emp.eid = 4;
+			emp.name = "balram";
+			emp.age = 90;
+			emp.city = "delhi";
+			emplist.Add(emp);
+			// fifth Employee
+			emp = new Employee();
+			emp.eid = 5;
+			emp.name = "krishna";
+			emp.age = 90;
+			emp.city = "mumbai";
+			emplist.Add(emp);
+			return emplist;
+
+
+		}
+	}
+	class demo
+	{
+		static void Main()
+		{
+			List<Employee> emplist=Employee.GetEmployees();
+			var city_name=emplist.Select(x => x.city).ToList();
+			
+			foreach(var city in  city_name)
+			{
+                Console.WriteLine(city);
+            }
+		}
+	}
+}
+output-
+allahabad
+varanasi
+mathura
+delhi
+mumbai
+---------------------------------------------------------------
+
+
+
+	
+
+
+
+
+
+	
+

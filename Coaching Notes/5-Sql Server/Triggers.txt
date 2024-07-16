@@ -1,0 +1,31 @@
+Triggers
+----------
+* it is a special type of stored procedure that automatically fired or executed when an event has occured.
+* triggers provide security to our database
+* performance is high
+Database Events
+-----------------
+create,drop,alter,insert,update,delete,and many more.
+Example
+--------
+student 
+personal Details- when you insert a record in student table its personal details table gets affected automatically.
+create table tbl_empinfo
+(
+info_id int Primary Key Identity(1,1)
+msg nvarchar(200)
+)
+alter trigger tr_emp
+on tbl_Employee
+for insert-for/alter insert in tbl_Employee
+as begin
+declare @id int
+select @id=eid from inserted-it keeps the id which is just created behind the 
+insert into tbl_empinfo(msg)values
+('the new Employee Added With 1D'+cast@id as varchar)+'at'+cast(GETDATA()as varchar))
+print('new Employee Added')
+end
+--------------
+select *from tbl_Employee
+select *from tbl_empinfo
+insert into tbl_Employee values('rajesh',34,'jhgl',34349,'clerk')

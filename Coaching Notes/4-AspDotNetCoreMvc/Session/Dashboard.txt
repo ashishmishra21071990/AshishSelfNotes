@@ -1,0 +1,3 @@
+<h1>***welcome to my dashboard***</h1>
+<h3>welcome @ViewBag.user</h3>
+<h4>@Html.ActionLink("Logout","Logout","Session")</h4>

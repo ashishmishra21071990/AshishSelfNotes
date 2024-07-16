@@ -1,0 +1,62 @@
+Partial class
+-------------
+* we will make more than class with same name with the help of partial class
+when a developer dont need to write complete logic in the
+same class .it want to distribute their logic with multiple developers
+then we use the concept of parial class
+partial Method Example
+--------------------------
+using System;
+using System.IO;
+using System.Reflection;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+using System.Security.Cryptography;
+using System.Xml.Linq;
+using System.Threading;
+
+namespace ashish
+{
+	partial class Employee // TL
+	{
+		public string name;
+		public int age;
+		public partial void display(); // declaration no body 
+	}
+	partial class Employee
+	{
+		public Employee(string name, int age)
+		{
+			this.name = name;
+			this.age = age;
+		}
+		public partial void display()
+		{
+            Console.WriteLine(this.name);
+            Console.WriteLine(this.age);
+            Console.WriteLine("hello partial");
+        }
+	}
+	class demo
+	{
+		static void Main()
+		{
+			Employee emp = new Employee("rahul", 85);
+			emp.display();
+		}
+	}
+}
+output-
+rahul
+85
+hello partial
+---------------------------------------------------------------------
+
+
+
+	
+

@@ -1,0 +1,248 @@
+1-wap to input two no.and find the smallest no.using if else 
+----------------------------------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int a, b;
+        Console.WriteLine("enter the two no.");
+        a=Convert.ToInt32(Console.ReadLine());
+        b=Convert.ToInt32(Console.ReadLine());  
+        
+        if(a<b)
+        {
+            Console.WriteLine("smallestno.="+a);
+        }
+        else
+        {
+            Console.WriteLine("smallestno.="+b);
+        }
+    }
+}
+------------------------------------
+2-wap to input a 3 no.and find the smallest no.among them using if else
+-----------------------------------------------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int a, b, c;
+        Console.WriteLine("enter the three no.");
+        a=Convert.ToInt32(Console.ReadLine());
+        b=Convert.ToInt32(Console.ReadLine());
+        c=Convert.ToInt32(Console.ReadLine());
+        
+        if(a<b&&a<c)
+        {
+            Console.WriteLine("smallestno.="+a);
+        }
+        else if(b<a&&b<c)
+        {
+            Console.WriteLine("smallestno.="+b);
+        }
+        else
+        {
+            Console.WriteLine("smallestno.=" + c);
+        }
+    }
+}
+-----------------------------------------
+3-wap to input a character and check its vowels and consonant
+----------------------------------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        char ch;
+        Console.WriteLine("enter the character");
+        ch=Convert.ToChar(Console.ReadLine());
+        if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U')
+        {
+            Console.WriteLine("vowels=" + ch);
+        }
+        else if(ch>='a'&&ch<='z'|| ch >= 'A' && ch <= 'Z')
+        {
+            Console.WriteLine("consonant=" + ch);
+        }
+    }
+}
+------------------------------------------------
+4-wap to input a year and checks its leap year or not
+-------------------------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int year;
+        Console.WriteLine("enter the year");
+        year=Convert.ToInt32(Console.ReadLine());
+        if(year%4==0)
+        {
+            Console.WriteLine("leap year="+year);
+        }
+        else
+        {
+            Console.WriteLine("leap year not="+year);
+        }
+
+    }
+}
+------------------------
+5-wap to input a no. and check its even or odd
+-------------------------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int number;
+        Console.WriteLine("enter the no.");
+        number=Convert.ToInt32(Console.ReadLine());
+        if(number%2==0)
+        {
+            Console.WriteLine("even no.="+number);
+
+        }
+        else
+        {
+            Console.WriteLine("odd no.=" + number);
+        }
+    }
+}
+-------------------
+6-wap to input a character and check wheather input character is in uppercase,lowercase,digit,special symbol
+-----------------------------------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        char ch;
+
+        Console.WriteLine("enter character or digits");
+        ch=Convert.ToChar(Console.ReadLine());
+        if(ch>='A'&&ch<='Z')
+        {
+            Console.WriteLine("upper case="+ch);
+        }
+        else if(ch>='a'&&ch<='z')
+        {
+            Console.WriteLine("lower case=" + ch);
+        }
+        else if(ch>=0||ch<=9)
+        {
+            Console.WriteLine("digits=" + ch);
+        }
+        else
+        {
+            Console.WriteLine("special symbol=" + ch);
+        }
+    }
+}
+------------------------------------
+7-wap to find the day of weak
+-------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int weak;
+        Console.WriteLine("enter the no of 1 to 7");
+        weak=Convert.ToInt32(Console.ReadLine());
+        if(weak == 1)
+        {
+            Console.WriteLine("monday="+weak);
+        }
+        else if(weak == 2)
+        {
+            Console.WriteLine("tuesday="+weak);
+        }
+        else if (weak == 3)
+        {
+            Console.WriteLine("thursday=" + weak);
+        }
+        else if (weak == 4)
+        {
+            Console.WriteLine("wednesday=" + weak);
+        }
+        else if (weak == 5)
+        {
+            Console.WriteLine("friday=" + weak);
+        }
+        else if (weak == 6)
+        {
+            Console.WriteLine("satuarday=" + weak);
+        }
+        else if (weak == 7)
+        {
+            Console.WriteLine("sunday=" + weak);
+        }
+    }
+}
+--------------------------------------------------
+8-wap to find the month of year
+-----------------------------
+same task as per privious question
+-------------------------
+9-wap to find the calculator program using switch
+addition
+substraction
+multiplication
+division
+remainder
+--------------------------------------------------
+using System;
+class demo
+{
+    static void Main()
+    {
+        int a, b, c;
+        char ch;
+        Console.WriteLine("enter the no.");
+        a=Convert.ToInt32(Console.ReadLine());
+        b=Convert.ToInt32(Console.ReadLine());  
+       
+        Console.WriteLine("enter the choice");
+        Console.WriteLine("add:+");
+        Console.WriteLine("sub:-");
+        Console.WriteLine("mul:*");
+        Console.WriteLine("div:/");
+        Console.WriteLine("rem:%");
+        ch = Convert.ToChar(Console.ReadLine());
+        switch (ch)
+        {
+            case '+':
+                c = a + b;
+                Console.WriteLine("add="+c);
+                break;
+            case '-':
+                c = a - b;
+                Console.WriteLine("sub=" + c);
+                break;
+            case '*':
+                c = a * b;
+                Console.WriteLine("mul=" + c);
+                break;
+            case '/':
+                c = a / b;
+                Console.WriteLine("div=" + c);
+                break;
+            case '%':
+                c = a % b;
+                Console.WriteLine("rem=" + c);
+                break;
+            default:
+                Console.WriteLine("wrong choice");
+                break;
+
+
+        }
+    }
+}
+-----------------------------
+

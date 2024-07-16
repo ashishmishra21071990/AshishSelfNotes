@@ -1,0 +1,91 @@
+Variable
+-----------
+it is memory location i.e used to store your data
+Variable Initialization
+-------------------------
+to assign value into var
+int a=4;//here we assign 4 value to a
+Variable Declaration
+-------------------------
+dont provide any value to the var
+int a,b,c;//runtime
+Rules For Declaring Variable
+-----------------------------
+1-var name can not start from digit
+-------------------------------------
+ex-int 1asdd=34; //rong
+int add 34=56; //right
+2-var name can not be keyword
+-----------------------------
+int for=4;//rong
+3-no space area allowed b/w var name
+----------------------------------------
+a b=34;//rong
+4-underscore are allowed
+-------------------------
+int a_b=45;//right
+5-hyphen are not allowed
+--------------------------
+int a-b=90;//rong
+6-both uppercase and lowercase treated as d/w variable name
+------------------------------------------------------------
+int age=34;//lowercase
+int Age=12;//sentencecase
+int AGE=14;//uppercase
+Constant
+------------
+it is a fixed value i.e never going to be changed throughout the whole program
+ex-const int a=5;//here 5 is constant value
+Types Of Constant
+----------------------
+1-Numeric
+-------------
+it holds numeric value like 1,2,....
+1-octal-0 to 7
+2-decimal-0 to 9
+3-hexadecimal- 0 to 15
+4-real or floating point-12,34.56,-1,+1
+2-Character
+-----------------
+it holds single value.it is represented by single quote
+ex-'1','a' 
+3-Strings
+-------------
+it holds multiple value.it is represented by double quote
+ex-"123" "addffdds" "2345"
+Kewword
+-----------------
+are the reserved word which have special meaning in a program
+ex-while,for,do-while,overide
+Data Types
+-----------------
+it identifies that which type of value a variable can hold. there are two types
+1-Primitive Data Type
+--------------------------
+it stores only single value int,float,boolean,double,byte,char
+2-Non Primitive Data Type/Reference
+--------------------------------------
+it holds multiple value strings,array,delegate,interface,class
+Wap To Print Welcome To C#
+---------------------------------
+using System;
+class demo
+{
+	static void Main()
+	{
+		int a, b, c;
+        Console.WriteLine("enter two no.="); 
+		a = Convert.ToInt32 (Console.ReadLine());
+		b = Convert.ToInt32 (Console.ReadLine());
+		c = a + b;
+        Console.WriteLine("sum="+c);
+}
+}
+		
+
+
+
+	
+
+
+

@@ -1,0 +1,126 @@
+Tuple
+-------
+it is a sequence of information.
+all information will be stored in the form of items.
+---------------------------------------------------------
+using System;
+using System.IO;
+using System.Reflection;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+using System.Security.Cryptography;
+using System.Xml.Linq;
+using System.Threading;
+
+namespace ashish
+{
+ class Employee
+	{
+		static void Main()
+		{
+			Tuple<int, string, string> tv = new Tuple<int, string, string>(101, "shivam", "noida");
+			int eid=tv.Item1;
+			string name=tv.Item2;
+			string city=tv.Item3;
+            Console.WriteLine(eid);
+            Console.WriteLine(name);
+            Console.WriteLine(city);
+        }
+	}
+}
+output-
+101
+shivam
+noida
+----------------------------------------------------or--------------------
+using System;
+using System.IO;
+using System.Reflection;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+using System.Security.Cryptography;
+using System.Xml.Linq;
+using System.Threading;
+
+namespace ashish
+{
+ class Employee
+	{
+		static void Main()
+		{
+			var res  = Tuple.Create(101, "shivam", "allahabad");
+			int eid=res.Item1;
+			string name=res.Item2;
+			string city=res.Item3;
+            Console.WriteLine(eid);
+            Console.WriteLine(name);
+            Console.WriteLine(city);
+        }
+	}
+}
+-----------------------------------------------------------------------
+Dictionary
+------------
+one more way to index initializer
+-------------------------------------
+var dict = new Dictionary<string, int> { ["abc"] = 12, ["bcd"] = 345 };
+---------------------------------------------------------------------------
+String Interpolation
+-----------------------
+here we use doller $,{var_name} and ""symbol
+--------------------------------------------
+using System;
+using System.IO;
+using System.Reflection;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+using System.Security.Cryptography;
+using System.Xml.Linq;
+using System.Threading;
+
+namespace ashish
+{
+	class demo
+	{
+		static void Main()
+		{
+			string author = "mr.abhishek";
+			string movie = "avtar 2";
+			int year = 2022;
+			string res =$"{author}is the actor of{movie} released in {year}";
+            Console.WriteLine(res);
+        }
+	}
+}
+output-
+mr.abhishekis the actor ofavtar 2 released in 2022
+----------------------------------------------------------------
+
+
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+

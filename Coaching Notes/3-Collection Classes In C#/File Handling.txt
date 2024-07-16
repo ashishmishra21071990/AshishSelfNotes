@@ -1,0 +1,139 @@
+File Handling
+-------------------
+* it include the namespace of using System.IO;
+variable holds the value temporary basis you can not work
+with priviouse value.
+File
+-----
+file is used for keeping a record.it stores all your data on a 
+permanent basis.
+* it stores hug amount of data
+Types Of File
+----------------
+1-Text File
+-------------
+which is readable by human(.txt,.docx,.pptx)
+2-Binary File
+---------------
+which can not readable by human(.exe,.bat,mp3,mp4)
+write
+-------
+in write operation if file is not found then it will created
+automatically
+Read
+-----
+in read operation file must be there
+StreamWritter(Class)
+-----------------------
+to write a file
+StreamReader(Class)
+----------------------
+to read from the file
+-----------------------------------------------------------------------------------------
+using System;
+using System.IO;
+using System;
+using System.Collections.Generic;
+
+using System.ComponentModel;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Channels;
+namespace ashish
+{
+	class demo
+	{
+		static void Main()
+		{
+			// null is represent we can read all our file data
+			string[] names = { "ravi", "sonu", "vikash", "mohit", "ram", "krishna", "radha" };
+			using(StreamWriter sw = new StreamWriter("C:\\ram.txt"))
+				foreach (string item in names)
+				{
+					sw.WriteLine(item);
+				}
+			try
+			{
+				using(StreamReader sr=new StreamReader("C:\\ram.txt"))
+				{
+					string line = "";
+					while((line=sr.ReadLine())!=null)
+					{
+                        Console.WriteLine(line);
+                    }
+				}
+
+			}
+			catch (Exception ex)
+			{
+                Console.WriteLine("file not found"+ex.Message);
+            }
+		}
+		
+		
+		
+		
+		
+	}
+
+	
+}
+-----------------------------------------------------------------------------------
+		
+		
+		
+
+		
+
+		
+		
+
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

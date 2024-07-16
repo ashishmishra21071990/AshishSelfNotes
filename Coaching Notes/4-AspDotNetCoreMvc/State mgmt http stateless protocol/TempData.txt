@@ -1,0 +1,169 @@
+TempData
+---------
+Note-
+-----
+if i want to data transfer b/w one controller to another than the data transfer from the second controller view.
+<h2>TempDatavalue=@TempData["msg"]</h2>
+* I Controller code-TempData["msg"]="data come from TempData";
+return RedirectToAction("Index","Employee");
+-------------------------------------------------------------------------
+TempData["VarName/KeyName"]=value;
+------------------------------------
+* it is inherited from TempDataDictionary
+* it is used to transfer information b/w controller to view and controller to controller
+* it required type casting for complex data type
+* it does not display compile time error it only show run time error
+* it hold your data only from one subsequent request to another subsequent request
+* if you want to Keep temDatavalue throughout request than we use Keep() method
+TempData.Keep();
+----------------
+Employee
+---------
+using Microsoft.AspNetCore.Hosting.Server;
+
+namespace WebApplicationdipika.Models
+{
+	public class Employee
+	{
+		public int eid { get;set; }
+		public string? name { get; set; }
+		public int age { get;set; }
+		public string? mobileno { get;set; }
+		public int salary { get;set; }
+	}
+}
+----------------------------------------------------
+EmployeeController
+------------------
+
+using Microsoft.AspNetCore.Mvc;
+using WebApplicationdipika.Models;
+
+namespace WebApplicationdipika.Controllers
+{
+	public class EmployeeController : Controller
+	{
+		
+		public IActionResult Index()
+		{
+			ViewBag.dat = "data come from ViewBag";
+			ViewData["Data"]= "data come from ViewData";
+			TempData["msg"] = "data come from TempData";
+			List<string>first=new List<string>(){ "cricket", "footbal", "batmilton", "tennis", "hockey" };
+			TempData["sports"] = first;
+			
+			return View();
+		
+		}
+		public IActionResult About()
+		{
+			List<string> first = new List<string>() { "cricket", "footbal", "batmilton", "tennis", "hockey" };
+			TempData["sports"] = first;
+
+			if (TempData["msg"]!=null)
+			{
+				TempData.ToString();
+			}
+			TempData.Keep();
+			return View();
+		}
+		public IActionResult Contact()
+		{
+			List<string> first = new List<string>() { "cricket", "footbal", "batmilton", "tennis", "hockey" };
+			TempData["sports"] = first;
+			if (TempData["msg"] != null)
+			{
+				TempData.ToString();
+			}
+			TempData.Keep();
+			return View();
+		}
+		public IActionResult Service()
+		{
+			List<string> first = new List<string>() { "cricket", "footbal", "batmilton", "tennis", "hockey" };
+			TempData["sports"] = first;
+			if (TempData["msg"]!=null)
+			{
+				TempData.ToString() ;
+			}
+			TempData.Keep();
+			return View();	
+		}
+		
+		
+		
+	}
+}
+------------------------------------------------------------
+Index
+-------
+@using WebApplicationdipika.Models;
+<h2>ViewBag=@ViewBag.dat</h2>
+<h2>ViewData=@ViewData["Data"]</h2>
+<h2>TempData=@TempData["msg"]</h2>
+<h3>we have following games given below</h3>
+<ol>
+	@foreach (var sp in (IEnumerable<string>)TempData["sports"])
+
+	{
+		<li>@sp</li>
+	}
+</ol>
+	
+------------------------------
+About
+-------
+
+@{
+	ViewData["title"] = "About";
+}
+<h1>About</h1>
+<h2>ViewBag=@ViewBag.dat</h2>
+<h2>ViewData=@ViewData["Data"]</h2>
+<h2>Tempdata=@TempData["msg"]</h2>
+<h3>we have following games given below</h3>
+<ol>
+	@foreach(var sp in (IEnumerable<string>)TempData["sports"])
+	
+	{
+		<li>@sp</li>
+	}
+</ol>
+-------------------------
+Contact
+--------
+@{
+	ViewData["title"] = "About";
+}
+<h1>About</h1>
+<h2>ViewBag=@ViewBag.dat</h2>
+<h2>ViewData=@ViewData["Data"]</h2>
+<h2>Tempdata=@TempData["msg"]</h2>
+<h3>we have following games given below</h3>
+<ol>
+	@foreach (var sp in (IEnumerable<string>)TempData["sports"])
+
+	{
+		<li>@sp</li>
+	}
+</ol>
+----------------------
+Service
+----------
+@{
+	ViewData["title"] = "About";
+}
+<h1>About</h1>
+<h2>ViewBag=@ViewBag.dat</h2>
+<h2>ViewData=@ViewData["Data"]</h2>
+<h2>Tempdata=@TempData["msg"]</h2>
+<h3>we have following games given below</h3>
+<ol>
+	@foreach (var sp in (IEnumerable<string>)TempData["sports"])
+
+	{
+		<li>@sp</li>
+	}
+</ol>
+-----------------------------
+
